@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :parents
+  resources :parents
   get 'admin_pages/dashboard'
 
   devise_for :admins
