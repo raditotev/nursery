@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :testemonials
+  resources :awards
   resources :newsletters
   devise_for :parents
   resources :parents
