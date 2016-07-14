@@ -1,12 +1,12 @@
 FactoryGirl.define do
   factory :admin do
-    username { Faker::Name.last_name.downcase }
+    username { Faker::Internet.user_name }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
     superadmin false
   end
   factory :super_admin, class: Admin do
-    username { Faker::Name.last_name.downcase }
+    username { Faker::Internet.user_name }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
     superadmin true
