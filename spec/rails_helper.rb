@@ -7,7 +7,6 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
 require 'shoulda/matchers'
-require 'support/factory_girl'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -24,7 +23,7 @@ require 'support/factory_girl'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -60,7 +59,9 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Devise helper methods
-  config.include Devise::TestHelpers, :type => :controller
+  config.include Devise::Test::ControllerHelpers, :type => :controller
+  # Include helper methods from support/controller_macros.rb
+  config.extend ControllerMacros, :type => :controller
 end
 
 Shoulda::Matchers.configure do |config|
