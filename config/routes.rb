@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :newsletters
   devise_for :parents
   resources :parents
-  get 'admin_pages/dashboard'
+  get 'admin' => 'admin_pages#dashboard'
 
   devise_for :admins
   resources :admins
