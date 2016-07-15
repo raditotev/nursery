@@ -1,4 +1,4 @@
-class FaqsController < ApplicationController
+class FaqsController < AdministrationController
   before_action :set_faq, only: [:show, :edit, :update, :destroy]
 
   # GET /faqs

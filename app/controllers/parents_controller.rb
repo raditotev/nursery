@@ -1,4 +1,4 @@
-class ParentsController < ApplicationController
+class ParentsController < AdministrationController
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents

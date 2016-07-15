@@ -1,4 +1,4 @@
-class TestemonialsController < ApplicationController
+class TestemonialsController < AdministrationController
   before_action :set_testemonial, only: [:show, :edit, :update, :destroy]
 
   # GET /testemonials

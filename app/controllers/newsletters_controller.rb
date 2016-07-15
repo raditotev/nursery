@@ -1,4 +1,4 @@
-class NewslettersController < ApplicationController
+class NewslettersController < AdministrationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
   # GET /newsletters
