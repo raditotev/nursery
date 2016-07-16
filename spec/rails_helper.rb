@@ -61,7 +61,7 @@ RSpec.configure do |config|
   # Devise helper methods
   config.include Devise::Test::ControllerHelpers, :type => :controller
   # Include helper methods from support/controller_macros.rb
-  config.extend ControllerMacros, :type => :controller
+  config.extend ControllerHelperMethods, :type => :controller
 end
 
 Shoulda::Matchers.configure do |config|

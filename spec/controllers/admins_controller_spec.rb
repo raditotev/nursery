@@ -6,6 +6,9 @@ RSpec.describe AdminsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Admin. As you add validations to Admin, be sure to
   # adjust the attributes here as well.
+
+  let(:admin){ create(:admin) }
+
   let(:valid_attributes) { attributes_for(:admin) }
 
   let(:invalid_attributes) { attributes_for(:admin, email: nil, password: nil) }
@@ -18,7 +21,6 @@ RSpec.describe AdminsController, type: :controller do
   describe "GET #index" do
 
     describe "when user unauthorized" do
-
       it "redirects to login" do
         get :index
         expect(response).to redirect_to new_admin_session_path
@@ -36,7 +38,6 @@ RSpec.describe AdminsController, type: :controller do
       end
 
       it "assigns all admins as @admins" do
-        admin = create(:admin)
         get :index, params: {}, session: valid_session
         expect(assigns(:admins)).to eq([@super_admin, admin])
       end
@@ -44,11 +45,8 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "GET #show" do
-
     describe "when user unauthorized" do
-
       it "should redirect" do
-        admin = create(:admin)
         get :show, params: { id: admin.id }, session: valid_session
         expect(response).to redirect_to new_admin_session_path
       end
@@ -58,7 +56,6 @@ RSpec.describe AdminsController, type: :controller do
       login_super_admin # creates @admin
 
       it "loads show page" do
-        admin = create(:admin)
         get :show, params: { id: admin.to_param }, session: valid_session
         expect(response).to be_success
         expect(response).to render_template :show
@@ -66,17 +63,8 @@ RSpec.describe AdminsController, type: :controller do
 
       context "and params are valid" do
         it "should assign requested admin as @admin" do
-          admin = create(:admin)
           get :show, params: { id: admin.to_param }, session: valid_session
           expect(assigns(:admin)).to eq admin
-        end
-      end
-
-      context "and  params are invalid" do
-        it "should raise error" do
-          expect {
-            get :show, params: { id:'invalid' }, session: valid_session
-          }.to raise_error(ActiveRecord::RecordNotFound)
         end
       end
     end
@@ -104,7 +92,6 @@ RSpec.describe AdminsController, type: :controller do
 
     describe "when user unauthorized" do
       it "should redirect" do
-        admin = create(:admin)
         get :edit, params: { id: admin.id }, session: valid_session
         expect(response).to redirect_to new_admin_session_path
       end
@@ -121,7 +108,6 @@ RSpec.describe AdminsController, type: :controller do
 
       context "and params are valid" do
         it "assigns the requested admin as @admin" do
-          admin = create(:admin)
           get :edit, params: {id: admin.to_param}, session: valid_session
           expect(assigns(:admin)).to eq admin
         end
@@ -197,7 +183,6 @@ RSpec.describe AdminsController, type: :controller do
         }
 
         it "updates the requested admin" do
-          admin = create(:admin)
           put :update, params: {id: admin.to_param, admin: new_attributes}, session: valid_session
           admin.reload
           expect(admin.username).to eq new_attributes[:username]
@@ -205,13 +190,11 @@ RSpec.describe AdminsController, type: :controller do
         end
 
         it "assigns the requested admin as @admin" do
-          admin = create(:admin)
           put :update, params: {id: admin.to_param, admin: valid_attributes}, session: valid_session
           expect(assigns(:admin)).to eq(admin)
         end
 
         it "redirects to the admin" do
-          admin = create(:admin)
           put :update, params: {id: admin.to_param, admin: valid_attributes}, session: valid_session
           expect(response).to redirect_to(admin)
         end
@@ -219,13 +202,11 @@ RSpec.describe AdminsController, type: :controller do
 
       context "with invalid params" do
         it "assigns the admin as @admin" do
-          admin = create(:admin)
           put :update, params: {id: admin.to_param, admin: invalid_attributes}, session: valid_session
           expect(assigns(:admin)).to eq(admin)
         end
 
         it "re-renders the 'edit' template" do
-          admin = create(:admin)
           put :update, params: {id: admin.to_param, admin: invalid_attributes}, session: valid_session
           expect(response).to render_template("edit")
         end
@@ -244,15 +225,18 @@ RSpec.describe AdminsController, type: :controller do
 
     describe "when user is authorized" do
       login_super_admin
+
+      before :each do
+        admin
+      end
+
       it "destroys the requested admin" do
-        admin = create(:admin)
         expect {
           delete :destroy, params: {id: admin.to_param}, session: valid_session
         }.to change(Admin, :count).by(-1)
       end
 
       it "redirects to the admins list" do
-        admin = create(:admin)
         delete :destroy, params: {id: admin.to_param}, session: valid_session
         expect(response).to redirect_to(admins_url)
       end

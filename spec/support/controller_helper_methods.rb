@@ -1,4 +1,4 @@
-module ControllerMacros
+module ControllerHelperMethods
   def login_super_admin
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:super_admin]
