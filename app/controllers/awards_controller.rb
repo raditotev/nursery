@@ -2,13 +2,11 @@ class AwardsController < AdministrationController
   before_action :set_award, only: [:show, :edit, :update, :destroy]
 
   # GET /awards
-  # GET /awards.json
   def index
     @awards = Award.all
   end
 
   # GET /awards/1
-  # GET /awards/1.json
   def show
   end
 
@@ -22,42 +20,34 @@ class AwardsController < AdministrationController
   end
 
   # POST /awards
-  # POST /awards.json
   def create
     @award = Award.new(award_params)
 
     respond_to do |format|
       if @award.save
-        format.html { redirect_to @award, notice: 'Award was successfully created.' }
-        format.json { render :show, status: :created, location: @award }
+        format.html { redirect_to @award, flash: {success: 'Award was successfully created.'} }
       else
         format.html { render :new }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /awards/1
-  # PATCH/PUT /awards/1.json
   def update
     respond_to do |format|
       if @award.update(award_params)
-        format.html { redirect_to @award, notice: 'Award was successfully updated.' }
-        format.json { render :show, status: :ok, location: @award }
+        format.html { redirect_to @award, flash: {success: 'Award was successfully updated.'} }
       else
         format.html { render :edit }
-        format.json { render json: @award.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /awards/1
-  # DELETE /awards/1.json
   def destroy
     @award.destroy
     respond_to do |format|
-      format.html { redirect_to awards_url, notice: 'Award was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to awards_url, flash: {success: 'Award was successfully destroyed.'} }
     end
   end
 
