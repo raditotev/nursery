@@ -14,7 +14,7 @@ RSpec.describe FaqsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "unauthorized user" do
-    is_redirected :job
+    is_redirected :faq
   end
 
   describe "GET #index" do
