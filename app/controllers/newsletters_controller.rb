@@ -2,13 +2,11 @@ class NewslettersController < AdministrationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
   # GET /newsletters
-  # GET /newsletters.json
   def index
     @newsletters = Newsletter.all
   end
 
   # GET /newsletters/1
-  # GET /newsletters/1.json
   def show
   end
 
@@ -22,42 +20,35 @@ class NewslettersController < AdministrationController
   end
 
   # POST /newsletters
-  # POST /newsletters.json
+
   def create
     @newsletter = Newsletter.new(newsletter_params)
 
     respond_to do |format|
       if @newsletter.save
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully created.' }
-        format.json { render :show, status: :created, location: @newsletter }
+        format.html { redirect_to @newsletter, flash: {success: 'Newsletter was successfully created.'} }
       else
         format.html { render :new }
-        format.json { render json: @newsletter.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /newsletters/1
-  # PATCH/PUT /newsletters/1.json
   def update
     respond_to do |format|
       if @newsletter.update(newsletter_params)
-        format.html { redirect_to @newsletter, notice: 'Newsletter was successfully updated.' }
-        format.json { render :show, status: :ok, location: @newsletter }
+        format.html { redirect_to @newsletter, flash: {success: 'Newsletter was successfully updated.'} }
       else
         format.html { render :edit }
-        format.json { render json: @newsletter.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /newsletters/1
-  # DELETE /newsletters/1.json
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to newsletters_url, flash: {success: 'Newsletter was successfully destroyed.'} }
     end
   end
 
