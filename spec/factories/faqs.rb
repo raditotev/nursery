@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :faq do
-    question "What is question?"
+    question "What is your question?"
     answer "Here is our answer."
   end
 
