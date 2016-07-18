@@ -18,24 +18,15 @@ RSpec.describe AdminsController, type: :controller do
   # AdminsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  unauthorized_user_is_redirected :admin
+
+
   describe "GET #index" do
-
-    describe "when user unauthorized" do
-      it "redirects to login" do
-        get :index
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       # creates @super_admin, controler_macros.rb
       login_super_admin
 
-      it "loads index page" do
-        get :index
-        expect(response).to be_success
-        expect(response).to render_template :index
-      end
+      it_loads_index_page
 
       it "assigns all admins as @admins" do
         get :index, params: {}, session: valid_session
@@ -45,21 +36,10 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "GET #show" do
-    describe "when user unauthorized" do
-      it "should redirect" do
-        get :show, params: { id: admin.id }, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin # creates @admin
 
-      it "loads show page" do
-        get :show, params: { id: admin.to_param }, session: valid_session
-        expect(response).to be_success
-        expect(response).to render_template :show
-      end
+      it_loads_show_page :admin
 
       context "and params are valid" do
         it "should assign requested admin as @admin" do
@@ -71,16 +51,9 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "GET #new" do
-
-    describe "when user unauthorized" do
-      it "should redirect" do
-        get :new, params: {}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin
+
       it "assigns a new admin as @admin" do
         get :new, params: {}, session: valid_session
         expect(assigns(:admin)).to be_a_new(Admin)
@@ -89,50 +62,22 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "GET #edit" do
-
-    describe "when user unauthorized" do
-      it "should redirect" do
-        get :edit, params: { id: admin.id }, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin
-      it "loads edit page" do
-        admin = create(:admin)
-        get :edit, params: { id: admin.to_param }, session: valid_session
-        expect(response).to be_success
-        expect(response).to render_template :edit
-      end
 
-      context "and params are valid" do
-        it "assigns the requested admin as @admin" do
+      it_loads_edit_page :admin
+
+      it "assigns the requested admin as @admin" do
           get :edit, params: {id: admin.to_param}, session: valid_session
           expect(assigns(:admin)).to eq admin
-        end
-      end
-
-      context "and  params are invalid" do
-        it "should raise error" do
-          expect {get :edit, params: { id:'invalid' }, session: valid_session}.to raise_error(ActiveRecord::RecordNotFound)
-        end
       end
     end
   end
 
   describe "POST #create" do
-
-    describe "when user unauthorized" do
-      login_admin # check wether admin can access actions
-      it "should redirect_to sign_in page and generate flash message" do
-        post :create, params: {admin: valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin
+
       context "with valid params" do
         it "creates a new Admin" do
           expect {
@@ -167,16 +112,9 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "PUT #update" do
-    describe "when user unauthorized" do
-      login_admin # check wether admin can access actions
-      it "should redirect_to sign_in page and generate flash message" do
-        post :create, params: {admin: valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin
+
       context "with valid params" do
         let(:new_attributes) {
           attributes_for (:admin)
@@ -215,14 +153,6 @@ RSpec.describe AdminsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    describe "when user unauthorized" do
-      login_admin # check wether admin can access actions
-      it "should redirect_to sign_in page and generate flash message" do
-        post :create, params: {admin: valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
-    end
-
     describe "when user is authorized" do
       login_super_admin
 
@@ -243,5 +173,4 @@ RSpec.describe AdminsController, type: :controller do
 
     end
   end
-
 end
