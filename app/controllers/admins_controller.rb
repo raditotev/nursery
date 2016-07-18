@@ -24,42 +24,34 @@ class AdminsController < AdministrationController
   end
 
   # POST /admins
-  # POST /admins.json
   def create
     @admin = Admin.new(admin_params)
 
     respond_to do |format|
       if @admin.save
-        format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
-        format.json { render :show, status: :created, location: @admin }
+        format.html { redirect_to @admin, flash: {success: 'Admin was successfully created.'} }
       else
         format.html { render :new }
-        format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /admins/1
-  # PATCH/PUT /admins/1.json
   def update
     respond_to do |format|
       if @admin.update(admin_params)
-        format.html { redirect_to @admin, notice: 'Admin was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin }
+        format.html { redirect_to @admin, flash: {success: 'Admin was successfully updated.'} }
       else
         format.html { render :edit }
-        format.json { render json: @admin.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /admins/1
-  # DELETE /admins/1.json
   def destroy
     @admin.destroy
     respond_to do |format|
-      format.html { redirect_to admins_url, notice: 'Admin was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to admins_url, flash: {success: 'Admin was successfully destroyed.'} }
     end
   end
 
@@ -76,7 +68,6 @@ class AdminsController < AdministrationController
 
     def super_admin
       unless current_admin.superadmin
-        flash[:error] = "You're not authorized to create Admin user."
         redirect_to new_admin_session_path
       end
     end

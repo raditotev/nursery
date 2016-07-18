@@ -18,8 +18,9 @@ RSpec.describe AdminsController, type: :controller do
   # AdminsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  unauthorized_user_is_redirected :admin
-
+  describe "unauthorized user" do
+    is_redirected :admin
+  end
 
   describe "GET #index" do
     describe "when user is authorized" do
@@ -83,6 +84,7 @@ RSpec.describe AdminsController, type: :controller do
           expect {
             post :create, params: {admin: valid_attributes}, session: valid_session
           }.to change(Admin, :count).by(1)
+        expect(flash[:success]).to eq "Admin was successfully created."
         end
 
         it "assigns a newly created admin as @admin" do
@@ -125,6 +127,7 @@ RSpec.describe AdminsController, type: :controller do
           admin.reload
           expect(admin.username).to eq new_attributes[:username]
           expect(admin.email).to eq new_attributes[:email]
+          expect(flash[:success]).to eq "Admin was successfully updated."
         end
 
         it "assigns the requested admin as @admin" do
@@ -164,6 +167,7 @@ RSpec.describe AdminsController, type: :controller do
         expect {
           delete :destroy, params: {id: admin.to_param}, session: valid_session
         }.to change(Admin, :count).by(-1)
+      expect(flash[:success]).to eq "Admin was successfully destroyed."
       end
 
       it "redirects to the admins list" do

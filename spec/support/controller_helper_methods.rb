@@ -26,46 +26,44 @@ module ControllerHelperMethods
     let(:object){ create(resource) }
   end
 
-  def unauthorized_user_is_redirected resource
-    describe "unauthorized user" do
-      create_object resource
-      let(:valid_attributes) { attributes_for(resource) }
-      let(:valid_session) { {} }
+  def is_redirected resource
+    create_object resource
+    let(:valid_attributes) { attributes_for(resource) }
+    let(:valid_session) { {} }
 
-      it "is redirected to sign in page on get index" do
-        get :index
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on get index" do
+      get :index
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on get show" do
-        get :show, params: { id: object.id }, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on get show" do
+      get :show, params: { id: object.id }, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on get new" do
-        get :new, params: {}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on get new" do
+      get :new, params: {}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on get edit" do
-        get :edit, params: { id: object.id }, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on get edit" do
+      get :edit, params: { id: object.id }, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on post create" do
-        post :create, params: {resource => valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on post create" do
+      post :create, params: {resource => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on put update" do
-        post :create, params: {resource => valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on put update" do
+      post :create, params: {resource => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
 
-      it "is redirected to sign in page on delete destroy" do
-        post :create, params: {resource => valid_attributes}, session: valid_session
-        expect(response).to redirect_to new_admin_session_path
-      end
+    it "is redirected to sign in page on delete destroy" do
+      post :create, params: {resource => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
     end
   end
 
