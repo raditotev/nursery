@@ -85,14 +85,22 @@ module ControllerHelperMethods
     end
   end
 
-def it_loads_edit_page resource
-  create_object resource
-
-  it "loads edit page" do
-      get :edit, params: { id: object.to_param }, session: valid_session
+  def it_loads_new_page
+    it "loads new page" do
+      get :new, params: {}, session: {}
       expect(response).to be_success
-      expect(response).to render_template :edit
+      expect(response).to render_template :new
     end
-end
+  end
+
+  def it_loads_edit_page resource
+    create_object resource
+
+    it "loads edit page" do
+        get :edit, params: { id: object.to_param }, session: valid_session
+        expect(response).to be_success
+        expect(response).to render_template :edit
+      end
+  end
 
 end
