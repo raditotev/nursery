@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe AdminPagesController, type: :controller do
 
   describe "GET #dashboard" do
+    login_admin
+
     it "returns http success" do
       get :dashboard
       expect(response).to have_http_status(:success)

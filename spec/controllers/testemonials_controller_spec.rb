@@ -10,7 +10,7 @@ RSpec.describe TestemonialsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "unauthorized user" do
-    is_redirected :faq
+    is_redirected :testemonial
   end
 
   describe "GET #index" do
