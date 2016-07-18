@@ -2,13 +2,11 @@ class TestemonialsController < AdministrationController
   before_action :set_testemonial, only: [:show, :edit, :update, :destroy]
 
   # GET /testemonials
-  # GET /testemonials.json
   def index
     @testemonials = Testemonial.all
   end
 
   # GET /testemonials/1
-  # GET /testemonials/1.json
   def show
   end
 
@@ -22,42 +20,34 @@ class TestemonialsController < AdministrationController
   end
 
   # POST /testemonials
-  # POST /testemonials.json
   def create
     @testemonial = Testemonial.new(testemonial_params)
 
     respond_to do |format|
       if @testemonial.save
-        format.html { redirect_to @testemonial, notice: 'Testemonial was successfully created.' }
-        format.json { render :show, status: :created, location: @testemonial }
+        format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully created.'} }
       else
         format.html { render :new }
-        format.json { render json: @testemonial.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # PATCH/PUT /testemonials/1
-  # PATCH/PUT /testemonials/1.json
   def update
     respond_to do |format|
       if @testemonial.update(testemonial_params)
-        format.html { redirect_to @testemonial, notice: 'Testemonial was successfully updated.' }
-        format.json { render :show, status: :ok, location: @testemonial }
+        format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully updated.'} }
       else
         format.html { render :edit }
-        format.json { render json: @testemonial.errors, status: :unprocessable_entity }
       end
     end
   end
 
   # DELETE /testemonials/1
-  # DELETE /testemonials/1.json
   def destroy
     @testemonial.destroy
     respond_to do |format|
-      format.html { redirect_to testemonials_url, notice: 'Testemonial was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to testemonials_url, flash: {success: 'Testemonial was successfully destroyed.'} }
     end
   end
 
