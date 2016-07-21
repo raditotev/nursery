@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :testemonials
   resources :awards
   resources :newsletters
-  devise_for :parents
+  devise_for :parents, only: [:sessions, :passwords]
   resources :parents
   get 'admin' => 'admin_pages#dashboard'
 
-  devise_for :admins
+  devise_for :admins, only: [:sessions, :passwords]
   resources :admins
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
