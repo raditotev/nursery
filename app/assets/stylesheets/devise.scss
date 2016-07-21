@@ -1,0 +1,14 @@
+$body-bg:   #fbfbfb;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "mixins";
+
+
+body{
+  height: 100%;
+}
+
+.container{
+  @include dead-center;
+}
