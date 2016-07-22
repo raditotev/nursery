@@ -13,4 +13,8 @@ class AdminPagesController < AdministrationController
   def faqs
     @faqs = Faq.all
   end
+
+  def jobs
+    @jobs = Job.all
+  end
 end
