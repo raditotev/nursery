@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get 'admin/faqs' => 'admin_pages#faqs'
   get 'admin/breaks' => 'admin_pages#breaks'
   get 'admin/jobs' => 'admin_pages#jobs'
+  get 'admin/newsletters' => 'admin_pages#newsletters'
+  get 'admin/parents' => 'admin_pages#parents'
+  get 'admin/testemonials' => 'admin_pages#testemonials'
+  get 'admin/admins' => 'admin_pages#admins'
 
   devise_for :admins, only: [:sessions, :passwords]
   resources :admins

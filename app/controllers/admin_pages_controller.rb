@@ -17,4 +17,20 @@ class AdminPagesController < AdministrationController
   def jobs
     @jobs = Job.all
   end
+
+  def newsletters
+    @newsletters = Newsletter.all
+  end
+
+  def parents
+    @parents = Parent.all
+  end
+
+  def testemonials
+    @testemonials = Testemonial.all
+  end
+
+  def admins
+    @admins = Admin.where(superadmin: false)
+  end
 end

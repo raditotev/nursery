@@ -5,8 +5,8 @@
       <h3><%= link_to get_title(object), object %></h3>
     </div>
     <div class="col-xs-4 text-right">
-      <%= link_to fa_icon("pencil", id: "pencil"), send("edit_#{object.class.to_s.underscore}_path", object) %>
-      <%= link_to fa_icon("trash", id: "bin"), object, method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to fa_icon("pencil 2x", id: "pencil"), send("edit_#{object.class.to_s.underscore}_path", object) %>
+      <%= link_to fa_icon("trash 2x", id: "bin"), object, method: :delete, data: { confirm: "Are you sure?" } %>
     </div>
   <% end %>
   </div>
