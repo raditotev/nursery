@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   devise_for :parents, only: [:sessions, :passwords]
   resources :parents
   get 'admin' => 'admin_pages#dashboard'
+  get 'admin/awards' => 'admin_pages#awards'
+
 
   devise_for :admins, only: [:sessions, :passwords]
   resources :admins

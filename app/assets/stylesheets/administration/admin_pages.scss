@@ -36,10 +36,36 @@
   }
 }
 
+#index-page{
+  i{
+    padding-right: 1em;
+  }
+  #pencil{
+    color: $ornage;
+  }
+  #bin{
+    color: $brand-danger;
+  }
+  a{
+    color: #000;
+  }
+  h3{
+    margin: 0;
+  }
+  .col-xs-8, .col-xs-4{
+    margin-bottom: 1em;
+  }
+}
+
 @media screen and (max-width: 768px){
   #dashboard{
     h1{
       font-size: 1.5em;
+    }
+  }
+  #index-page{
+    h3{
+      font-size: 1.3em;
     }
   }
 }
