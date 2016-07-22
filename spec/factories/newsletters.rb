@@ -3,5 +3,4 @@ FactoryGirl.define do
     name "Newsletter"
     url { Faker::Internet.url }
   end
-
 end
