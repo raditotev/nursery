@@ -1,4 +1,14 @@
+$link-hover-decoration: none;
+$light-cappuccino: #FFF4E6;
+$dark-cappuccino: #3C2F2F;
+$gold: #FFA700;
+$blue: #3B5998;
+$green: #5CB85C;
+$ornage: #F47835;
+$brown: #B2875C;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "mixins";
 @import "administration/**/*"

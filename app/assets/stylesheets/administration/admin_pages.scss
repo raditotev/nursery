@@ -1,11 +1,54 @@
 #dashboard{
+  margin-top: 3em;
+  #trophy{
+      color: $gold;
+    }
+  #calendar{
+    color: $blue;
+  }
+  #question{
+    color: $green;
+  }
+  #user-plus{
+    color: $ornage;
+  }
+  #newspaper{
+    color: $gray-darker;
+  }
+  #users{
+    background-color: $gray-darker;
+    border-radius: 50%;
+    color: $gold;
+  }
+  #pencil{
+    color: $brown;
+  }
+  #thumbs{
+    color: $blue;
+  }
   i{
     display: block;
   }
   a{
-    color: #000;
+    color: $gray;
     &:hover{
       text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px){
+  #dashboard{
+    h1{
+      font-size: 1.5em;
+    }
+  }
+}
+
+@media screen and (max-width: 468px){
+  #dashboard{
+    h1{
+      font-size: 1em;
     }
   }
 }
