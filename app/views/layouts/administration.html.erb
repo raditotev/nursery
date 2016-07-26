@@ -22,5 +22,21 @@
       </div>
     </div>
   </div>
+
+  <div id="admin-back-link" class="text-center">
+  <% if params[:controller] != "admin_pages" %>
+    <% if params[:action] == "index" %>
+    <% route = admin_path %>
+    <% else %>
+      <% route = eval("admin_#{params[:controller].underscore}_path") %>
+    <% end %>
+      <h2>
+            <%= link_to fa_icon("arrow-left 2x", id: "back"), route %>
+      </h2>
+      <h4>
+        <%= link_to "Back", route %>
+      </h4>
+    </div>
+  <% end %>
   </body>
 </html>

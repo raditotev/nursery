@@ -51,14 +51,6 @@
   #admin-controls{
     margin-bottom: 3em;
   }
-  #create-new{
-    display: inline-block;
-    margin-left: 2em;
-    margin-right: 2em;
-  }
-  #back-link{
-    @extend #create-new;
-  }
   #plus{
     color: $green;
   }

@@ -1,24 +1,14 @@
 <div id="index-page">
   <div class="row">
     <div class="col-xs-6 col-xs-offset-3 text-center" id="admin-controls">
-      <div class="text-center" id="create-new">
-        <h1>
-          <%= link_to fa_icon("plus 2x", id: "plus"),
+      <h1>
+        <%= link_to fa_icon("plus 2x", id: "plus"),
+                            eval("new_#{params[:controller].chomp('s').underscore}_path") %>
+      </h1>
+      <h3>
+        <%= link_to "New #{params[:controller].chomp('s')}",
                               eval("new_#{params[:controller].chomp('s').underscore}_path") %>
-        </h1>
-        <h3>
-          <%= link_to "New #{params[:controller].chomp('s')}",
-                                eval("new_#{params[:controller].chomp('s').underscore}_path") %>
-        </h3>
-      </div>
-      <div class="text-center" id="back-link">
-        <h1>
-          <%= link_to fa_icon("arrow-left 2x", id: "back"), admin_path %>
-        </h1>
-        <h3>
-          <%= link_to "Back", admin_path %>
-        </h3>
-      </div>
+      </h3>
     </div>
   </div>
   <div class="row">
