@@ -12,7 +12,7 @@ class BreaksController < AdministrationController
 
   # GET /breaks/new
   def new
-    @break = Break.new
+    @closure = Break.new
   end
 
   # GET /breaks/1/edit
@@ -48,7 +48,7 @@ class BreaksController < AdministrationController
   def destroy
     @break.destroy
     respond_to do |format|
-      format.html { redirect_to breaks_url, flash: {success: 'Break was successfully destroyed.'} }
+      format.html { redirect_to admin_breaks_url, flash: {success: 'Break was successfully destroyed.'} }
     end
   end
 
