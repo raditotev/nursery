@@ -7,7 +7,7 @@ RSpec.describe Newsletter, type: :model do
     it { is_expected.to validate_presence_of(:url) }
   end
 
-  it "has valida fatory" do
+  it "has valid factory" do
     expect(build(:newsletter)).to be_valid
   end
 end

@@ -23,6 +23,7 @@ class NewslettersController < AdministrationController
 
   def create
     @newsletter = Newsletter.new(newsletter_params)
+    @newsletter.document = params[:newsletter][:document]
 
     respond_to do |format|
       if @newsletter.save
@@ -60,6 +61,6 @@ class NewslettersController < AdministrationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def newsletter_params
-      params.require(:newsletter).permit(:name, :url)
+      params.require(:newsletter).permit(:name, :url, :document)
     end
 end

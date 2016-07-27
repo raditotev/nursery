@@ -98,16 +98,14 @@ RSpec.describe NewslettersController, type: :controller do
 
     context "with valid params" do
       let(:new_attributes) {
-        attributes_for(:newsletter, name: "New Newsletter", url: Faker::Internet.url)
+        attributes_for(:newsletter, name: "New Newsletter")
       }
 
       it "updates the requested newsletter" do
         put :update, params: {id: newsletter.to_param, newsletter: new_attributes}, session: valid_session
         newsletter.reload
         expect(flash[:success]).to eq "Newsletter was successfully updated."
-        new_attributes.each_pair do |key, value|
-          expect(newsletter[key]).to eq new_attributes[key]
-        end
+        expect(newsletter[:name]).to eq new_attributes[:name]
       end
 
       it "assigns the requested newsletter as @newsletter" do

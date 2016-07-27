@@ -1,4 +1,4 @@
-<%= form_for(newsletter) do |f| %>
+<%= form_for(newsletter, html: {multipart: true}) do |f| %>
   <% if newsletter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(newsletter.errors.count, "error") %> prohibited this newsletter from being saved:</h2>
@@ -19,6 +19,11 @@
   <div class="field">
     <%= f.label :url %>
     <%= f.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :document %>
+    <%= f.file_field :document %>
   </div>
 
   <div class="actions">

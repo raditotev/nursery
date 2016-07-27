@@ -10,5 +10,9 @@
   <%= @newsletter.url %>
 </p>
 
+<p>
+  <%=link_to @newsletter.name, @newsletter.document.url %>
+</p>
+
 <%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
 <%= link_to 'Back', newsletters_path %>
