@@ -42,9 +42,9 @@ RSpec.describe BreaksController, type: :controller do
 
     it_loads_new_page
 
-    it "assigns a new break as @break" do
+    it "assigns a new break as @closure" do
       get :new, params: {}, session: valid_session
-      expect(assigns(:break)).to be_a_new(Break)
+      expect(assigns(:closure)).to be_a_new(Break)
     end
   end
 
@@ -152,7 +152,7 @@ RSpec.describe BreaksController, type: :controller do
 
     it "redirects to the breaks list" do
       delete :destroy, params: {id: closure.to_param}, session: valid_session
-      expect(response).to redirect_to(breaks_url)
+      expect(response).to redirect_to(admin_breaks_url)
     end
   end
 
