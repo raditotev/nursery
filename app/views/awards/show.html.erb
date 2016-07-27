@@ -10,5 +10,10 @@
   <%= @award.description %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @award.photo.url %>
+</p>
+
 <%= link_to 'Edit', edit_award_path(@award) %> |
 <%= link_to 'Back', awards_path %>

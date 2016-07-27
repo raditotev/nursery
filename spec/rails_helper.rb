@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
 require 'shoulda/matchers'
+include ActionDispatch::TestProcess
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -62,6 +63,13 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, :type => :controller
   # Include helper methods from support/controller_macros.rb
   config.extend ControllerHelperMethods, :type => :controller
+
+  config.after(:all) do
+    if Rails.env.test?
+      test_uploads = Dir["#{Rails.root}/test_uploads"]
+      FileUtils.rm_rf(test_uploads)
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|

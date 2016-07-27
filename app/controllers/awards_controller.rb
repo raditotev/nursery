@@ -47,7 +47,7 @@ class AwardsController < AdministrationController
   def destroy
     @award.destroy
     respond_to do |format|
-      format.html { redirect_to awards_url, flash: {success: 'Award was successfully destroyed.'} }
+      format.html { redirect_to admin_awards_url, flash: {success: 'Award was successfully destroyed.'} }
     end
   end
 
@@ -59,6 +59,6 @@ class AwardsController < AdministrationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def award_params
-      params.require(:award).permit(:title, :description)
+      params.require(:award).permit(:title, :description, :photo)
     end
 end

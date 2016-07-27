@@ -105,9 +105,7 @@ RSpec.describe AwardsController, type: :controller do
       it "updates the requested award" do
         put :update, params: {id: award.to_param, award: new_attributes}, session: valid_session
         award.reload
-        new_attributes.each_pair do |key, value|
-          expect(award[key]).to eq new_attributes[key]
-        end
+        expect(award[:title]).to eq new_attributes[:title]
         expect(flash[:success]).to eq "Award was successfully updated."
       end
 
@@ -150,7 +148,7 @@ RSpec.describe AwardsController, type: :controller do
 
     it "redirects to the awards list" do
       delete :destroy, params: {id: award.to_param}, session: valid_session
-      expect(response).to redirect_to(awards_url)
+      expect(response).to redirect_to(admin_awards_url)
     end
   end
 end
