@@ -1,32 +1,8 @@
-<%= form_for(parent) do |f| %>
-  <% if parent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(parent.errors.count, "error") %> prohibited this parent from being saved:</h2>
+<%= simple_form_for(parent) do |f| %>
 
-      <ul>
-      <% parent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <%= f.input :title %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.button :submit %>
+
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

@@ -1,32 +1,8 @@
-<%= form_for(admin) do |f| %>
-  <% if admin.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(admin.errors.count, "error") %> prohibited this admin from being saved:</h2>
+<%= simple_form_for(admin) do |f| %>
 
-      <ul>
-      <% admin.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+  <%= f.input :superadmin %>
+  <%= f.button :submit %>
 
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :superadmin %>
-    <%= f.check_box :superadmin %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

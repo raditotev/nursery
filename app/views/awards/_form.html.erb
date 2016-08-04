@@ -1,32 +1,8 @@
-<%= form_for(award, html: {multipart: true}) do |f| %>
-  <% if award.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(award.errors.count, "error") %> prohibited this award from being saved:</h2>
+<%= simple_form_for award do |f| %>
 
-      <ul>
-      <% award.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :photo, as: :file %>
+<%= f.button :submit %>
 
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

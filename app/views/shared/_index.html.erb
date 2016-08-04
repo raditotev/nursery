@@ -6,7 +6,7 @@
                             eval("new_#{params[:controller].chomp('s').underscore}_path") %>
       </h1>
       <h3>
-        <%= link_to "New #{params[:controller].chomp('s')}",
+        <%= link_to "New #{params[:controller].chomp('s').capitalize}",
                               eval("new_#{params[:controller].chomp('s').underscore}_path") %>
       </h3>
     </div>
