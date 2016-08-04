@@ -36,18 +36,16 @@
   }
 }
 
-#index-page{
-  .row .col-xs-4{
-    i{
-      padding-right: 1em;
-    }
-  }
-  #pencil{
+#pencil{
     color: $ornage;
+    padding-right: 1em;
   }
-  #bin{
-    color: $brand-danger;
-  }
+#bin{
+  color: $brand-danger;
+  padding-right: 1em;
+}
+
+#index-page{
   #admin-controls{
     margin-bottom: 3em;
   }
@@ -62,6 +60,12 @@
   }
   .col-xs-8, .col-xs-4{
     margin-bottom: 1em;
+  }
+}
+
+#show-newsletter{
+  div{
+    display: inline-block;
   }
 }
 

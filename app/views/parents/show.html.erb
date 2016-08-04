@@ -1,19 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @parent.title %>
+<h1><%= parent_full_name @parent %></h1>
+<p class="text-right">
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@parent) %>
+  <%= link_to fa_icon("trash 2x", id: "bin"), @parent,
+                                                                     method: :delete,
+                                                                     data: { confirm: "Are you sure?" } %>
 </p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @parent.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @parent.last_name %>
-</p>
-
-<%= link_to 'Edit', edit_parent_path(@parent) %> |
-<%= link_to 'Back', parents_path %>

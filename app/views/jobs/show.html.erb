@@ -1,14 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @job.title %>
+<h1><%= @job.title %></h1>
+<p><%= @job.description %></p>
+<p class="text-right">
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@job) %>
+  <%= link_to fa_icon("trash 2x", id: "bin"), @job,
+                                                                     method: :delete,
+                                                                     data: { confirm: "Are you sure?" } %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @job.description %>
-</p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>

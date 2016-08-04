@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
-
+<h1><%= @award.title %></h1>
 <p>
-  <strong>Title:</strong>
-  <%= @award.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @award.description %>
 </p>
-
 <p>
-  <strong>Photo:</strong>
   <%= image_tag @award.photo.url %>
 </p>
-
-<%= link_to 'Edit', edit_award_path(@award) %> |
-<%= link_to 'Back', awards_path %>
+<p class="text-right">
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@award) %>
+  <%= link_to fa_icon("trash 2x", id: "bin"), @award,
+                                                                     method: :delete,
+                                                                     data: { confirm: "Are you sure?" } %>
+</p>

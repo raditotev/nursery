@@ -1,19 +1,13 @@
-<p id="notice"><%= notice %></p>
+<h1>
+  From <%= @break.start_date.strftime("%e %B") %> to <%= @break.end_date.strftime("%e %B") %>
+</h1>
 
 <p>
-  <strong>Start date:</strong>
-  <%= @break.start_date %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @break.end_date %>
-</p>
-
-<p>
-  <strong>Description:</strong>
   <%= @break.description %>
 </p>
-
-<%= link_to 'Edit', edit_break_path(@break) %> |
-<%= link_to 'Back', breaks_path %>
+<p class="text-right">
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@break) %>
+  <%= link_to fa_icon("trash 2x", id: "bin"), @break,
+                                                                     method: :delete,
+                                                                     data: { confirm: "Are you sure?" } %>
+</p>

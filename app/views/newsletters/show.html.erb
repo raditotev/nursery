@@ -1,18 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @newsletter.name %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @newsletter.url %>
-</p>
-
-<p>
-  <%=link_to @newsletter.name, @newsletter.document.url %>
-</p>
-
-<%= link_to 'Edit', edit_newsletter_path(@newsletter) %> |
-<%= link_to 'Back', newsletters_path %>
+<h1><%= @newsletter.name %></h1>
+<div class="row">
+  <div class="col-xs-6 text-left">
+    <%= link_to fa_icon("search 2x", id: "search"), @newsletter.document.url, title: "Open" %>
+  </div>
+  <div class="col-xs-6 text-right">
+    <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@newsletter) %>
+    <%= link_to fa_icon("trash 2x", id: "bin"), @newsletter,
+                                                                         method: :delete,
+                                                                         data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
