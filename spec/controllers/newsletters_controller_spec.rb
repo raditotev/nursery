@@ -5,7 +5,7 @@ RSpec.describe NewslettersController, type: :controller do
 
   let(:valid_attributes) { attributes_for(:newsletter) }
 
-  let(:invalid_attributes) { attributes_for(:newsletter, name: nil, url: nil) }
+  let(:invalid_attributes) { attributes_for(:newsletter, name: nil) }
 
   let(:valid_session) { {} }
 
