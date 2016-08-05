@@ -1,7 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# Back button
+$(document).on "turbolinks:load", ->
+  $('#admin-back-link').hover (->
+    $(this).stop().animate 'opacity': 1
+    return
+  ), ->
+    $(this).stop().animate 'opacity': 0.3
+    return
+
 $ ->
+  # Flash messages
   flashCallback = ->
     $(".alert").fadeOut()
   $(".alert").bind 'click', (ev) =>
