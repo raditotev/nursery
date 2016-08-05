@@ -11,7 +11,7 @@
   <body>
   <div class="container-fluid" id="admin-header">
     <div class="container">
-      <h1><%= link_to "Admin Panel", admin_path %></h1>
+      <h1><%= link_to "Admin Panel", admin_dashboard_path %></h1>
     </div>
   </div>
 
@@ -30,7 +30,7 @@
   <div id="admin-back-link" class="text-center">
   <% if params[:controller] != "admin_pages" %>
     <% if params[:action] == "index" %>
-    <% route = admin_path %>
+    <% route = admin_dashboard_path %>
     <% else %>
       <% route = eval("admin_#{params[:controller].underscore}_path") %>
     <% end %>

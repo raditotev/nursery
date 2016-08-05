@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :newsletters, except: :index
   devise_for :parents, only: [:sessions, :passwords]
   resources :parents, except: :index
-  get 'admin' => 'admin_pages#dashboard'
+  get 'admin' => 'admin_pages#dashboard', as: :admin_dashboard
   get 'admin/awards' => 'awards#index'
   get 'admin/faqs' => 'faqs#index'
   get 'admin/breaks' => 'breaks#index'
