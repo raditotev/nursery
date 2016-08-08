@@ -51,7 +51,7 @@ class AdminsController < AdministrationController
   def destroy
     @admin.destroy
     respond_to do |format|
-      format.html { redirect_to admins_url, flash: {success: 'Admin was successfully destroyed.'} }
+      format.html { redirect_to admin_admins_url, flash: {success: 'Admin was successfully destroyed.'} }
     end
   end
 
