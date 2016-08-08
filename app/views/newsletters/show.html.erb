@@ -4,7 +4,7 @@
     <%= link_to fa_icon("search 2x", id: "search"), @newsletter.document.url, title: "Open" %>
   </div>
   <div class="col-xs-6 text-right">
-    <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@newsletter) %>
+    <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_newsletter_path(@newsletter) %>
     <%= link_to fa_icon("trash 2x", id: "bin"), @newsletter,
                                                                          method: :delete,
                                                                          data: { confirm: "Are you sure?" } %>

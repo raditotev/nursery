@@ -1,3 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
+$font-family-sans-serif: 'Roboto', sans-serif;
+$font-family-serif: 'Lora', serif;
+$font-size-base: 16px;
 $link-hover-decoration: none;
 $light-cappuccino: #FFF4E6;
 $dark-cappuccino: #3C2F2F;
@@ -11,4 +17,9 @@ $brown: #B2875C;
 @import "bootstrap";
 @import "font-awesome";
 @import "mixins";
-@import "administration/**/*"
+@import "administration/**/*";
+
+p{
+  font-size: $font-size-base;
+  font-family: $font-family-serif;
+}

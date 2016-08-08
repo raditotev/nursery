@@ -3,7 +3,7 @@
   <%= @testemonial.description %>
 </p>
 <p class="text-right">
-  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@testemonial) %>
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_testemonial_path(@testemonial) %>
   <%= link_to fa_icon("trash 2x", id: "bin"), @testemonial,
                                                                      method: :delete,
                                                                      data: { confirm: "Are you sure?" } %>

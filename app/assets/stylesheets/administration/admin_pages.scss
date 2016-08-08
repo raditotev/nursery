@@ -19,7 +19,7 @@
     border-radius: 50%;
     color: $gold;
   }
-  #pencil{
+  #pencil-pad{
     color: $brown;
   }
   #thumbs{
@@ -29,7 +29,7 @@
     display: block;
   }
   a{
-    color: $gray;
+    color: $gray-dark;
     &:hover{
       text-decoration: none;
     }
