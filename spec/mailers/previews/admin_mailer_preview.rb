@@ -2,8 +2,9 @@
 class AdminMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/admin_mailer/send_password
-  def send_password
-    AdminMailerMailer.send_password
+  def send_admin_password
+    admin = FactoryGirl.create(:admin)
+    AdminMailer.send_admin_password admin
   end
 
 end

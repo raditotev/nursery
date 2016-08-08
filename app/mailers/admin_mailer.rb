@@ -7,4 +7,12 @@ class AdminMailer < ApplicationMailer
 
     mail(to: @user.email, subject: subject)
   end
+
+  def send_parent_password parent
+    @user = parent
+    subject = "Your Oaktree Password"
+    @url = "http://localhost:3000/parents/sign_in?parent[email]=#{@user.email}"
+
+    mail(to: @user.email, subject: subject)
+  end
 end

@@ -1,6 +1,6 @@
 <h1><%= parent_full_name @parent %></h1>
 <p class="text-right">
-  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@parent) %>
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_parent_path(@parent) %>
   <%= link_to fa_icon("trash 2x", id: "bin"), @parent,
                                                                      method: :delete,
                                                                      data: { confirm: "Are you sure?" } %>

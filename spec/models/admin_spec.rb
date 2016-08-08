@@ -16,12 +16,16 @@ RSpec.describe Admin, type: :model do
 
   describe "callbacks" do
 
-    it "generates password" do
+    it "generates password via set_password" do
       expect(subject.password).to be_nil
       expect(subject.generated_password).to be_nil
       subject.run_callbacks :validation
       expect(subject.password).not_to be_nil
       expect(subject.generated_password).not_to be_nil
+    end
+
+    it "sends an email via send_email" do
+      expect{ create(:admin) }.to change { ActionMailer::Base.deliveries.count }.by(1)
     end
   end
 
