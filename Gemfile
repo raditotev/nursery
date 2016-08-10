@@ -50,6 +50,7 @@ group :development, :test do
   gem 'capybara', '~> 2.5'
   # Creates objects for tests
   gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'selenium-webdriver'
 end
 
 group :test do
