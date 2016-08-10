@@ -1,15 +1,16 @@
 require 'rails_helper'
 
-RSpec.feature "Admin::NewAwardPage", type: :feature do
+RSpec.feature "New Award Page", type: :feature do
   before :each do
     visit new_award_path
     sign_in_admin
   end
 
-  subject { page }
+  scenario "visit" do
+    expect(page).to have_css "h1", text: "Admin Panel"
+    expect(page).to have_link "Admin Panel"
+  end
 
-  it { is_expected.to have_css "h1", text: "Admin Panel" }
-  it { is_expected.to have_link "Admin Panel" }
   scenario "with correct details" do
     fill_in 'award_title', with: "Test Award"
     fill_in 'award_description', with: "Award content"

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Admin::AwardsPage", type: :feature do
+RSpec.feature "Awards Page", type: :feature do
 
   before do
     @award = create(:award)
@@ -11,19 +11,19 @@ RSpec.feature "Admin::AwardsPage", type: :feature do
     sign_in_admin
   end
 
-  subject { page }
-
-  it { is_expected.to have_css "h1", text: "Admin Panel" }
-  it { is_expected.to have_link "Admin Panel" }
-  it { is_expected.to have_css "#plus" }
-  it { is_expected.to have_css "h3", text: "New Award" }
-  it { is_expected.to have_link "New Award" }
-  it { is_expected.to have_css "h3", text: @award.title }
-  it { is_expected.to have_link @award.title }
-  it { is_expected.to have_css "#pencil" }
-  it { is_expected.to have_css "#bin" }
-  it { is_expected.to have_css "#back" }
-  it { is_expected.to have_link "Back" }
+  scenario "visit" do
+    expect(page).to have_css "h1", text: "Admin Panel"
+    expect(page).to have_link "Admin Panel"
+    expect(page).to have_css "#plus"
+    expect(page).to have_css "h3", text: "New Award"
+    expect(page).to have_link "New Award"
+    expect(page).to have_css "h3", text: @award.title
+    expect(page).to have_link @award.title
+    expect(page).to have_css "#pencil"
+    expect(page).to have_css "#bin"
+    expect(page).to have_css "#back"
+    expect(page).to have_link "Back"
+  end
 
   scenario "has link to Dashboard" do
     click_link "Admin Panel"
@@ -40,11 +40,8 @@ RSpec.feature "Admin::AwardsPage", type: :feature do
     expect(current_path).to eq edit_award_path @award
   end
 
-  scenario "deletes Award", js: true do
+  scenario "deletes Award" do
     click_link "Delete"
-    a = page.driver.browser.switch_to.alert
-    expect(a.text).to eq("Are you sure?")
-    a.accept
     expect(page).to have_content("Award was successfully destroyed.")
     expect(page).to_not have_content @award.title
     expect(current_path).to eq admin_awards_path
