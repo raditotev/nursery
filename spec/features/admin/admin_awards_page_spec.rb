@@ -22,6 +22,8 @@ RSpec.feature "Admin::AwardsPage", type: :feature do
   it { is_expected.to have_link @award.title }
   it { is_expected.to have_css "#pencil" }
   it { is_expected.to have_css "#bin" }
+  it { is_expected.to have_css "#back" }
+  it { is_expected.to have_link "Back" }
 
   scenario "has link to Dashboard" do
     click_link "Admin Panel"
@@ -46,5 +48,10 @@ RSpec.feature "Admin::AwardsPage", type: :feature do
     expect(page).to have_content("Award was successfully destroyed.")
     expect(page).to_not have_content @award.title
     expect(current_path).to eq admin_awards_path
+  end
+
+  scenario "has link Back to Dashboard" do
+    click_link "Back"
+    expect(current_path).to eq admin_dashboard_path
   end
 end
