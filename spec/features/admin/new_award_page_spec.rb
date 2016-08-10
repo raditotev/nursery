@@ -9,7 +9,7 @@ RSpec.feature "Admin::NewAwardPage", type: :feature do
   subject { page }
 
   it { is_expected.to have_css "h1", text: "Admin Panel" }
-
+  it { is_expected.to have_link "Admin Panel" }
   scenario "with correct details" do
     fill_in 'award_title', with: "Test Award"
     fill_in 'award_description', with: "Award content"

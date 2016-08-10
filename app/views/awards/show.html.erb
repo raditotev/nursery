@@ -6,8 +6,10 @@
   <%= image_tag @award.photo.url %>
 </p>
 <p class="text-right">
-  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@award) %>
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_award_path(@award),
+                                                                          title: "Edit" %>
   <%= link_to fa_icon("trash 2x", id: "bin"), @award,
                                                                      method: :delete,
-                                                                     data: { confirm: "Are you sure?" } %>
+                                                                     data: { confirm: "Are you sure?" },
+                                                                     title: "Delete" %>
 </p>
