@@ -59,8 +59,10 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # Devise helper methods
+  # Devise controller helper methods
   config.include Devise::Test::ControllerHelpers, :type => :controller
+  # Feature helper methods
+  config.include FeatureHelperMethods, type: :feature
   # Include helper methods from support/controller_macros.rb
   config.extend ControllerHelperMethods, :type => :controller
 
