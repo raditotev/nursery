@@ -49,7 +49,7 @@ class NewslettersController < AdministrationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, flash: {success: 'Newsletter was successfully destroyed.'} }
+      format.html { redirect_to admin_newsletters_url, flash: {success: 'Newsletter was successfully destroyed.'} }
     end
   end
 
