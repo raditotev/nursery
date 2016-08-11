@@ -47,7 +47,7 @@ class TestemonialsController < AdministrationController
   def destroy
     @testemonial.destroy
     respond_to do |format|
-      format.html { redirect_to testemonials_url, flash: {success: 'Testemonial was successfully destroyed.'} }
+      format.html { redirect_to admin_testemonials_url, flash: {success: 'Testemonial was successfully destroyed.'} }
     end
   end
 
