@@ -48,7 +48,7 @@ class ParentsController < AdministrationController
   def destroy
     @parent.destroy
     respond_to do |format|
-      format.html { redirect_to parents_url, flash: {success: 'Parent was successfully destroyed.'} }
+      format.html { redirect_to admin_parents_url, flash: {success: 'Parent was successfully destroyed.'} }
     end
   end
 
