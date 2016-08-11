@@ -47,7 +47,7 @@ class JobsController < AdministrationController
   def destroy
     @job.destroy
     respond_to do |format|
-      format.html { redirect_to jobs_url, flash: {success: 'Job was successfully destroyed.'} }
+      format.html { redirect_to admin_jobs_url, flash: {success: 'Job was successfully destroyed.'} }
     end
   end
 
