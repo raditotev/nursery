@@ -6,8 +6,10 @@
   <%= @break.description %>
 </p>
 <p class="text-right">
-  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_break_path(@break) %>
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_break_path(@break),
+                                                                          title: "Edit" %>
   <%= link_to fa_icon("trash 2x", id: "bin"), @break,
                                                                      method: :delete,
-                                                                     data: { confirm: "Are you sure?" } %>
+                                                                     data: { confirm: "Are you sure?" },
+                                                                     title: "Delete" %>
 </p>

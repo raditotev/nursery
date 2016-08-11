@@ -12,7 +12,7 @@ class BreaksController < AdministrationController
 
   # GET /breaks/new
   def new
-    @closure = Break.new
+    @break = Break.new
   end
 
   # GET /breaks/1/edit
