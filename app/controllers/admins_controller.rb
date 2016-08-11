@@ -6,7 +6,7 @@ class AdminsController < AdministrationController
   # GET /admins
   # GET /admins.json
   def index
-    @admins = Admin.all
+    @admins = Admin.where(superadmin: false)
   end
 
   # GET /admins/1
