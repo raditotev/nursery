@@ -1,8 +1,3 @@
-// body{
-//   position: relative;
-//   height: 100%;
-// }
-
 #admin-header{
   background-color: $light-cappuccino;
   color: $dark-cappuccino;
@@ -10,10 +5,13 @@
   h1{
     font-weight: bold;
   }
+  table{
+    width: 100%;
+  }
 }
 
 #admin-back-link{
-  position: absolute;
+  position: fixed;
   top: 90%;
   left: 10%;
   transform: translate(-50%, -50%);
