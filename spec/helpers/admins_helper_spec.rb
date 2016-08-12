@@ -33,6 +33,10 @@ RSpec.describe AdminsHelper, type: :helper do
       closure = create(:break)
       expect(break_text(closure)).to eq "From #{closure.start_date.strftime("%e %B")} to #{closure.end_date.strftime("%e %B %Y")}"
     end
+    it "returns text for single date" do
+      single_day_closure = Break.create!(start_date: Date.today, end_date: Date.today, description: "Single day")
+      expect(break_text(single_day_closure)).to eq "Day off on #{single_day_closure.start_date.strftime("%e %B")}"
+    end
   end
 
   describe "#parent_full_name" do

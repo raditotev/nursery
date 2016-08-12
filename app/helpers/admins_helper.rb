@@ -14,7 +14,8 @@ module AdminsHelper
   def break_text closure
     start = closure.start_date
     finish = closure.end_date
-    "From #{start.strftime("%e %B")} to #{finish.strftime("%e %B %Y")}"
+    start == finish ? "Day off on #{start.strftime("%e %B")}" :
+                                "From #{start.strftime("%e %B")} to #{finish.strftime("%e %B %Y")}"
   end
 
   def parent_full_name parent
