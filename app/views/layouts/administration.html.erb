@@ -53,7 +53,12 @@
       <h4>
         <%= link_to "Back", route %>
       </h4>
+      <% end %>
     </div>
-  <% end %>
+
+  <div>
+    <%= debug(params) if Rails.env.development? %>
+  </div>
+
   </body>
 </html>
