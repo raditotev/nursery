@@ -12,3 +12,7 @@ body{
 .container{
   @include dead-center;
 }
+
+.alert-alert{
+  @extend .alert-warning;
+}

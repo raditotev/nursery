@@ -23,3 +23,7 @@ p{
   font-size: $font-size-base;
   font-family: $font-family-serif;
 }
+
+.alert-notice{
+  @extend .alert-info;
+}
