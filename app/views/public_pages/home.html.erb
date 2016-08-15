@@ -1,0 +1,54 @@
+<div id="home-page">
+  <div class="container-fluid" id="hero-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+        <h1 class="text-center">Welcome to Oak Tree Day Nursery</h1>
+        <p>
+           Oak Tree Day Nursery is situated at Blairderry Road, Streatham Hill, London and cares for babies and pre-school children between the ages of three months and five years. It is a 62 place private nursery and is registered with OFSTED.
+        </p>
+        <p>
+          It is located in a detached house that has been completely renovated with spacious playrooms and a large outside garden with a safe, impact absorbent play surface and fixed equipment.
+        </p>
+        <p>
+          The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
+        </p>
+        <p>
+          PLEASE NOTE THAT OAK TREE DAY NURSERY, 58 BLAIRDERRY ROAD, LONDON IS NOT AFFILIATED WITH OR CONNECTED IN ANY WAY WHATSOEVER TO  ANY OTHER NURSERY WITH THE SAME OR SIMILAR NAME.
+        </p>
+      </div>
+    </div>
+  </div>
+  </div> <!-- End Hero Intro -->
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+      <h1>Latest from our website</h1>
+        <div class="col-xs-12 col-sm-4">
+          <h3 class="text-center">Upcoming Closures</h3>
+          <% @closures.each do |closure| %>
+            <strong><%= break_text closure %></strong>
+            <p><%= closure.description %></p>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h3 class="text-center">Newsletters</h3>
+          <% @newsletters.each do |newsletter| %>
+          <p>
+            <strong>
+              <%= link_to newsletter.name, newsletter.document.url %>
+            </strong>
+          </p>
+          <% end %>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h3 class="text-center">Awards</h3>
+          <% @awards.each do |award| %>
+          <strong><%= award.title %></strong>
+          <p><%= award.description[0..140] %>...<%= link_to ">>", "#" %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

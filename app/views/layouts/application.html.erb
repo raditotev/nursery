@@ -9,10 +9,104 @@
   </head>
 
   <body>
+  <div class="container-fluid" id="hero-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>
+            Logo
+          </h1>
+        </div>
+        <div class="col-xs-6 text-right">
+          <ul>
+            <li>Oak Tree Day Nursery</li>
+            <li>58 Blairderry Road</li>
+            <li>Streatham Hill</li>
+            <li>London</li>
+            <li>SW2 4SB</li>
+            <br>
+            <li><%= fa_icon("phone") %> 020 8674 4844</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Hero Header -->
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Nursery</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Parents</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
     <%= yield %>
 
-    <div>
-      <%= debug(params) if Rails.env.development? %>
+    <div class="container-fluid" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <ul>
+            <li>Resources
+            <ul>
+              <li>Newsletters</li>
+              <li>Our staff</li>
+              <li>Careers</li>
+            </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul>
+            <li>External links
+            <ul>
+              <li>Offstead</li>
+              <li>EYPS</li>
+              <li>Something else</li>
+            </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <ul>
+            <li>Information
+            <ul>
+              <li>Fees</li>
+              <li>Terms and Conditions</li>
+              <li>FAQ's</li>
+            </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row text-center">
+        <%= link_to image_tag("http://ratings.food.gov.uk/images/scores/medium/fhrs_5_en-gb.JPG"), "http://ratings.food.gov.uk/business/en-GB/482995/Oak-Tree-Nursery-Lambeth", target: "_blank" %>
+        <%= link_to image_tag("day_nurseries.png"), "http://www.daynurseries.co.uk/daynursery.cfm/searchazref/50001005OAKC", target: "_blank" %>
+        <%= link_to image_tag("offstead.jpg"), "http://reports.ofsted.gov.uk/inspection-reports/find-inspection-report/provider/CARE/EY383631", target: "_blank" %>
+        <%= link_to image_tag("ndna.jpg"), "http://www.ndna.org.uk/", target: "_blank" %>
+      </div>
     </div>
+    </div>
+
+    <!-- <div>
+      <%= debug(params) if Rails.env.development? %>
+    </div> -->
   </body>
 </html>

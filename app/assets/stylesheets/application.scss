@@ -2,3 +2,33 @@
 @import "bootstrap";
 @import "font-awesome";
 // @import "application/**/*"
+
+#hero-header{
+  margin-top: 1em;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+a, a:hover, a:active, a:focus{
+  outline: 0;
+}
+
+#navbar-collapse{
+  text-align: center;
+}
+
+.navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+#footer{
+  margin-top: 3em;
+  img{
+    height: 5em;
+    margin: 1em;
+  }
+}

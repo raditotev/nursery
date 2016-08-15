@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'public_pages#home'
+
   resources :faqs, except: :index
   resources :jobs, except: :index
   resources :breaks, except: :index
