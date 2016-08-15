@@ -77,15 +77,26 @@
   }
   #index-page{
     h3{
-      font-size: 1.3em;
+      font-size: 1.5em;
     }
   }
 }
 
-@media screen and (max-width: 468px){
+@media screen and (max-width: 480px){
   #dashboard{
     h1{
       font-size: 1em;
+      font-weight: bold;
+    }
+  }
+  #index-page{
+    h3{
+      text-align: center;
+    }
+    .resource-controls{
+      text-align: center;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
     }
   }
 }

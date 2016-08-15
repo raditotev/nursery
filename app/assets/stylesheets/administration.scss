@@ -19,6 +19,23 @@ $brown: #B2875C;
 @import "mixins";
 @import "administration/**/*";
 
+body{
+  height: 100%;
+  height: 100vh;
+}
+
+#admin-header{
+  background-color: $light-cappuccino;
+  color: $dark-cappuccino;
+  margin-bottom: 3em;
+  h1{
+    font-weight: bold;
+  }
+  table{
+    width: 100%;
+  }
+}
+
 p{
   font-size: $font-size-base;
   font-family: $font-family-serif;
@@ -26,4 +43,37 @@ p{
 
 .alert-notice{
   @extend .alert-info;
+}
+
+#admin-back-link{
+  position: fixed;
+  top: 93%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  h4{
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px){
+  #admin-header{
+    h1{
+      font-size: 1.4em;
+    }
+  }
+  #admin-back-link{
+  position: fixed;
+  top: 90%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  h2{
+    font-size: 1.3em;
+  }
+  h4{
+    font-size: 1em;
+    margin-top: 0;
+  }
+}
 }
