@@ -14,4 +14,20 @@ class PublicPagesController < ApplicationController
 
   def nursery
   end
+
+  def staff
+    @awards = Award.all
+  end
+
+  def contact
+    if request.post?
+      message = {}
+      message['from'] = params[:contact][:from]
+      message['subject'] = params[:contact][:subject]
+      message['content'] = params[:contact][:content]
+      PublicMailer.contact_form(message).deliver
+      flash[:success] = "Message has been send."
+    end
+    @new_mail = {from: '', subject: '', message: ''}
+  end
 end

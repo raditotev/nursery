@@ -1,4 +1,5 @@
 class AdminMailer < ApplicationMailer
+  default from: 'administration@oaktreedaynursery.com'
 
   def send_admin_password admin
     @user = admin

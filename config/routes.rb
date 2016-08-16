@@ -24,9 +24,11 @@ Rails.application.routes.draw do
   resources :admins, except: :index
 
   # Public routes
-
   get 'about-us' => 'public_pages#about_us'
   get 'nursery' => 'public_pages#nursery'
+  get 'staff' => 'public_pages#staff'
+  get 'contact' => 'public_pages#contact'
+  post 'contact' => 'public_pages#contact'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

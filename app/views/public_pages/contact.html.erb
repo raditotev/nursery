@@ -1,0 +1,41 @@
+<% provide(:title, "Contact") %>
+<div id="contact-page">
+  <div class="container-fluid">
+    <div class="container">
+      <h1 class="text-center">Contact Us</h1>
+      <div class="row">
+        <div class="col-sm-6">
+        <p>
+          The best way to choose a nursery is to come and see it for yourself. If you would like to make an appointment, or if you have any enquires about our facilities, please do telephone us, we’ll be happy to welcome you and your child for a visit around the Nursery.
+        </p>
+        <p>
+          <strong>Oak Tree Day Nursery</strong><br>
+           58 Blairderry Road <br>
+           Streatham Hill <br>
+            London <br>
+            SW2 4SB <br>
+            <br>
+            <%= fa_icon "phone" %> 020 8674 4844
+        </p>
+        </div>
+        <div class="col-sm-6">
+          <%= simple_form_for :contact do |f| %>
+            <%= f.input :from %>
+            <%= f.input :subject %>
+            <%= f.input :content, as: :text %>
+            <%= f.submit 'Send Email' %>
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" col-xs-12 col-sm-6 col-sm-offset-3">
+          <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+          <div style='overflow:hidden;'>
+          <div id='gmap_canvas' style='height:440px;width:700px;'></div>
+          <style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+          <script type='text/javascript'>function init_map(){var myOptions = {zoom:16,center:new google.maps.LatLng(51.43951630987152,-0.128130716671766),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(51.43951630987152,-0.128130716671766)});infowindow = new google.maps.InfoWindow({content:'<strong>Oak Treee Day Nursery</strong><br> 58 Blairderry Road, Streatham Hill, London SW2 4SB <br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -51,13 +51,21 @@
           <li><%= link_to "Home", root_url %></li>
           <li><%= link_to "About Us", about_us_path %></li>
           <li><%= link_to "Nursery", nursery_path %></li>
-          <li><%= link_to "Staff", "#" %></li>
-          <li><%= link_to "Contact", "#" %></li>
+          <li><%= link_to "Staff", staff_path %></li>
+          <li><%= link_to "Contact", contact_path %></li>
           <li><%= link_to "Parents", "#" %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+  <!-- Flash messages -->
+  <div class="container">
+    <div class="row">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %> text-center"><%= message %></div>
+      <% end %>
+    </div>
+  </div>
 
     <%= yield %>
 
@@ -114,8 +122,8 @@
     </div>
     </div>
 
-    <!-- <div>
+    <div>
       <%= debug(params) if Rails.env.development? %>
-    </div> -->
+    </div>
   </body>
 </html>
