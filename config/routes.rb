@@ -21,5 +21,7 @@ Rails.application.routes.draw do
 
   devise_for :admins, only: [:sessions, :passwords]
   resources :admins, except: :index
+
+  get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
