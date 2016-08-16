@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   # Public routes
 
   get 'about-us' => 'public_pages#about_us'
+  get 'nursery' => 'public_pages#nursery'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

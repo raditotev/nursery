@@ -10,6 +10,8 @@ class PublicPagesController < ApplicationController
   end
 
   def about_us
+  end
 
+  def nursery
   end
 end
