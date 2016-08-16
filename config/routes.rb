@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'public_pages#home'
 
+  # Administration routes
   resources :faqs, except: :index
   resources :jobs, except: :index
   resources :breaks, except: :index
@@ -21,6 +22,10 @@ Rails.application.routes.draw do
 
   devise_for :admins, only: [:sessions, :passwords]
   resources :admins, except: :index
+
+  # Public routes
+
+  get 'about-us' => 'public_pages#about_us'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
