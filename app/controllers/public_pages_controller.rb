@@ -36,4 +36,12 @@ class PublicPagesController < ApplicationController
       end
     end
   end
+
+  def careers
+    @jobs = Job.all
+  end
+
+  def testimonials
+    @testimonials = Testemonial.all
+  end
 end

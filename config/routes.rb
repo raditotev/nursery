@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   get 'contact' => 'public_pages#contact'
   post 'contact' => 'public_pages#contact'
   get 'newsletters' => 'public_pages#newsletters'
-  # get 'show/:id' => 'public_pages#newsletter'
+  get 'careers' => 'public_pages#careers'
+  get 'testimonials' => 'public_pages#testimonials'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
