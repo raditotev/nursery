@@ -50,4 +50,7 @@ class PublicPagesController < ApplicationController
 
   def eyfs_curriculum
   end
+
+  def british_values
+  end
 end
