@@ -44,4 +44,7 @@ class PublicPagesController < ApplicationController
   def testimonials
     @testimonials = Testemonial.all
   end
+
+  def education_fund
+  end
 end
