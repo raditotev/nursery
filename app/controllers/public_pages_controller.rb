@@ -47,4 +47,7 @@ class PublicPagesController < ApplicationController
 
   def education_fund
   end
+
+  def eyfs_curriculum
+  end
 end
