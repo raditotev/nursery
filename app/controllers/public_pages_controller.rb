@@ -2,7 +2,7 @@ class PublicPagesController < ApplicationController
   def home
     @closures = Break.where('start_date > ?', Date.today)
                                    .order(start_date: :asc)
-    @newsletters = Newsletter.order(created_at: :desc).last(3)
+    @newsletters = Newsletter.first(6)
     @awards = Award.last(3)
     @ofsted_description = "Ofsted is the inspectorate for children and learners in England."
     @foundation_years_description = "Information and support for parents on parenting,  child development, Early education, school and special needs."

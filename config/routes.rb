@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'staff' => 'public_pages#staff'
   get 'contact' => 'public_pages#contact'
   post 'contact' => 'public_pages#contact'
+  get 'newsletters' => 'public_pages#newsletters'
+  # get 'show/:id' => 'public_pages#newsletter'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

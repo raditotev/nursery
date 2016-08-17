@@ -8,6 +8,10 @@ class NewslettersController < AdministrationController
 
   # GET /newsletters/1
   def show
+    pdf_url = @newsletter.document.url
+    pdf_filename = File.join(Rails.root, '/public' + pdf_url)
+    send_file(pdf_filename, filename: @newsletter.document_file_name,
+                                          disposition: 'inline', type: "application/pdf")
   end
 
   # GET /newsletters/new
