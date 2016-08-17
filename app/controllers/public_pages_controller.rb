@@ -53,4 +53,7 @@ class PublicPagesController < ApplicationController
 
   def british_values
   end
+
+  def save_money
+  end
 end
