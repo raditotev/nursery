@@ -56,4 +56,8 @@ class PublicPagesController < ApplicationController
 
   def save_money
   end
+
+  def faqs
+    @faqs = Faq.all
+  end
 end

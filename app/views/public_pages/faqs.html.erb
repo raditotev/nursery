@@ -1,0 +1,13 @@
+<% provide(:title, "FAQs") %>
+
+<div id="faqs-page" class="container-fluid">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <% @faqs.each do |faq| %>
+    <div>
+      <h4><strong>Q:<%= faq.question %></strong></h4>
+      <h4>A:<%= faq.answer %></h4>
+    </div>
+    <% end %>
+  </div>
+</div>
