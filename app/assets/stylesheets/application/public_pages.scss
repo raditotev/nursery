@@ -1,0 +1,20 @@
+@import "mixins";
+
+
+#contact-page{
+  .container-fluid{
+    margin: 3em auto;
+  }
+  #contacts{
+    display: table;
+    .col-sm-6{
+      float: none;
+      display: table-cell;
+      div{
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
