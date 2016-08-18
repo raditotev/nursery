@@ -28,7 +28,7 @@ class TestemonialsController < AdministrationController
         if !testemonial_photo_params.empty?
         @testemonial.create_photo(testemonial_photo_params)
         if @testemonial.photo.errors.any?
-          @testemonial.destroy
+          @testemonial.photo.destroy
           flash.now[:error] = "You have to upload image."
           format.html {render :new}
         else
@@ -47,6 +47,7 @@ class TestemonialsController < AdministrationController
   def update
     respond_to do |format|
       if @testemonial.update(testemonial_params)
+        @testemonial.photo.update_attributes(testemonial_photo_params) unless testemonial_photo_params.empty?
         format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully updated.'} }
       else
         format.html { render :edit }
@@ -70,7 +71,7 @@ class TestemonialsController < AdministrationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def testemonial_params
-      params.require(:testemonial).permit(:title, :description)
+      params.require(:testemonial).permit(:title, :description, :name)
     end
 
     def testemonial_photo_params

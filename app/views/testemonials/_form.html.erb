@@ -5,6 +5,7 @@
   <%= simple_fields_for :photo do |ff| %>
     <%= ff.input :image, as: :file %>
   <% end %>
+  <%= f.input :name %>
   <%= f.button :submit %>
 
 <% end %>
