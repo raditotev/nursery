@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photos
   root to: 'public_pages#home'
 
   # Administration routes

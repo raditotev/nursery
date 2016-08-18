@@ -6,7 +6,7 @@
   <% @testimonials.each do |testimonial| %>
     <div class="row">
       <div class="col-sm-6">
-        <h1>Image</h1>
+        <%= image_tag testimonial.photo.image.url, class: 'img-responsive' %>
       </div>
       <div class="col-sm-6">
       <h3><%= testimonial.title %></h3>

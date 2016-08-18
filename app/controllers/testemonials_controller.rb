@@ -22,10 +22,21 @@ class TestemonialsController < AdministrationController
   # POST /testemonials
   def create
     @testemonial = Testemonial.new(testemonial_params)
-
     respond_to do |format|
       if @testemonial.save
-        format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully created.'} }
+        # raise testemonial_photo_params.empty?
+        if !testemonial_photo_params.empty?
+        @testemonial.create_photo(testemonial_photo_params)
+        if @testemonial.photo.errors.any?
+          @testemonial.destroy
+          flash.now[:error] = "You have to upload image."
+          format.html {render :new}
+        else
+          format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully created.'} }
+        end
+      else
+          format.html { redirect_to @testemonial, flash: {success: 'Testemonial was successfully created.'} }
+        end
       else
         format.html { render :new }
       end
@@ -60,5 +71,9 @@ class TestemonialsController < AdministrationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def testemonial_params
       params.require(:testemonial).permit(:title, :description)
+    end
+
+    def testemonial_photo_params
+      params.fetch(:photo, {}).permit(:image)
     end
 end
