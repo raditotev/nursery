@@ -1,5 +1,11 @@
-@import "mixins";
-
+#home-page{
+  #hero-intro{
+    margin: 3em auto 1.5em auto;
+  }
+  #news{
+    margin: 1.5em auto 3 auto;
+  }
+}
 
 #contact-page{
   .container-fluid{

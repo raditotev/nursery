@@ -13,7 +13,12 @@
   <div class="container-fluid" id="hero-header">
     <div class="container">
       <div class="row">
-        <%= image_tag("logo.png") %>
+      <div class="col-xs-6">
+        <%= link_to image_tag("logo.png", class: "img-responsive"), root_url %>
+      </div>
+      <div class="col-xs-6">
+        <h1 class="text-right">Oak Tree Day Nursery</h1>
+      </div>
       </div>
     </div>
   </div> <!-- Hero Header -->
@@ -65,7 +70,7 @@
               <li><%= link_to "Nursery Eductation Fund", education_fund_path %></li>
               <li><%= link_to "EYFS Curriculum Activities", eyfs_curriculum_path %></li>
               <li><%= link_to "British Values", british_values_path %></li>
-              <li><%= link_to "Testemonials", testimonials_path %></li>
+              <li><%= link_to "Testimonials", testimonials_path %></li>
 
             </ul>
             </li>
@@ -98,7 +103,7 @@
           </ul>
         </div>
       </div>
-      <div class="row text-center">
+      <div class="row text-center" id="footer-images">
         <%= link_to image_tag("http://ratings.food.gov.uk/images/scores/medium/fhrs_5_en-gb.JPG"), "http://ratings.food.gov.uk/business/en-GB/482995/Oak-Tree-Nursery-Lambeth", target: "_blank" %>
         <%= link_to image_tag("day_nurseries.png"), "http://www.daynurseries.co.uk/daynursery.cfm/searchazref/50001005OAKC", target: "_blank" %>
         <%= link_to image_tag("offstead.jpg"), "http://reports.ofsted.gov.uk/inspection-reports/find-inspection-report/provider/CARE/EY383631", target: "_blank" %>
@@ -107,8 +112,8 @@
     </div>
     </div>
 
-    <div>
+    <!-- <div>
       <%= debug(params) if Rails.env.development? %>
-    </div>
+    </div> -->
   </body>
 </html>

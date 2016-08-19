@@ -17,14 +17,13 @@
     </p>
   </div>
   </div> <!-- End Hero Intro -->
-  <div class="container-fluid">
+  <div class="container-fluid" id="news">
     <div class="container">
       <div class="row">
-      <h1>Latest from our website</h1>
         <div class="col-xs-12 col-sm-4">
           <h2 class="text-center">Upcoming Closures</h2>
           <% @closures.each do |closure| %>
-            <h4><%= break_text closure %></h4>
+            <h4><strong><%= break_text closure %></strong></h4>
             <p><%= closure.description %></p>
           <% end %>
         </div>

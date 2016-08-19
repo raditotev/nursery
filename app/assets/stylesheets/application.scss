@@ -1,7 +1,22 @@
+@import 'https://fonts.googleapis.com/css?family=Corben|Lato|Lora';
+$font-family-sans-serif: 'Lato', sans-serif;
+$font-family-serif: 'Lora', serif;
+$font-size-base: 16px;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 @import "application/**/*";
+
+p{
+  font-family: $font-family-serif;
+}
+
+#hero-header{
+  h1{
+    font-family: 'Corben', cursive;
+  }
+}
 
 #hero-header{
   margin-top: 1em;
@@ -27,8 +42,11 @@ a, a:hover, a:active, a:focus{
 
 #footer{
   margin-top: 3em;
-  img{
-    height: 80px;
-    margin: 1em;
+  #footer-images{
+    margin-top: 1.5em;
+    img{
+      height: 80px;
+      margin: 1em;
+    }
   }
 }
