@@ -1,3 +1,8 @@
+/*
+ *= require_tree ./application
+ *= require_self
+ */
+
 @import 'https://fonts.googleapis.com/css?family=Corben|Lato|Lora';
 $font-family-sans-serif: 'Lato', sans-serif;
 $font-family-serif: 'Lora', serif;
@@ -13,13 +18,18 @@ p{
 }
 
 #hero-header{
+  background-color: #FEF5F4;
   h1{
     font-family: 'Corben', cursive;
   }
+  .container{
+    margin-top: 1em;
+  }
 }
 
-#hero-header{
-  margin-top: 1em;
+.navbar{
+  background-color: #D4E0E8;
+  margin-bottom: 0;
 }
 
 ul li{
@@ -41,7 +51,10 @@ a, a:hover, a:active, a:focus{
 }
 
 #footer{
-  margin-top: 3em;
+  background-color: #BCCED8;
+  .container{
+    margin-top: 3em;
+  }
   #footer-images{
     margin-top: 1.5em;
     img{
