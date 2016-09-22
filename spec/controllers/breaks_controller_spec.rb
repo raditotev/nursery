@@ -44,7 +44,7 @@ RSpec.describe BreaksController, type: :controller do
 
     it "assigns a new break as @closure" do
       get :new, params: {}, session: valid_session
-      expect(assigns(:closure)).to be_a_new(Break)
+      expect(assigns(:break)).to be_a_new(Break)
     end
   end
 
