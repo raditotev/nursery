@@ -31,7 +31,7 @@ RSpec.describe AdminsController, type: :controller do
 
       it "assigns all admins as @admins" do
         get :index, params: {}, session: valid_session
-        expect(assigns(:admins)).to eq([@super_admin, admin])
+        expect(assigns(:admins)).to eq([admin])
       end
     end
   end
@@ -172,7 +172,7 @@ RSpec.describe AdminsController, type: :controller do
 
       it "redirects to the admins list" do
         delete :destroy, params: {id: admin.to_param}, session: valid_session
-        expect(response).to redirect_to(admins_url)
+        expect(response).to redirect_to(admin_admins_url)
       end
 
     end
