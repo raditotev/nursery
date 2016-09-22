@@ -1,17 +1,68 @@
+@import 'https://fonts.googleapis.com/css?family=Henny+Penny|Marko+One';
+
 #home-page{
-  #hero-intro{
-    background: image-url('hero-intro.jpg') no-repeat center center;
-    background-size: cover;
+  #intro{
+    h1, p{
+      font-family: 'Marko One', serif;
+    }
+    small{
+      font-size: 0.6em;
+    }
     .container{
       margin: 3em auto 1.5em auto;
-      color: #fff;
+      color: #000;
+    }
+  }
+  #services{
+    margin: 1.5em auto 1.5em auto;
+    img{
+      margin: auto;
+    }
+    p{
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
     }
   }
   #news{
-    background-color: #F9E69B;
-    .container{
-      margin: 1.5em auto 3 auto;
+    margin: 1.5em auto 3 auto;
+    .row{
+      display: table;
+      .col-xs-12, .col-sm-4{
+        float: none;
+        display: table-cell;
+        vertical-align: middle;
+      }
     }
+    img{
+      border-radius: 5px;
+    }
+  }
+}
+
+#about-us-page{
+  img{
+    border-radius: 5px;
+  }
+  .row{
+    display: table;
+    .col-xs-6{
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+#nursery-page{
+  @extend #about-us-page;
+}
+
+#staff-page{
+  img{
+    margin: auto 1em;
+    float: right;
+    display: inline;
+    border-radius: 5px;
   }
 }
 

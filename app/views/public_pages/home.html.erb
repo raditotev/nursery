@@ -1,46 +1,96 @@
 <% provide(:title, "Home") %>
-<div id="home-page">
-  <div class="container-fluid" id="hero-intro">
-  <div class="container">
+<div class="container-fluid" id="home-page">
+  <div class="container" id="intro">
     <h1 class="text-center">Welcome to Oak Tree Day Nursery</h1>
-    <p>
-       Oak Tree Day Nursery is situated at Blairderry Road, Streatham Hill, London and cares for babies and pre-school children between the ages of three months and five years. It is a 62 place private nursery and is registered with OFSTED.
+    <p class="text-center">
+      <strong>est. 2003</strong>
     </p>
-    <p>
-      It is located in a detached house that has been completely renovated with spacious playrooms and a large outside garden with a safe, impact absorbent play surface and fixed equipment.
-    </p>
-    <p>
+    <p class="text-center">
       The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
     </p>
     <p>
-      PLEASE NOTE THAT OAK TREE DAY NURSERY, 58 BLAIRDERRY ROAD, LONDON IS NOT AFFILIATED WITH OR CONNECTED IN ANY WAY WHATSOEVER TO  ANY OTHER NURSERY WITH THE SAME OR SIMILAR NAME.
+    <small>
+      * PLEASE NOTE THAT OAK TREE DAY NURSERY, 58 BLAIRDERRY ROAD, LONDON IS NOT AFFILIATED WITH OR CONNECTED IN ANY WAY WHATSOEVER TO  ANY OTHER NURSERY WITH THE SAME OR SIMILAR NAME.
+    </small>
     </p>
-  </div>
-  </div> <!-- End Hero Intro -->
-  <div class="container-fluid" id="news">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <h2 class="text-center">Upcoming Closures</h2>
-          <% @closures.each do |closure| %>
-            <h4><strong><%= break_text closure %></strong></h4>
-            <p><%= closure.description %></p>
-          <% end %>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <h2 class="text-center">Newsletters</h2>
-          <% @newsletters.each do |newsletter| %>
-          <h4 class="text-center"><%= link_to newsletter.name, newsletter, target: "_blank" %></h4>
-          <% end %>
-        </div>
-        <div class="col-xs-12 col-sm-4">
-          <h3 class="text-center">Awards</h3>
-          <% @awards.each do |award| %>
-          <strong><%= award.title %></strong>
-          <p><%= award.description[0..140] %>...<%= link_to ">>", "#" %></p>
-          <% end %>
-        </div>
+  </div><!-- End Hero Intro -->
+  <div class="container" id="services">
+    <div class="row">
+      <div class="col-xs-4 col-sm-2">
+      <p>
+        <%= image_tag("baby.png", class: "img-responsive") %>
+      </p>
+      <p>
+        Care for babies and pre-school children between the ages of three months and five years.
+      </p>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <p>
+          <%= image_tag("old-school.png", class: "img-responsive") %>
+        </p>
+        <p>
+          Detached house that has been completely renovated with spacious playrooms and has room for 62 children.
+        </p>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <p>
+          <%= image_tag("calendar-clock.png", class: "img-responsive") %>
+        </p>
+        <p>
+          Open 50 weeks a year from 8 am to 6 pm.
+        </p>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <p>
+          <%= image_tag("tablet.png", class: "img-responsive") %>
+        </p>
+        <p>
+          We use the latests software and technology to track and create reports for your child development.
+        </p>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <p>
+          <%= image_tag("swing.png", class: "img-responsive") %>
+        </p>
+        <p>
+          Outdoor playground with impact absorbent play surface and fixed equipment.
+        </p>
+      </div>
+      <div class="col-xs-4 col-sm-2">
+        <p>
+          <%= image_tag("security-camera.png", class: "img-responsive") %>
+        </p>
+        <p>
+          Safe and secure environment.
+        </p>
       </div>
     </div>
-  </div>
+  </div><!-- End of Services -->
+  <div class="container" id="news">
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <h2 class="text-center">Calendar</h2>
+        <% @closures.each do |closure| %>
+          <h5><strong><%= break_text closure %></strong></h5>
+          <p><%= closure.description %></p>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <%= image_tag("kids.jpg", class: "img-responsive") %>
+      </div>
+      <!-- <div class="col-xs-12 col-sm-4">
+        <h2 class="text-center">Newsletters</h2>
+        <% @newsletters.each do |newsletter| %>
+        <h4 class="text-center"><%= link_to newsletter.name, newsletter, target: "_blank" %></h4>
+        <% end %>
+      </div> -->
+      <!-- <div class="col-xs-12 col-sm-4">
+        <h3 class="text-center">Awards</h3>
+        <% @awards.each do |award| %>
+        <strong><%= award.title %></strong>
+        <p><%= award.description[0..140] %>...<%= link_to ">>", "#" %></p>
+        <% end %>
+      </div> -->
+    </div>
+  </div> <!-- End news -->
 </div>
