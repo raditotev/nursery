@@ -151,7 +151,7 @@ RSpec.describe TestemonialsController, type: :controller do
 
     it "redirects to the testemonials list" do
       delete :destroy, params: {id: testemonial.to_param}, session: valid_session
-      expect(response).to redirect_to(testemonials_url)
+      expect(response).to redirect_to(admin_testemonials_url)
     end
   end
 

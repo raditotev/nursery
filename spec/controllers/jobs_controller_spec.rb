@@ -150,7 +150,7 @@ RSpec.describe JobsController, type: :controller do
 
     it "redirects to the jobs list" do
       delete :destroy, params: {id: job.to_param}, session: valid_session
-      expect(response).to redirect_to(jobs_url)
+      expect(response).to redirect_to(admin_jobs_url)
     end
   end
 

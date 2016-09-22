@@ -147,7 +147,7 @@ RSpec.describe NewslettersController, type: :controller do
 
     it "redirects to the newsletters list" do
       delete :destroy, params: {id: newsletter.to_param}, session: valid_session
-      expect(response).to redirect_to(newsletters_url)
+      expect(response).to redirect_to(admin_newsletters_url)
     end
   end
 

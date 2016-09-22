@@ -152,7 +152,7 @@ RSpec.describe ParentsController, type: :controller do
 
     it "redirects to the parents list" do
       delete :destroy, params: {id: parent.to_param}, session: valid_session
-      expect(response).to redirect_to(parents_url)
+      expect(response).to redirect_to(admin_parents_url)
     end
   end
 
