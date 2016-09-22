@@ -70,7 +70,7 @@ RSpec.describe FaqsController, type: :controller do
         expect {
           post :create, params: {faq: valid_attributes}, session: valid_session
         }.to change(Faq, :count).by(1)
-        expect(flash[:success]).to eq "Question - Answer was successfuly created."
+        expect(flash[:success]).to eq "FAQ was successfully created."
       end
 
       it "assigns a newly created faq as @faq" do
@@ -109,7 +109,7 @@ RSpec.describe FaqsController, type: :controller do
       it "updates the requested faq" do
         put :update, params: {id: faq.to_param, faq: new_attributes}, session: valid_session
         faq.reload
-        expect(flash[:success]).to eq "Question - Answer was successfuly updated."
+        expect(flash[:success]).to eq "FAQ was successfully updated."
         new_attributes.each_pair do |key, value|
           expect(faq[key]).to eq new_attributes[key]
         end
@@ -150,12 +150,12 @@ RSpec.describe FaqsController, type: :controller do
       expect {
         delete :destroy, params: {id: faq.to_param}, session: valid_session
       }.to change(Faq, :count).by(-1)
-      expect(flash[:success]).to eq "Question - Answer was successfuly destroyed."
+      expect(flash[:success]).to eq "FAQ was successfully destroyed."
     end
 
     it "redirects to the faqs list" do
       delete :destroy, params: {id: faq.to_param}, session: valid_session
-      expect(response).to redirect_to(faqs_url)
+      expect(response).to redirect_to(admin_faqs_url)
     end
   end
 end

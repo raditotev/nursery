@@ -28,7 +28,7 @@ class FaqsController < AdministrationController
 
     respond_to do |format|
       if @faq.save
-        format.html { redirect_to @faq, flash: {success: 'Question - Answer was successfully created.'} }
+        format.html { redirect_to @faq, flash: {success: 'FAQ was successfully created.'} }
         format.json { render :show, status: :created, location: @faq }
       else
         format.html { render :new }
