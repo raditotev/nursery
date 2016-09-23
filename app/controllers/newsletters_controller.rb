@@ -31,7 +31,7 @@ class NewslettersController < AdministrationController
 
     respond_to do |format|
       if @newsletter.save
-        format.html { redirect_to @newsletter, flash: {success: 'Newsletter was successfully created.'} }
+        format.html { redirect_to admin_newsletters_path, flash: {success: 'Newsletter was successfully created.'} }
       else
         format.html { render :new }
       end
@@ -42,7 +42,7 @@ class NewslettersController < AdministrationController
   def update
     respond_to do |format|
       if @newsletter.update(newsletter_params)
-        format.html { redirect_to @newsletter, flash: {success: 'Newsletter was successfully updated.'} }
+        format.html { redirect_to admin_newsletters_path, flash: {success: 'Newsletter was successfully updated.'} }
       else
         format.html { render :edit }
       end
@@ -53,7 +53,7 @@ class NewslettersController < AdministrationController
   def destroy
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to admin_newsletters_url, flash: {success: 'Newsletter was successfully destroyed.'} }
+      format.html { redirect_to admin_newsletters_path, flash: {success: 'Newsletter was successfully destroyed.'} }
     end
   end
 
