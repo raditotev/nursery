@@ -16,7 +16,7 @@ RSpec.feature "Show FAQ Page", type: :feature do
     expect(page).to have_css "h1", text: "Question:"
     expect(page).to have_css "h3", text: @faq.question
     expect(page).to have_css "h1", text: "Answer:"
-    expect(page).to have_css "h3", @faq.answer
+    expect(page).to have_css "h3", text: @faq.answer
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
     expect(page).to have_link "Back"
