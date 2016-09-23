@@ -13,8 +13,8 @@ RSpec.feature "Show Award Page", type: :feature do
   scenario "visit" do
     expect(page).to have_css "h1", text: "Admin Panel"
     expect(page).to have_link "Admin Panel"
-    expect(page).to have_css "h1", @award.title
-    expect(page).to have_css "p", @award.description
+    expect(page).to have_css "h1", text: @award.title
+    expect(page).to have_css "p", text: @award.description
     expect(page).to have_css "img[src='#{@award.photo.url}']"
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
