@@ -13,8 +13,8 @@ RSpec.feature "Show Break Page", type: :feature do
   scenario "visit" do
     expect(page).to have_css "h1", text: "Admin Panel"
     expect(page).to have_link "Admin Panel"
-    expect(page).to have_css "h1", break_text(@break)
-    expect(page).to have_css "p", @break.description
+    expect(page).to have_css "h1", text: break_text(@break)
+    expect(page).to have_css "p", text: @break.description
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
     expect(page).to have_link "Back"
