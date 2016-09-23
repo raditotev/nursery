@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   get 'british_values' => 'public_pages#british_values'
   get 'save_money' => 'public_pages#save_money'
   get 'faqs' => 'public_pages#faqs'
+  get 'gallery' => 'public_pages#gallery'
+  get 'profile' => 'public_pages#profile'
 
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

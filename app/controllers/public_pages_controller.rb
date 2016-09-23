@@ -1,9 +1,11 @@
 class PublicPagesController < ApplicationController
+  before_action :authenticate_parent!, only: [:gallery, :profile]
+
   def home
     @closures = Break.where('start_date > ?', Date.today)
                                    .order(start_date: :asc)
-    @newsletters = Newsletter.first(6)
-    @awards = Award.last(3)
+    # @newsletters = Newsletter.first(6)
+    # @awards = Award.last(3)
     @ofsted_description = "Ofsted is the inspectorate for children and learners in England."
     @foundation_years_description = "Information and support for parents on parenting,  child development, Early education, school and special needs."
     @lambeth_service_description = "The Families Information Service provides free, reliable and impartial information and assistance to parents, children, young people and professionals on support services and activities for the 0 to 19 year olds and up to 25 if the young person has a special need or disability."
@@ -59,5 +61,13 @@ class PublicPagesController < ApplicationController
 
   def faqs
     @faqs = Faq.all
+  end
+
+  def gallery
+
+  end
+
+  def profile
+
   end
 end

@@ -44,7 +44,13 @@
             <li><%= link_to "Nursery", nursery_path %></li>
             <li><%= link_to "Staff", staff_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
-            <li><%= link_to "Parents", "#" %></li>
+            <% if parent_signed_in? %>
+              <li><%= link_to "Gallery", gallery_path %></li>
+              <li><%= link_to "Profile", profile_path %></li>
+              <li><%= link_to "Log out", destroy_parent_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Parents", new_parent_session_path %></li>
+            <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
