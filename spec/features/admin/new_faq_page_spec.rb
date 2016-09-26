@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "New FAQ Page", type: :feature do
   before :each do
-    visit new_faq_path
     sign_in_admin
+    visit new_faq_path
   end
 
   scenario "visit" do

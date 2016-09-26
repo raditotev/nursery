@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "New newsletter Page", type: :feature do
   before :each do
-    visit new_newsletter_path
     sign_in_admin
+    visit new_newsletter_path
   end
 
   scenario "visit" do

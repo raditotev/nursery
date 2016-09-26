@@ -6,8 +6,8 @@ RSpec.feature "Show Admin Page", type: :feature do
   end
 
   before :each do
-    visit admin_path @admin
     sign_in_super_admin
+    visit admin_path @admin
   end
 
   scenario "visit" do

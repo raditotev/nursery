@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "New Job Page", type: :feature do
   before :each do
-    visit new_job_path
     sign_in_admin
+    visit new_job_path
   end
 
   scenario "visit" do

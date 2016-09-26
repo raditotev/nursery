@@ -6,14 +6,15 @@ RSpec.feature "Show Testemonial Page", type: :feature do
   end
 
   before :each do
-    visit testemonial_path @testemonial
     sign_in_admin
+    visit testemonial_path @testemonial
   end
 
   scenario "visit" do
     expect(page).to have_css "h1", text: "Admin Panel"
     expect(page).to have_link "Admin Panel"
-    expect(page).to have_css "h1", text: @testemonial.title
+    expect(page).to have_css "blockquote", text: @testemonial.description
+    expect(page).to have_css "strong", text: @testemonial.name
     expect(page).to have_link "Edit"
     expect(page).to have_link "Delete"
     expect(page).to have_link "Back"

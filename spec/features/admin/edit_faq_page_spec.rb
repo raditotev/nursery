@@ -6,8 +6,8 @@ RSpec.feature "Edit FAQ Page", type: :feature do
   end
 
   before :each do
-    visit edit_faq_path @faq
     sign_in_admin
+    visit edit_faq_path @faq
   end
 
   scenario "visit" do

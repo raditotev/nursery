@@ -7,8 +7,8 @@ RSpec.feature "Newsletters Page", type: :feature do
   end
 
   before :each do
-    visit admin_newsletters_path
     sign_in_admin
+    visit admin_newsletters_path
   end
 
   scenario "visit" do

@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.feature "Dashboard", type: :feature do
 
   before :each do
-    visit admin_dashboard_path
     sign_in_admin
   end
 
@@ -13,8 +12,8 @@ RSpec.feature "Dashboard", type: :feature do
   it { is_expected.to have_css "h1", text: "Admin Panel" }
   it { is_expected.to have_css "h1", text: "Awards" }
   it { is_expected.to have_link "Awards" }
-  it { is_expected.to have_css "h1", text: "Closures" }
-  it { is_expected.to have_link "Closures" }
+  it { is_expected.to have_css "h1", text: "Events" }
+  it { is_expected.to have_link "Events" }
   it { is_expected.to have_css "h1", text: "FAQs" }
   it { is_expected.to have_link "FAQs" }
   it { is_expected.to have_css "h1", text: "Jobs" }
@@ -33,9 +32,9 @@ RSpec.feature "Dashboard", type: :feature do
     expect(current_path).to eq admin_awards_path
   end
 
-  scenario "has link to Closures" do
-    click_link "Closures"
-    expect(current_path).to eq admin_breaks_path
+  scenario "has link to Events" do
+    click_link "Events"
+    expect(current_path).to eq admin_events_path
   end
 
   scenario "has link to FAQs" do

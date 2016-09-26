@@ -6,8 +6,8 @@ RSpec.feature "Show Award Page", type: :feature do
   end
 
   before :each do
-    visit award_path @award
     sign_in_admin
+    visit award_path @award
   end
 
   scenario "visit" do

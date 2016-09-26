@@ -6,8 +6,8 @@ RSpec.feature "Edit Job Page", type: :feature do
   end
 
   before :each do
-    visit edit_job_path @job
     sign_in_admin
+    visit edit_job_path @job
   end
 
   scenario "visit" do

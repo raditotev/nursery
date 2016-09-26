@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "New Parent Page", type: :feature do
   before :each do
-    visit new_parent_path
     sign_in_admin
+    visit new_parent_path
   end
 
   scenario "visit" do

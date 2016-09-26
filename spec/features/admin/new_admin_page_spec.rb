@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.feature "New Admin Page", type: :feature do
   before :each do
-    visit new_admin_path
     sign_in_super_admin
+    visit new_admin_path
   end
 
   scenario "visit" do

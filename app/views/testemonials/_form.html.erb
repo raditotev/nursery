@@ -1,6 +1,5 @@
 <%= simple_form_for testemonial, html: { multipart: true } do |f| %>
 
-  <%= f.input :title %>
   <%= f.input :description %>
   <%= simple_fields_for :photo do |ff| %>
     <%= ff.input :image, as: :file %>

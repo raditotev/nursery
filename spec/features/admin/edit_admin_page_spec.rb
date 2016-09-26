@@ -6,8 +6,8 @@ RSpec.feature "Edit Admin Page", type: :feature do
   end
 
   before :each do
-    visit edit_admin_path @admin
     sign_in_super_admin
+    visit edit_admin_path @admin
   end
 
   scenario "visit" do

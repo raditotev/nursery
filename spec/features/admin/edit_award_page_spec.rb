@@ -6,8 +6,8 @@ RSpec.feature "Edit Award Page", type: :feature do
   end
 
   before :each do
-    visit edit_award_path @award
     sign_in_admin
+    visit edit_award_path @award
   end
 
   scenario "visit" do

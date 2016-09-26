@@ -3,7 +3,7 @@ class TestemonialsController < AdministrationController
 
   # GET /testemonials
   def index
-    @testemonials = Testemonial.all
+    @testimonials = Testemonial.all
   end
 
   # GET /testemonials/1

@@ -6,8 +6,8 @@ RSpec.feature "Edit Parent Page", type: :feature do
   end
 
   before :each do
-    visit edit_parent_path @parent
     sign_in_admin
+    visit edit_parent_path @parent
   end
 
   scenario "visit" do

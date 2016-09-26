@@ -7,8 +7,8 @@ RSpec.feature "Jobs Page", type: :feature do
   end
 
   before :each do
-    visit admin_jobs_path
     sign_in_admin
+    visit admin_jobs_path
   end
 
   scenario "visit" do

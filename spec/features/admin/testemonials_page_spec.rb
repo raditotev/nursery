@@ -7,8 +7,8 @@ RSpec.feature "Testemonials Page", type: :feature do
   end
 
   before :each do
-    visit admin_testemonials_path
     sign_in_admin
+    visit admin_testemonials_path
   end
 
   scenario "visit" do
@@ -17,8 +17,8 @@ RSpec.feature "Testemonials Page", type: :feature do
     expect(page).to have_css "#plus"
     expect(page).to have_css "h3", text: "New Testemonial"
     expect(page).to have_link "New Testemonial"
-    expect(page).to have_css "h3", text: @testemonial.title
-    expect(page).to have_link @testemonial.title
+    expect(page).to have_css "h3", text: @testemonial.name
+    expect(page).to have_link @testemonial.name
     expect(page).to have_css "#pencil"
     expect(page).to have_css "#bin"
     expect(page).to have_css "#back"
@@ -43,7 +43,7 @@ RSpec.feature "Testemonials Page", type: :feature do
   scenario "deletes Testemonial" do
     click_link "Delete"
     expect(page).to have_content("Testemonial was successfully destroyed.")
-    expect(page).to_not have_content @testemonial.title
+    expect(page).to_not have_content @testemonial.name
     expect(current_path).to eq admin_testemonials_path
   end
 
