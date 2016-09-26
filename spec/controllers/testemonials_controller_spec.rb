@@ -5,7 +5,7 @@ RSpec.describe TestemonialsController, type: :controller do
 
   let(:valid_attributes) { attributes_for(:testemonial) }
 
-  let(:invalid_attributes) { attributes_for(:testemonial, title: nil, description: nil) }
+  let(:invalid_attributes) { attributes_for(:testemonial, name: nil, description: nil) }
 
   let(:valid_session) { {} }
 
@@ -20,7 +20,7 @@ RSpec.describe TestemonialsController, type: :controller do
 
     it "assigns all testemonials as @testemonials" do
       get :index, params: {}, session: valid_session
-      expect(assigns(:testemonials)).to eq([testemonial])
+      expect(assigns(:testimonials)).to eq([testemonial])
     end
   end
 
@@ -98,7 +98,7 @@ RSpec.describe TestemonialsController, type: :controller do
 
     context "with valid params" do
       let(:new_attributes) {
-        attributes_for(:testemonial, title: "New Testemonial",
+        attributes_for(:testemonial, name: "John",
                                                      description: Faker::Lorem.paragraph(2))
       }
 
