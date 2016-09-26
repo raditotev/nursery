@@ -7,9 +7,9 @@ RSpec.describe AdminsHelper, type: :helper do
       expect(get_title(faq)).to eq faq.question
     end
 
-    it "returns generated text as title for break" do
-      closure = create(:break)
-      expect(get_title(closure)).to eq break_text(closure)
+    it "returns generated text as title for event" do
+      closure = create(:event)
+      expect(get_title(closure)).to eq event_text(closure)
     end
 
     it "returns name as title for newsletter" do
@@ -28,14 +28,14 @@ RSpec.describe AdminsHelper, type: :helper do
     end
   end
 
-  describe "#break_text" do
+  describe "#event_text" do
     it "returns dates as text" do
-      closure = create(:break)
-      expect(break_text(closure)).to eq "From #{closure.start_date.strftime("%e %B")} to #{closure.end_date.strftime("%e %B %Y")}"
+      closure = create(:event)
+      expect(event_text(closure)).to eq "From #{closure.start_date.strftime("%e %B")} to #{closure.end_date.strftime("%e %B %Y")}"
     end
     it "returns text for single date" do
-      single_day_closure = Break.create!(start_date: Date.today, end_date: Date.today, description: "Single day")
-      expect(break_text(single_day_closure)).to eq "Day off on #{single_day_closure.start_date.strftime("%e %B")}"
+      single_day_closure = Event.create!(start_date: Date.today, end_date: Date.today, description: "Single day")
+      expect(event_text(single_day_closure)).to eq "Day off on #{single_day_closure.start_date.strftime("%e %B")}"
     end
   end
 

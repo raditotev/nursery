@@ -6,8 +6,8 @@ class AdminPagesController < AdministrationController
     @awards = Award.all
   end
 
-  def breaks
-    @breaks = Break.all
+  def events
+    @events = Event.all
   end
 
   def faqs

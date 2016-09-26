@@ -6,7 +6,7 @@ Job.destroy_all
 Newsletter.destroy_all
 Parent.destroy_all
 Testemonial.destroy_all
-Break.destroy_all
+Event.destroy_all
 
 10.times do
   Award.create(title: Faker::Name.title, description: Faker::Lorem.paragraph(2))
@@ -18,14 +18,14 @@ Break.destroy_all
   Testemonial.create(title: Faker::Name.title, description: Faker::Lorem.paragraph(2))
 end
 
-Break.create(start_date: Date.new(2016, 8, 20),
+Event.create(start_date: Date.new(2016, 8, 20),
                       end_date: Date.new(2016, 8, 23),
                       description: Faker::Lorem.paragraph(1))
 
-Break.create(start_date: Date.new(2016, 9, 26),
+Event.create(start_date: Date.new(2016, 9, 26),
                       end_date: Date.new(2016, 9, 30),
                       description: Faker::Lorem.paragraph(1))
 
-Break.create(start_date: Date.new(2016, 12, 24),
+Event.create(start_date: Date.new(2016, 12, 24),
                       end_date: Date.new(2017, 1, 5),
                       description: Faker::Lorem.paragraph(1))

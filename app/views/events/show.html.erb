@@ -1,14 +1,14 @@
 <h1>
-  <%= break_text @break %>
+  <%= event_text @event %>
 </h1>
 
 <p>
-  <%= @break.description %>
+  <%= @event.description %>
 </p>
 <p class="text-right">
-  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_break_path(@break),
+  <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_event_path(@event),
                                                                           title: "Edit" %>
-  <%= link_to fa_icon("trash 2x", id: "bin"), @break,
+  <%= link_to fa_icon("trash 2x", id: "bin"), @event,
                                                                      method: :delete,
                                                                      data: { confirm: "Are you sure?" },
                                                                      title: "Delete" %>

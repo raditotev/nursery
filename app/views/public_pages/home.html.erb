@@ -70,9 +70,9 @@
     <div class="row">
       <div class="col-xs-12 col-sm-4">
         <h2 class="text-center">Calendar</h2>
-        <% @closures.each do |closure| %>
-          <h5><strong><%= break_text closure %></strong></h5>
-          <p><%= closure.description %></p>
+        <% @events.each do |event| %>
+          <h5><strong><%= event_text event %></strong></h5>
+          <p><%= event.description %></p>
         <% end %>
       </div>
       <div class="col-xs-12 col-sm-8">

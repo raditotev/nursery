@@ -2,7 +2,7 @@ module AdminsHelper
   def get_title object
     title = case
     when object.class == Faq then object.question
-    when object.class == Break then break_text(object)
+    when object.class == Event then event_text(object)
     when object.class == Newsletter then object.name
     when object.class == Parent then parent_full_name object
     when object.class == Admin then object.username
@@ -11,9 +11,9 @@ module AdminsHelper
     end
   end
 
-  def break_text closure
-    start = closure.start_date
-    finish = closure.end_date
+  def event_text event
+    start = event.start_date
+    finish = event.end_date
     start == finish ? "Day off on #{start.strftime("%e %B")}" :
                                 "From #{start.strftime("%e %B")} to #{finish.strftime("%e %B %Y")}"
   end

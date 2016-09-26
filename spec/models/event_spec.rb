@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Break, type: :model do
+RSpec.describe Event, type: :model do
 
   describe "validations" do
     it { is_expected.to validate_presence_of(:start_date) }
@@ -9,6 +9,6 @@ RSpec.describe Break, type: :model do
   end
 
   it "has valida fatory" do
-    expect(build(:break)).to be_valid
+    expect(build(:event)).to be_valid
   end
 end

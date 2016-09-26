@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "breaks/show", type: :view do
+RSpec.describe "events/show", type: :view do
   before(:each) do
-    @break = assign(:break, Break.create!(
+    @event = assign(:event, Event.create!(
       :description => "MyText"
     ))
   end

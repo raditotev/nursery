@@ -3,6 +3,7 @@ module FeatureHelperMethods
 
   def sign_in_admin
     admin = create(:admin)
+    visit new_admin_session_path
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
     click_button 'Log in'
@@ -10,6 +11,7 @@ module FeatureHelperMethods
 
   def sign_in_super_admin
     admin = create(:super_admin)
+    visit new_admin_session_path
     fill_in 'Email', with: admin.email
     fill_in 'Password', with: admin.password
     click_button 'Log in'

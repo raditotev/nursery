@@ -2,7 +2,7 @@ class PublicPagesController < ApplicationController
   before_action :authenticate_parent!, only: [:gallery, :profile]
 
   def home
-    @closures = Break.where('start_date > ?', Date.today)
+    @events = Event.where('start_date > ?', Date.today)
                                    .order(start_date: :asc)
     # @newsletters = Newsletter.first(6)
     # @awards = Award.last(3)

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Administration routes
   resources :faqs, except: :index
   resources :jobs, except: :index
-  resources :breaks, except: :index
+  resources :events, except: :index
   resources :testemonials, except: :index
   resources :awards, except: :index
   resources :newsletters, except: :index
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin_pages#dashboard', as: :admin_dashboard
   get 'admin/awards' => 'awards#index'
   get 'admin/faqs' => 'faqs#index'
-  get 'admin/breaks' => 'breaks#index'
+  get 'admin/events' => 'events#index'
   get 'admin/jobs' => 'jobs#index'
   get 'admin/newsletters' => 'newsletters#index'
   get 'admin/parents' => 'parents#index'
