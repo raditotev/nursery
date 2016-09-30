@@ -12,24 +12,26 @@
   </div>
   <div class="row text-center">
     <div class="col-xs-4">
+      <h1><%= link_to fa_icon("picture-o 3x", text: "Gallery", id: "gallery"), admin_albums_path %></h1>
+    </div>
+    <div class="col-xs-4">
       <h1><%= link_to fa_icon("user-plus 3x", text: "Jobs", id: "user-plus"), admin_jobs_path %></h1>
     </div>
     <div class="col-xs-4">
       <h1><%= link_to fa_icon("newspaper-o 3x", text: "Newsletters", id:"newspaper"), admin_newsletters_path %></h1>
     </div>
-    <div class="col-xs-4">
-      <h1><%= link_to fa_icon("users 3x", text: "Parents", id: "users"), admin_parents_path %></h1>
-
-    </div>
   </div>
   <div class="row text-center">
-  <% if current_admin.superadmin %>
+    <div class="col-xs-4">
+      <h1><%= link_to fa_icon("users 3x", text: "Parents", id: "users"), admin_parents_path %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h1><%= link_to fa_icon("thumbs-o-up 3x", text: "Testemonials", id: "thumbs"), admin_testemonials_path %></h1>
+    </div>
+    <% if current_admin.superadmin %>
     <div class="col-xs-4">
         <h1><%= link_to fa_icon("pencil-square-o 3x", text: "Admins", id:"pencil-pad"), admin_admins_path %></h1>
     </div>
     <% end %>
-    <div class="col-xs-4">
-      <h1><%= link_to fa_icon("thumbs-o-up 3x", text: "Testemonials", id: "thumbs"), admin_testemonials_path %></h1>
-    </div>
   </div>
 </div>

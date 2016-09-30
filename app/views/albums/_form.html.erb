@@ -1,0 +1,22 @@
+<%= simple_form_for(@album, html: {multipart: true}) do |f| %>
+  <%= f.input :name %>
+
+  <% if @album.photos.any? %>
+    <div id="images">
+      <% @album.photos.each do |photo| %>
+        <div id="<%= photo.image_file_name.split(".").join("_") %>" class="image">
+          <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-image", remote: true, title: "Delete Image" do %>
+          <i class="glyphicon glyphicon-remove-circle"></i>
+          <% end %>
+          <%= image_tag photo.image.url(:medium) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.input "Choose photos" do %>
+  <%= file_field_tag "images[]", type: :file, multiple: true %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>

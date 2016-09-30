@@ -1,28 +1,30 @@
 Rails.application.routes.draw do
-  resources :photos
   root to: 'public_pages#home'
 
-  # Administration routes
+  resources :albums, except: :index
   resources :faqs, except: :index
   resources :jobs, except: :index
   resources :events, except: :index
+  resources :photos
   resources :testemonials, except: :index
   resources :awards, except: :index
   resources :newsletters, except: :index
   devise_for :parents, only: [:sessions, :passwords]
   resources :parents, except: :index
+  devise_for :admins, only: [:sessions, :passwords]
+  resources :admins, except: :index
+
+  # Administration routes
   get 'admin' => 'admin_pages#dashboard', as: :admin_dashboard
   get 'admin/awards' => 'awards#index'
   get 'admin/faqs' => 'faqs#index'
+  get 'admin/albums' => 'albums#index'
   get 'admin/events' => 'events#index'
   get 'admin/jobs' => 'jobs#index'
   get 'admin/newsletters' => 'newsletters#index'
   get 'admin/parents' => 'parents#index'
   get 'admin/testemonials' => 'testemonials#index'
   get 'admin/admins' => 'admins#index'
-
-  devise_for :admins, only: [:sessions, :passwords]
-  resources :admins, except: :index
 
   # Public routes
   get 'about-us' => 'public_pages#about_us'
