@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center"><%= @album.name %></h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @album.name %>
-</p>
-
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+<div class="container">
+  <div id="links" class="links">
+    <% @album.photos.each do |picture| %>
+        <%= link_to image_tag(picture.image.url(:medium)), picture.image.url, data: { gallery: ''} %>
+        <% end %>
+  </div>
+</div>

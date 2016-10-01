@@ -1,0 +1,45 @@
+.blueimp-gallery .slides .slide .slide-content{
+  max-width: 70%;
+}
+
+.thumbnail > img, .thumbnail a > img{
+  /*height: 20vh;*/
+  height: 15rem;
+  width: auto;
+}
+
+.delete-image{
+  font-size: 40px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: block;
+  color: red;
+  &:hover{
+      background: transparent;
+      color: #a80606;
+    }
+}
+
+#images{
+  margin: 2rem auto;
+}
+
+.image{
+  display: inline-block;
+  position: relative;
+}
+
+.missing-photos{
+  height: 15rem;
+  text-align: center;
+  margin-bottom: 0px;
+  padding-top: 2rem;
+  color: #000;
+}
+
+#links{
+  img{
+    margin: 5px;
+  }
+}

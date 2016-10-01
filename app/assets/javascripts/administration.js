@@ -14,4 +14,14 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.blueimp-gallery.min
+//= require bootstrap-image-gallery
 //= require_tree ./administration
+
+var ready;
+ready = function() {
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

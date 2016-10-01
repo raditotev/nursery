@@ -28,7 +28,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <% flash.each do |message_type, message| %>
           <div class="alert alert-<%= message_type %> text-center"><%= message %></div>
         <% end %>
@@ -38,6 +38,10 @@
       </div>
     </div>
   </div>
+
+  <!-- Bootstrap Gallery Modal -->
+  <%= render 'shared/blueimp_gallery' %>
+
 
   <div id="admin-back-link" class="text-center">
   <% if params[:controller] != "admin_pages" %>

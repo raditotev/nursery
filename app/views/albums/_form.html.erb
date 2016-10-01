@@ -4,7 +4,7 @@
   <% if @album.photos.any? %>
     <div id="images">
       <% @album.photos.each do |photo| %>
-        <div id="<%= photo.image_file_name.split(".").join("_") %>" class="image">
+        <div id="photo-<%= photo.id %>" class="image">
           <%= link_to photo, method: :delete, data: { confirm: 'Are you sure?' }, class: "delete-image", remote: true, title: "Delete Image" do %>
           <i class="glyphicon glyphicon-remove-circle"></i>
           <% end %>

@@ -1,5 +1,4 @@
 class AlbumsController < AdministrationController
-  before_action :set_layout
   before_action :set_album, only: [:show, :edit, :update, :destroy]
 
   # GET /albums
@@ -86,11 +85,5 @@ class AlbumsController < AdministrationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
       params.require(:album).permit(:name, :images)
-    end
-
-    def set_layout
-      unless current_admin.superadmin
-        layout "administration"
-      end
     end
 end
