@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :faqs, except: :index
   resources :jobs, except: :index
   resources :events, except: :index
-  resources :photos
+  resources :photos, only: :destroy
   resources :testemonials, except: :index
   resources :awards, except: :index
   resources :newsletters, except: :index
