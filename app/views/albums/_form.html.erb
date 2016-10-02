@@ -9,10 +9,16 @@
           <i class="glyphicon glyphicon-remove-circle"></i>
           <% end %>
           <%= image_tag photo.image.url(:medium) %>
+          <p>
+            <%= f.radio_button(:cover_photo_id, photo.id) %>
+            Make cover
+          </p>
         </div>
       <% end %>
     </div>
   <% end %>
+
+  <div id="image-preview"></div>
 
   <%= f.input "Choose photos" do %>
   <%= file_field_tag "images[]", type: :file, multiple: true %>

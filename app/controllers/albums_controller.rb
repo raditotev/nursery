@@ -35,6 +35,8 @@ class AlbumsController < AdministrationController
         }
       end
 
+      @album.update_attributes(cover_photo_id: @album.photos.first.id) if @album.photos.any?
+
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
@@ -84,6 +86,6 @@ class AlbumsController < AdministrationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:name, :images)
+      params.require(:album).permit(:name, :cover_photo_id)
     end
 end

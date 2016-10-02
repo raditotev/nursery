@@ -14,7 +14,7 @@
       <div class="thumbnail">
       <% if album.photos.any? %>
         <%= link_to album do %>
-          <%= image_tag(album.photos.first.image.url(:medium), alt: "Photo", class: "img-responsive") %>
+          <%= image_tag(album.photos.find(album.cover_photo_id).image.url(:medium), alt: "Photo", class: "img-responsive") %>
         <% end %>
         <% else %>
           <%= link_to edit_album_path(album) do %>
