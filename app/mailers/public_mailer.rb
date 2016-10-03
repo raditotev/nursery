@@ -5,6 +5,17 @@ class PublicMailer < ApplicationMailer
     @sender = message[:from]
     @content = message[:content]
 
-    mail(to: "to@example.org", subject: "[website] #{message[:subject]}")
+    mail(to: "office@oaktreedaynursery.com", subject: "[website] #{message[:subject]}")
+  end
+
+  def request_viewing request
+    @name = request["name"]
+    @email = request["email"]
+    @mobile = request["mobile"]
+    @telephone = request["telephone"]
+    @date = request["date"]
+    @time = request["time"]
+
+    mail(to: "office@oaktreedaynursery.com", subject: "Request for Viewing from #{@name}")
   end
 end

@@ -1,0 +1,18 @@
+<h1>Request for viewing</h1>
+
+<h3>Contact details</h3>
+
+<p>Name: <%= @name %></p>
+<p>Email: <%= @email %></p>
+<p>Mobile: <%= @mobile %></p>
+<p>Telephone: <%= @telephone %></p>
+<hr>
+<br>
+
+<p>
+  <% if @time == "" %>
+    <strong><%= @name %></strong> would like to visit us anytime on <strong><%= @date %></strong>.
+  <% else %>
+  <strong><%= @name %></strong> would like to visit us on <strong><%= @date %></strong> in the <strong><%= @time %></strong>.
+  <% end %>
+</p>

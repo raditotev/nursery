@@ -1,0 +1,16 @@
+Request for viewing
+
+Contact details
+----------------------
+Name: <%= @name %>
+Email: <%= @email %>
+Mobile: <%= @mobile %>
+Telephone: <%= @telephone %>
+
+
+
+<% if @time == "" %>
+  <%= @name %> would like to visit us anytime on <%= @date %>.
+<% end %>
+<%= @name %> would like to visit us on <%= @date %> in the <%= @time %>.
+

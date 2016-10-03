@@ -56,6 +56,16 @@ class PublicPagesController < ApplicationController
   def british_values
   end
 
+  def request_viewing
+    request = {}
+    params[:request].each_pair { |key, value| request[key] = value unless key[0..3] == "date" }
+    date  = params[:request]["date(3i)"] + "/" + params[:request]["date(2i)"] + "/" + params[:request]["date(1i)"]
+    request["date"] = date
+
+    PublicMailer.request_viewing(request).deliver
+    respond_to :js
+  end
+
   def save_money
   end
 

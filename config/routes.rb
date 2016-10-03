@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   get 'british_values' => 'public_pages#british_values'
   get 'save_money' => 'public_pages#save_money'
   get 'faqs' => 'public_pages#faqs'
+  post 'request_viewing' => 'public_pages#request_viewing'
   get 'download_fees_terms_and_conditions' => 'application#fees_terms_and_conditions'
 
   #Parents only
