@@ -13,6 +13,7 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require jquery.blueimp-gallery.min
 //= require bootstrap-image-gallery
@@ -31,3 +32,15 @@ $(function() {
   })(this));
   return setTimeout(flashCallback, 3000);
 });
+
+$(function() {
+  $('#request_date').datepicker({ dateFormat: 'dd/mm/yy' });
+});
+
+
+
+var ready = function(){
+
+}
+
+$(document).on('turbolinks:load', ready);

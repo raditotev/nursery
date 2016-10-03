@@ -58,9 +58,7 @@ class PublicPagesController < ApplicationController
 
   def request_viewing
     request = {}
-    params[:request].each_pair { |key, value| request[key] = value unless key[0..3] == "date" }
-    date  = params[:request]["date(3i)"] + "/" + params[:request]["date(2i)"] + "/" + params[:request]["date(1i)"]
-    request["date"] = date
+    params[:request].each_pair { |key, value| request[key] = value}
 
     PublicMailer.request_viewing(request).deliver
     respond_to :js

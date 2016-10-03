@@ -11,8 +11,8 @@ class PublicMailer < ApplicationMailer
   def request_viewing request
     @name = request["name"]
     @email = request["email"]
-    @mobile = request["mobile"]
-    @telephone = request["telephone"]
+    @mobile = request["mobile"] == "" ? "not specified" : request["mobile"]
+    @telephone = request["telephone"] == "" ? "not specified" : request["telephone"]
     @date = request["date"]
     @time = request["time"]
 
