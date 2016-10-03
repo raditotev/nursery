@@ -1,5 +1,5 @@
 class PublicPagesController < ApplicationController
-  before_action :authenticate_parent!, only: [:gallery, :profile]
+  before_action :authenticate_parent!, only: [:gallery, :album, :profile]
 
   def home
     @events = Event.where('start_date > ?', Date.today)
@@ -64,7 +64,13 @@ class PublicPagesController < ApplicationController
   end
 
   def gallery
+    @albums = Album.all
+  end
 
+  def album
+    album = Album.find(params[:id])
+    @name = album.name
+    @photos = album.photos
   end
 
   def profile

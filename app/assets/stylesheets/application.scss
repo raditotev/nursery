@@ -13,6 +13,9 @@ $font-size-base: 18px;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import "blueimp-gallery.min";
+@import "bootstrap-image-gallery";
+@import "administration/albums";
 @import "application/**/*";
 
 html{

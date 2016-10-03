@@ -1,0 +1,12 @@
+<% provide(:title, @name) %>
+
+<div class="container" id="album-page">
+  <div id="links" class="links text-center">
+    <% @photos.each do |photo| %>
+        <%= link_to image_tag(photo.image.url(:medium), alt: "#{photo.image_file_name}"), photo.image.url, data: { gallery: ''} %>
+        <% end %>
+  </div>
+</div>
+
+<!-- Bootstrap Gallery Modal -->
+  <%= render 'shared/blueimp_gallery' %>

@@ -14,6 +14,8 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.blueimp-gallery.min
+//= require bootstrap-image-gallery
 //= require_tree ./application
 //= require_self
 
