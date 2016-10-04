@@ -11,11 +11,12 @@ $font-family-serif: 'Lora', serif;
 $font-size-base: 18px;
 
 @import "bootstrap-sprockets";
-@import "jquery-ui";
 @import "bootstrap";
+@import "jquery-ui";
 @import "font-awesome";
 @import "blueimp-gallery.min";
 @import "bootstrap-image-gallery";
+@import "blueimp-gallery.min.css";
 @import "administration/albums";
 @import "application/**/*";
 
@@ -36,6 +37,10 @@ body{
 
 p{
   font-family: $font-family-serif;
+}
+
+button[disabled], html input[disabled]{
+  cursor: not-allowed;
 }
 
 #hero-header{

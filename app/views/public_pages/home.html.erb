@@ -98,19 +98,16 @@
         <h4 class="modal-title" id="requestTourLabel">Request tour</h4>
       </div>
       <div class="modal-body">
-        <%= simple_form_for(:request, url: request_viewing_path, remote: true) do |f| %>
+        <%= simple_form_for(:request, url: request_viewing_path, remote: true, html: {role: :form}) do |f| %>
           <%= f.input :name %>
           <%= f.input :email %>
           <%= f.input :mobile, required: false %>
           <%= f.input :telephone, required: false %>
           <%= f.input :date, required: true %>
           <%= f.input :time, collection: [ "Morning", "Afternoon"], prompt: "When do you prefer to visit?", required: false %>
-
+          <%= f.submit "Send request", id:"send_request", disabled: true %>
+        <% end %>
       </div>
-      <div class="modal-footer">
-        <%= f.submit "Send request" %>
-      </div>
-      <% end %>
     </div>
   </div>
 </div>

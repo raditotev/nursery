@@ -17,10 +17,12 @@
 //= require turbolinks
 //= require jquery.blueimp-gallery.min
 //= require bootstrap-image-gallery
+//= require jquery.blueimp-gallery.min.js
 //= require_tree ./application
 //= require_self
 
 $(function() {
+  // Hide flash messages after 3 seconds
   var flashCallback;
   flashCallback = function() {
     return $(".alert").fadeOut();
@@ -33,14 +35,22 @@ $(function() {
   return setTimeout(flashCallback, 3000);
 });
 
-$(function() {
-  $('#request_date').datepicker({ dateFormat: 'dd/mm/yy' });
-});
-
-
-
-var ready = function(){
-
+var ready
+ready = function(){
+  // Disable send request button if required fields empty
+  $(function() {
+    $('#send_request').hover(function() {
+      if($("#request_name").val() != "" &&
+          $("#request_email").val() !="" &&
+          $("#request_date").val() !=""){
+        $('#send_request').prop("disabled", false);
+      } else {
+        $('#send_request').prop("disabled", true);
+      }
+    });
+    // Date picker for viewing request modal
+    $('#request_date').datepicker({dateFormat: 'dd/mm/yy'});
+  });
 }
 
 $(document).on('turbolinks:load', ready);
