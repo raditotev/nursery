@@ -57,6 +57,8 @@ class AlbumsController < AdministrationController
             existing_image = @album.photos.find {|photo| photo.image_file_name == image.original_filename}
             @album.photos.create(image: image) unless existing_image
         end
+
+        @album.update_attributes(cover_photo_id: @album.photos.first.id) if @album.cover_photo_id == nil
       end
 
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
