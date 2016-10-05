@@ -24,15 +24,8 @@ class PublicPagesController < ApplicationController
   def contact
     if request.post?
       message = {}
-      message[:from] = params[:contact][:from]
-      message[:subject] = params[:contact][:subject]
-      message[:content] = params[:contact][:content]
-      if message[:from] == '' || message[:subject] == '' || message[:content] == ''
-
-        flash.now[:warning] = 'Please fill all required fields.'
-        render :contact
-      else
-        PublicMailer.contact_form(message).deliver
+      params[:contact].each_pair{ |k, v| message[k] = v }
+      if PublicMailer.contact_form(message).deliver
         flash.now[:success] = "Message has been send."
         render :contact
       end

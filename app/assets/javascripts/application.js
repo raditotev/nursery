@@ -1,15 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// compiled file. JavaScript code in this file should be added after the last require_* statement.
-//
-// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
@@ -35,19 +23,29 @@ $(function() {
   return setTimeout(flashCallback, 3000);
 });
 
-var ready
+
+var ready;
 ready = function(){
-  // Disable send request button if required fields empty
   $(function() {
-    $('#send_request').hover(function() {
-      if($("#request_name").val() != "" &&
-          $("#request_email").val() !="" &&
-          $("#request_date").val() !=""){
-        $('#send_request').prop("disabled", false);
-      } else {
-        $('#send_request').prop("disabled", true);
-      }
-    });
+
+    var disable_button = function(button, field1, field2, field3){
+        $(button).hover(function() {
+        if($(field1).val() != "" &&
+            $(field2).val() !="" &&
+            $(field3).val() !=""){
+          $(button).prop("disabled", false);
+        } else {
+          $(button).prop("disabled", true);
+        }
+      });
+    }
+
+    // Disable send request button if required fields empty (Request Viewing)
+    disable_button("#send_request", "#request_name",
+                               "#request_email", "#request_date");
+    // Disable send message button if required fields empty (Contact Form)
+    disable_button("#send_message", "#contact_form",
+                               "#contact_subject", "#contact_content");
     // Date picker for viewing request modal
     $('#request_date').datepicker({dateFormat: 'dd/mm/yy'});
   });

@@ -2,10 +2,11 @@ class PublicMailer < ApplicationMailer
   default from: 'website@oaktreedaynursery.com'
 
   def contact_form message
-    @sender = message[:from]
-    @content = message[:content]
+    @sender = message["from"]
+    @content = message["content"]
+    @subject = message["subject"]
 
-    mail(to: "office@oaktreedaynursery.com", subject: "[website] #{message[:subject]}")
+    mail(to: "office@oaktreedaynursery.com", subject: "[website] #{@subject}")
   end
 
   def request_viewing request
