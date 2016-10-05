@@ -25,8 +25,12 @@ class PublicPagesController < ApplicationController
     if request.post?
       message = {}
       params[:contact].each_pair{ |k, v| message[k] = v }
+
       if PublicMailer.contact_form(message).deliver
         flash.now[:success] = "Message has been send."
+        render :contact
+      else
+        flash.now[:error] = "Please try again."
         render :contact
       end
     end
@@ -51,10 +55,14 @@ class PublicPagesController < ApplicationController
 
   def request_viewing
     request = {}
-    params[:request].each_pair { |key, value| request[key] = value}
+    params[:request].each_pair { |k, v| request[k] = v}
 
-    PublicMailer.request_viewing(request).deliver
-    respond_to :js
+    if PublicMailer.request_viewing(request).deliver
+      respond_to :js
+    else
+      flash.now[:error] = "Something's wrong. Please try again or send us message via our contact form."
+      render :contact
+    end
   end
 
   def save_money

@@ -100,9 +100,9 @@
       <div class="modal-body">
         <%= simple_form_for(:request, url: request_viewing_path, remote: true, html: {role: :form}) do |f| %>
           <%= f.input :name %>
-          <%= f.input :email %>
-          <%= f.input :mobile, required: false %>
-          <%= f.input :telephone, required: false %>
+          <%= f.input :email, as: :email %>
+          <%= f.input :mobile, required: false, as: :tel %>
+          <%= f.input :telephone, required: false, as: :tel %>
           <%= f.input :date, required: true %>
           <%= f.input :time, collection: [ "Morning", "Afternoon"], prompt: "When do you prefer to visit?", required: false %>
           <%= f.submit "Send request", id:"send_request", disabled: true %>
