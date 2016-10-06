@@ -12,17 +12,17 @@ RSpec.feature "Edit Event Page", type: :feature do
 
   scenario "visit" do
     expect(page).to have_select("event_start_date_3i",
-                                                    selected: @event.start_date.strftime("%e"))
+                                                    selected: @event.start_date.strftime("%e").strip)
     expect(page).to have_select("event_start_date_2i",
-                                                    selected: @event.start_date.strftime("%B"))
+                                                    selected: @event.start_date.strftime("%B").strip)
     expect(page).to have_select("event_start_date_1i",
-                                                    selected: @event.start_date.strftime("%Y"))
+                                                    selected: @event.start_date.strftime("%Y").strip)
     expect(page).to have_select("event_end_date_3i",
-                                                    selected: @event.end_date.strftime("%e"))
+                                                    selected: @event.end_date.strftime("%e").strip)
     expect(page).to have_select("event_end_date_2i",
-                                                    selected: @event.end_date.strftime("%B"))
+                                                    selected: @event.end_date.strftime("%B").strip)
     expect(page).to have_select("event_end_date_1i",
-                                                    selected: @event.end_date.strftime("%Y"))
+                                                    selected: @event.end_date.strftime("%Y").strip)
     expect(page).to have_css "textarea#event_description", text: @event.description
     expect(page).to have_button "Update Event"
     expect(page).to have_link "Back"

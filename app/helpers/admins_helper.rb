@@ -15,7 +15,7 @@ module AdminsHelper
     start = event.start_date
     finish = event.end_date
     start == finish ? "Day off on #{start.strftime("%e %B")}" :
-                                "From #{start.strftime("%e %B")} to #{finish.strftime("%e %B %Y")}"
+                                "From #{start.strftime('%e %B').strip} to #{finish.strftime('%e %B %Y').strip}"
   end
 
   def parent_full_name parent
