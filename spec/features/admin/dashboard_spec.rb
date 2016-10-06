@@ -16,6 +16,8 @@ RSpec.feature "Dashboard", type: :feature do
   it { is_expected.to have_link "Events" }
   it { is_expected.to have_css "h1", text: "FAQs" }
   it { is_expected.to have_link "FAQs" }
+  it { is_expected.to have_css "h1", text: "Gallery" }
+  it { is_expected.to have_link "Gallery" }
   it { is_expected.to have_css "h1", text: "Jobs" }
   it { is_expected.to have_link "Jobs" }
   it { is_expected.to have_css "h1", text: "Newsletters" }
@@ -40,6 +42,11 @@ RSpec.feature "Dashboard", type: :feature do
   scenario "has link to FAQs" do
     click_link "FAQs"
     expect(current_path).to eq admin_faqs_path
+  end
+
+  scenario "has link to FAQs" do
+    click_link "Gallery"
+    expect(current_path).to eq admin_albums_path
   end
 
   scenario "has link to Jobs" do
