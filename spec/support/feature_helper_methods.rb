@@ -16,4 +16,11 @@ module FeatureHelperMethods
     fill_in 'Password', with: admin.password
     click_button 'Log in'
   end
+
+  def create_album_with_photo
+    visit new_album_path
+    fill_in 'album_name', with: "Test Album with Photo"
+    page.attach_file "images_", ["#{Rails.root}/spec/support/images/test_img.png"]
+    click_button 'Create Album'
+  end
 end

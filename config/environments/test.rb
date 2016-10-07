@@ -44,4 +44,6 @@ Rails.application.configure do
     path: ':rails_root/test_uploads/:class/:id/:attachment/:filename.:extension',
     url: ':rails_root/test_uploads/:class/:id/:attachment/:filename.:extension'
   }
+  #Work around for assets url in feature tests
+  config.action_dispatch.show_exceptions = true
 end
