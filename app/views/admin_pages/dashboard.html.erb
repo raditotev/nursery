@@ -1,36 +1,36 @@
 <div id="dashboard">
   <div class="row text-center">
     <div class="col-xs-4">
-      <h1><%= link_to fa_icon("trophy 3x", text: "Awards", id: "trophy"), admin_awards_path %></h1>
+      <h1><%= link_to fa_icon("trophy 2x", text: "Awards", id: "trophy"), admin_awards_path %></h1>
     </div>
     <div class="col-xs-4">
-      <h1><%= link_to fa_icon("calendar 3x", text: "Events", id: "calendar"), admin_events_path %></h1>
+      <h1><%= link_to fa_icon("calendar 2x", text: "Events", id: "calendar"), admin_events_path %></h1>
     </div>
     <div class="col-xs-4">
-      <h1><%= link_to fa_icon("question-circle-o 3x", text: "FAQs", id: "question"), admin_faqs_path %></h1>
-    </div>
-  </div>
-  <div class="row text-center">
-    <div class="col-xs-4">
-      <h1><%= link_to fa_icon("picture-o 3x", text: "Gallery", id: "gallery"), admin_albums_path %></h1>
-    </div>
-    <div class="col-xs-4">
-      <h1><%= link_to fa_icon("user-plus 3x", text: "Jobs", id: "user-plus"), admin_jobs_path %></h1>
-    </div>
-    <div class="col-xs-4">
-      <h1><%= link_to fa_icon("newspaper-o 3x", text: "Newsletters", id:"newspaper"), admin_newsletters_path %></h1>
+      <h1><%= link_to fa_icon("question-circle-o 2x", text: "FAQs", id: "question"), admin_faqs_path %></h1>
     </div>
   </div>
   <div class="row text-center">
     <div class="col-xs-4">
-      <h1><%= link_to fa_icon("users 3x", text: "Parents", id: "users"), admin_parents_path %></h1>
+      <h1><%= link_to fa_icon("picture-o 2x", text: "Gallery", id: "gallery"), admin_albums_path %></h1>
     </div>
     <div class="col-xs-4">
-      <h1><%= link_to fa_icon("thumbs-o-up 3x", text: "Testemonials", id: "thumbs"), admin_testemonials_path %></h1>
+      <h1><%= link_to fa_icon("user-plus 2x", text: "Jobs", id: "user-plus"), admin_jobs_path %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h1><%= link_to fa_icon("newspaper-o 2x", text: "Newsletters", id:"newspaper"), admin_newsletters_path %></h1>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-xs-4">
+      <h1><%= link_to fa_icon("users 2x", text: "Parents", id: "users"), admin_parents_path %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h1><%= link_to fa_icon("thumbs-o-up 2x", text: "Testemonials", id: "thumbs"), admin_testemonials_path %></h1>
     </div>
     <% if current_admin.superadmin %>
     <div class="col-xs-4">
-        <h1><%= link_to fa_icon("pencil-square-o 3x", text: "Admins", id:"pencil-pad"), admin_admins_path %></h1>
+        <h1><%= link_to fa_icon("pencil-square-o 2x", text: "Admins", id:"pencil-pad"), admin_admins_path %></h1>
     </div>
     <% end %>
   </div>
