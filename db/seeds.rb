@@ -12,10 +12,10 @@ Event.destroy_all
   Award.create(title: Faker::Name.title, description: Faker::Lorem.paragraph(2))
   Faq.create(question: Faker::Lorem.sentence + "?", answer: Faker::Lorem.sentence)
   Job.create(title: Faker::Space.company, description: Faker::Lorem.paragraph(2))
-  Newsletter.create(name: Faker::Lorem.sentence, url: Faker::Internet.url)
+  Newsletter.create(name: Faker::Lorem.sentence)
   Parent.create(email: Faker::Internet.email, password: "password", title: Faker::Name.prefix,
                           first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-  Testemonial.create(title: Faker::Name.title, description: Faker::Lorem.paragraph(2))
+  Testemonial.create(description: Faker::Lorem.paragraph(2))
 end
 
 Event.create(start_date: Date.new(2016, 8, 20),

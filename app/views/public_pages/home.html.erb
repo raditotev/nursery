@@ -1,28 +1,40 @@
 <% provide(:title, "Home") %>
 
-<div class="container-fluid" id="home-page">
-  <div class="container" id="intro">
-    <h1 class="text-center">Welcome to Oak Tree Day Nursery</h1>
-    <p class="text-center">
-      <strong>est. 2003</strong>
-    </p>
-    <p id="request-viewing">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
-        Request tour
-      </button>
-    </p>
-    <p class="text-center">
-      The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
-    </p>
-    <p>
-    <small>
-      * PLEASE NOTE THAT OAK TREE DAY NURSERY, 58 BLAIRDERRY ROAD, LONDON IS NOT AFFILIATED WITH OR CONNECTED IN ANY WAY WHATSOEVER TO  ANY OTHER NURSERY WITH THE SAME OR SIMILAR NAME.
-    </small>
-    </p>
+<div id="home-page">
+  <div class="container-fluid" id="intro">
+    <div class="container vertical-text" id="welcome">
+      <h1 id="welcome-text" class="text-left">Welcome to Oak Tree <br /> Day Nursery</h1>
+      <p class="text-left">
+        Established in 2003
+      </p>
+      <p class="text-left" id="request-viewing">
+        <!-- Button trigger modal -->
+        <button type="button"  id="hero-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
+          Request tour
+        </button>
+      </p>
+    </div>
   </div><!-- End Hero Intro -->
-  <div class="container" id="services">
+
+  <div class="container-fluid" id="services">
+    <div class="container">
     <div class="row">
+      <div class="vertical-text about-us col-md-6">
+        <div class="container">
+          <h1>About Us</h1>
+          <p>
+            The children attending Oak Tree Day Nursery receive <br />the individual attention that will give them the opportunity <br /> to grow and develop at their own pace. While our emphasis <br />is on learning through play, we continue to provide <br />a high standard of care and education.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-offset-4 col-md-2">
+        <div class="services-image pull-right"><%= image_tag "about-us-image.png" %></div>
+      </div>
+    </div>
+  </div>
+  </div><!-- End of Services -->
+  <div id="points">
+      <div class="row">
       <div class="col-xs-4 col-sm-2">
       <p>
         <%= image_tag("baby.png", class: "img-responsive") %>
@@ -72,7 +84,7 @@
         </p>
       </div>
     </div>
-  </div><!-- End of Services -->
+  </div>
   <div class="container" id="news">
     <div class="row">
       <div class="col-xs-12 col-sm-4">

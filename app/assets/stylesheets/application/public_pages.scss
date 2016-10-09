@@ -1,26 +1,64 @@
-@import 'https://fonts.googleapis.com/css?family=Henny+Penny|Marko+One';
+@import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
+
+$font-size-base: 18px;
+$red: #eb595a;
+$purple: #7a5fa6;
+$blue: #62baec;
+
+h1 {
+  font-family: 'Montserrat', serif;
+  font-weight: 700;
+    }
+p {
+  font-weight: 400;
+  }
+
+small{
+  font-size: 0.6em;
+    }
 
 #home-page{
   #intro{
-    h1, p{
-      font-family: 'Marko One', serif;
-    }
-    small{
-      font-size: 0.6em;
-    }
     .container{
       margin: 3em auto 1.5em auto;
       color: #000;
     }
+    height: 100vh;
+    .vertical-text {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: left; 
+      justify-content: center;
+    }
+    background: url('hero-background.png') 700px 100px no-repeat;
+    padding: 0px!important;
+    #welcome-text {
+      line-height: 1.5em;
+    }
   }
-  #services{
-    margin: 1.5em auto 1.5em auto;
+
+  #hero-button {
+    background-color: $purple;
+    border: none;
+  }
+
+  #services {
+    background-color: $red;
+    color: #fff;
+    padding: 30px 0px;
     img{
       margin: auto;
     }
-    p{
-      font-family: 'Lato', sans-serif;
-      font-weight: bold;
+    p {
+      line-height: 2em;
+    }
+    .services-image img {
+      height: 400px;
+      width: auto;
+    }
+    .about-us {
+      margin-top: 50px;
     }
   }
   #news{
