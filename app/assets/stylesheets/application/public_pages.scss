@@ -4,45 +4,44 @@ small{
 
 #home-page{
   #welcome{
-    height: 80vh;
-    background: url('hero-background.png') 700px 100px no-repeat;
+    height: 85vh;
+    background: url('hero-image.svg') 60vw no-repeat;
     padding: 0px!important;
     h1 {
       font-weight: 700;
+      font-size: 3em;
       line-height: 1.5em;
         }
     p {
       font-weight: 400;
       }
     .container{
-      margin: 3em auto 1.5em auto;
+      margin: 3em auto 0 auto;
       color: #000;
+    }
+    #hero-button {
+      background-color: $purple;
+      border: none;
     }
   }
 
-  #hero-button {
-    background-color: $purple;
-    border: none;
-  }
-
-  #services {
+  #about-us {
     background-color: $red;
     color: #fff;
-    padding: 30px 0px;
+    .container{
+      margin: 3em auto;
+    }
+
     img{
       margin: auto;
+      height: 400px;
+      width: auto;
     }
     p {
       line-height: 2em;
     }
-    .services-image img {
-      height: 400px;
-      width: auto;
-    }
-    .about-us {
-      margin-top: 50px;
-    }
   }
+
   #news{
     margin: 1.5em auto 3 auto;
     .row{
@@ -119,6 +118,12 @@ small{
   #home-page{
     #welcome{
       background-position: 200px 280px;
+    }
+    #about-us{
+      img{
+        width: 30vw;
+        height: auto;
+      }
     }
   }
 }
