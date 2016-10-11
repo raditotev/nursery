@@ -3,19 +3,24 @@
 <div id="home-page">
   <div class="container-fluid" id="welcome">
     <div class="container">
-      <h1>
-        Welcome to Oak Tree <br />
-        Day Nursery
-      </h1>
-      <p>
-        Established in 2003
-      </p>
-      <p>
-        <!-- Button trigger modal -->
-        <button type="button"  id="hero-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
-          Request tour
-        </button>
-      </p>
+      <div id="welcome-text">
+        <h1>
+          Welcome to Oak Tree <br />
+          Day Nursery
+        </h1>
+        <p>
+          Established in 2003
+        </p>
+        <p>
+          <!-- Button trigger modal -->
+          <button type="button"  id="hero-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
+            Request tour
+          </button>
+        </p>
+      </div>
+      <div id="hero-image">
+        <%= svg "hero-image" %>
+      </div>
     </div>
   </div><!-- End Hero Intro -->
 
@@ -24,64 +29,74 @@
     <div class="pull-right">
         <h1>About Us</h1>
         <p>
-          The children attending Oak Tree Day Nursery receive <br />the individual attention that will give them the opportunity <br /> to grow and develop at their own pace. While our emphasis <br />is on learning through play, we continue to provide <br />a high standard of care and education.
+          The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
         </p>
     </div>
     <div class="pull-left"><%= image_tag "about-us-image.png" %></div>
   </div>
-  </div><!-- End of Services -->
-  <div id="points">
-      <div class="row">
-      <div class="col-xs-4 col-sm-2">
-      <p>
-        <%= image_tag("baby.png", class: "img-responsive") %>
-      </p>
-      <p>
-        Care for babies and pre-school children between the ages of three months and five years.
-      </p>
-      </div>
-      <div class="col-xs-4 col-sm-2">
-        <p>
-          <%= image_tag("old-school.png", class: "img-responsive") %>
-        </p>
-        <p>
-          Detached house that has been completely renovated with spacious playrooms and has room for 62 children.
-        </p>
-      </div>
-      <div class="col-xs-4 col-sm-2">
-        <p>
-          <%= image_tag("calendar-clock.png", class: "img-responsive") %>
-        </p>
-        <p>
-          Open 50 weeks a year from 8 am to 6 pm.
-        </p>
-      </div>
-      <div class="col-xs-4 col-sm-2">
-        <p>
-          <%= image_tag("tablet.png", class: "img-responsive") %>
-        </p>
-        <p>
-          We use the latests software and technology to track and create reports for your child development.
-        </p>
-      </div>
-      <div class="col-xs-4 col-sm-2">
-        <p>
-          <%= image_tag("swing.png", class: "img-responsive") %>
-        </p>
-        <p>
-          Outdoor playground with impact absorbent play surface and fixed equipment.
-        </p>
-      </div>
-      <div class="col-xs-4 col-sm-2">
-        <p>
-          <%= image_tag("security-camera.png", class: "img-responsive") %>
-        </p>
-        <p>
-          Safe and secure environment.
-        </p>
+  </div><!-- End of About Us -->
+
+  <div id="services">
+    <div class="container">
+      <div class="flex-container">
+        <div class="flex-item">
+          <div class="image">
+            <%= svg("baby-unit") %>
+          </div>
+          <div class="title">
+            <h3>Baby Unit</h3>
+          </div>
+          <div class="text">
+            <p>
+                Our baby rooms offer a safe, caring environment, with bright soft toys and equipment. There is  high staff ratio with qualified, caring  and motivated staff, ensuring a secure  relationship between parents, baby and staff.
+              </p>
+          </div>
+          <div class="link">
+            <p>
+                <%= link_to "More", nursery_path(anchor: "baby-unit"), id: "baby-link" %>
+              </p>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="image">
+            <%= svg("toddler-unit") %>
+          </div>
+          <div class="title">
+            <h3>Toddler Unit</h3>
+          </div>
+          <div class="text">
+            <p>
+                A child will move through to this stage between their second and third birthday. Our approach is to ensure that learning is fun. The children are introduced to activities, which will enable each child to develop at their own pace.
+              </p>
+          </div>
+          <div class="link">
+            <p>
+                <%= link_to "More", nursery_path(anchor: "toddler-unit"), id: "toddler-link" %>
+              </p>
+          </div>
+        </div>
+        <div class="flex-item">
+          <div class="image">
+            <%= svg("preschool-unit") %>
+          </div>
+          <div class="title">
+            <h3>Preschool</h3>
+          </div>
+          <div class="text">
+            <p>
+                Children will progress to our preschool unit after their third birthday. Our activity programme allows children to learn and develop the knowledge, understanding and skills they will need when they move to their first school.
+              </p>
+          </div>
+          <div class="link">
+            <p>
+                <%= link_to "More", nursery_path(anchor: "preschool-unit"), id: "preschool-link" %>
+              </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </div>  <!-- End of Services -->
+
   <div class="container" id="news">
     <div class="row">
       <div class="col-xs-12 col-sm-4">

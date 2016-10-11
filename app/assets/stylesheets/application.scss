@@ -16,6 +16,7 @@ $blue: #62baec;
 @import "blueimp-gallery.min";
 @import "bootstrap-image-gallery";
 @import "blueimp-gallery.min.css";
+@import "mixins";
 @import "administration/albums";
 @import "application/**/*";
 
@@ -47,6 +48,7 @@ ul li{
 
 a, a:hover, a:active, a:focus{
   outline: 0;
+  text-decoration: none;
 }
 
 

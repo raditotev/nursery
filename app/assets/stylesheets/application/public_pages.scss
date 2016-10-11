@@ -4,8 +4,9 @@ small{
 
 #home-page{
   #welcome{
+    position: realtive;
     height: 85vh;
-    background: url('hero-image.svg') 60vw no-repeat;
+    // background: url('hero-image.svg') 60vw no-repeat;
     padding: 0px!important;
     h1 {
       font-weight: 700;
@@ -15,6 +16,14 @@ small{
     p {
       font-weight: 400;
       }
+    #hero-image{
+      position: absolute;
+      bottom: -47px;
+      right: -20vw;
+    }
+    svg{
+      width: 65vw;
+    }
     .container{
       margin: 3em auto 0 auto;
       color: #000;
@@ -22,6 +31,24 @@ small{
     #hero-button {
       background-color: $purple;
       border: none;
+    }
+    @media (max-width: 900px) {
+      #hero-image{
+        bottom: -45px;
+        right: -400px;
+      }
+      svg{
+        width: 850px;
+      }
+    }
+    @media (max-width: 756px) {
+      #hero-image{
+        bottom: -3px;
+        right: -400px;
+      }
+      svg{
+        width: 700px;
+      }
     }
   }
 
@@ -31,7 +58,13 @@ small{
     .container{
       margin: 3em auto;
     }
-
+    .pull-left{
+      display:inline-block;
+    }
+    .pull-right{
+      display: inline-block;
+      width: 50%;
+    }
     img{
       margin: auto;
       height: 400px;
@@ -40,22 +73,79 @@ small{
     p {
       line-height: 2em;
     }
-  }
-
-  #news{
-    margin: 1.5em auto 3 auto;
-    .row{
-      display: table;
-      .col-xs-12, .col-sm-4{
-        float: none;
-        display: table-cell;
-        vertical-align: middle;
+    @media (max-width: 600px) {
+      .pull-right{
+        display: block;
+        width: 100%;
       }
     }
-    img{
-      border-radius: 5px;
+  }
+
+  #services{
+    .container{
+      margin: 3em auto;
+    }
+    .flex-container{
+      @include flexbox;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+      justify-content: space-around;
+    }
+    .flex-item{
+      padding: 20px;
+      @include flex(1);
+      text-align: center;
+    }
+    svg{
+      width: 200px;
+      #baby-unit{
+        path, circle{
+          fill: $purple;
+        }
+      }
+      #toddler-unit{
+        path, circle{
+          fill: $red;
+        }
+      }
+      #preschool-unit{
+        path, circle{
+          fill: $blue;
+        }
+      }
+    }
+    .link{
+      position: realtive;
+      bottom: 0;
+      left: 0;
+    }
+    #baby-link{
+      color: $purple;
+    }
+    #toddler-link{
+      color: $red;
+    }
+    #preschool-link{
+      color: $blue;
     }
   }
+
+  // #news{
+  //   margin: 1.5em auto 3 auto;
+  //   .row{
+  //     display: table;
+  //     .col-xs-12, .col-sm-4{
+  //       float: none;
+  //       display: table-cell;
+  //       vertical-align: middle;
+  //     }
+  //   }
+  //   img{
+  //     border-radius: 5px;
+  //   }
+  // }
 }
 
 #about-us-page{
@@ -128,12 +218,13 @@ small{
   }
 }
 
+// screen-xs
+@media (max-width: 480px) {
+
+}
+
+//screen-sm
 @media (max-width: 768px) {
-  #home-page{
-    #welcome{
-      height: 90vh;
-      background-position: 100px 300px;
-    }
-  }
+
 }
 
