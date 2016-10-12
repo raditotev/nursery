@@ -22,19 +22,10 @@ $blue: #62baec;
 
 
 // Application
-html{
-  height: 100%;
-  height: 100vh;
-}
 
 body{
-  height: 100%;
   height: 100vh;
-  // background: image-url('background.jpg') no-repeat center center fixed;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
+  height: 100%;
 }
 
 
@@ -97,19 +88,23 @@ button[disabled], html input[disabled]{
 } // End Navigation
 
 #footer{
-  margin-top: 3em;
-  padding-top: 1em;
-  background-color: rgba(15,116,143,0.8);
-  border-radius: 5px;
+  background-color: $blue;
+  strong{
+    font-weight: 700;
+    color: $purple;
+  }
   a{
-    color: #eee;
+    color: #fff;
+  }
+  .container{
+    margin-top: 3em;
   }
   #footer-images{
-    margin-top: 1.5em;
+    text-align: center;
     img{
-      height: 4em;
-      margin: 1em;
-      border-radius: 10px;
+      margin-bottom: 5px;
+      width: 80px;
+      border-radius: 5px;
     }
   }
 }
@@ -126,6 +121,12 @@ button[disabled], html input[disabled]{
     width: 100%;
     #logo{
       height: 60px;
+    }
+  }
+  #footer #footer-images{
+    margin-top: 1em;
+    img{
+      margin: 0;
     }
   }
 }

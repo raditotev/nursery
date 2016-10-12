@@ -58,58 +58,74 @@
 
     <%= yield %>
 
-    <div class="container" id="footer">
-      <div class="row">
-        <div class="col-sm-4">
-          <ul>
-            <li><strong>Oak Tree Day Nursery</strong>
-            <ul>
-              <li><%= link_to "Careers", careers_path %></li>
-              <li><%= link_to "Nursery Eductation Fund", education_fund_path %></li>
-              <li><%= link_to "EYFS Curriculum Activities", eyfs_curriculum_path %></li>
-              <li><%= link_to "British Values", british_values_path %></li>
-              <li><%= link_to "Testimonials", testimonials_path %></li>
+    <div class="container-fluid" id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10">
+            <div class="row">
+              <div class="col-xs-12 col-sm-4">
+                <ul>
+                  <li><strong>Oak Tree Day Nursery</strong>
+                  <ul>
+                    <li><%= link_to "Careers", careers_path %></li>
+                    <li><%= link_to "Nursery Eductation Fund", education_fund_path %></li>
+                    <li><%= link_to "EYFS Curriculum Activities", eyfs_curriculum_path %></li>
+                    <li><%= link_to "British Values", british_values_path %></li>
+                    <li><%= link_to "Testimonials", testimonials_path %></li>
 
-            </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-4">
-          <ul>
-            <li><strong>Information</strong>
-            <ul>
-              <li><%= link_to "Fees & Terms and Conditions", download_fees_terms_and_conditions_url %></li>
-              <li><%= link_to "Save Money on Child Care", save_money_path %></li>
-              <li><%= link_to "FAQ's", faqs_path %></li>
+                  </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <ul>
+                  <li><strong>Information</strong>
+                  <ul>
+                    <li><%= link_to "Fees & Terms and Conditions", download_fees_terms_and_conditions_url %></li>
+                    <li><%= link_to "Save Money on Child Care", save_money_path %></li>
+                    <li><%= link_to "FAQ's", faqs_path %></li>
 
-            </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="col-sm-4">
-          <ul>
-            <li><strong>External links</strong>
-            <ul>
-              <li><%= link_to "Ofsted", "https://www.gov.uk/government/organisations/ofsted",
-                                                          title: @ofsted_description%></li>
-              <li><%= link_to "Foundation Years", "http://www.foundationyears.org.uk/",
-                                                                            title: @foundation_years_description %></li>
-              <li><%= link_to "Lambeth Families Information Service", "http://www.younglambeth.org/local-offer/landing-pages/childcare-pre-school-and-early-years-provision.html",
-                                                                                                            title: @lambeth_service_description %></li>
-            </ul>
-            </li>
-          </ul>
+                  </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-12 col-sm-4">
+                <ul>
+                  <li><strong>External links</strong>
+                  <ul>
+                    <li><%= link_to "Ofsted", "https://www.gov.uk/government/organisations/ofsted",
+                                                                title: @ofsted_description%></li>
+                    <li><%= link_to "Foundation Years", "http://www.foundationyears.org.uk/",
+                                                                                  title: @foundation_years_description %></li>
+                    <li><%= link_to "Lambeth Families Information Service", "http://www.younglambeth.org/local-offer/landing-pages/childcare-pre-school-and-early-years-provision.html",
+                                                                                                                  title: @lambeth_service_description %></li>
+                  </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Off while in development
+          <div class="col-sm-12 col-md-2" id="footer-images">
+            <div class="row">
+              <div class="col-xs-3 col-sm-3 col-md-12">
+                <%= link_to image_tag("http://ratings.food.gov.uk/images/scores/medium/fhrs_5_en-gb.JPG"), "http://ratings.food.gov.uk/business/en-GB/482995/Oak-Tree-Nursery-Lambeth", target: "_blank" %>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-12">
+                <%= link_to image_tag("day_nurseries.png"), "http://www.daynurseries.co.uk/daynursery.cfm/searchazref/50001005OAKC", target: "_blank" %>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-12">
+                <%= link_to image_tag("offstead.jpg"), "http://reports.ofsted.gov.uk/inspection-reports/find-inspection-report/provider/CARE/EY383631", target: "_blank" %>
+              </div>
+              <div class="col-xs-3 col-sm-3 col-md-12">
+                <%= link_to image_tag("ndna.jpg"), "http://www.ndna.org.uk/", target: "_blank" %>
+              </div>
+            </div>
+          </div>
+          -->
         </div>
       </div>
-<!-- Temaporary until workig on public pages. Speed up reload!
-      <div class="row text-center" id="footer-images">
-        <%= link_to image_tag("http://ratings.food.gov.uk/images/scores/medium/fhrs_5_en-gb.JPG"), "http://ratings.food.gov.uk/business/en-GB/482995/Oak-Tree-Nursery-Lambeth", target: "_blank" %>
-        <%= link_to image_tag("day_nurseries.png"), "http://www.daynurseries.co.uk/daynursery.cfm/searchazref/50001005OAKC", target: "_blank" %>
-        <%= link_to image_tag("offstead.jpg"), "http://reports.ofsted.gov.uk/inspection-reports/find-inspection-report/provider/CARE/EY383631", target: "_blank" %>
-        <%= link_to image_tag("ndna.jpg"), "http://www.ndna.org.uk/", target: "_blank" %>
-      </div>
--->
-    </div>
+    </div> <!-- End Footer -->
 
     <!-- <div>
       <%= debug(params) if Rails.env.development? %>
