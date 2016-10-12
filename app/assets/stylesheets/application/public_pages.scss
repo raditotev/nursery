@@ -12,6 +12,10 @@ small{
     font-size: 1.5em;
     font-weight: 400;
     }
+  .btn-primary {
+    background-color: $red;
+    border: none;
+  }
   #welcome{
     position: realtive;
     height: 85vh;
