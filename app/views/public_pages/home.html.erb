@@ -11,12 +11,6 @@
         <p>
           Established in 2003
         </p>
-        <p>
-          <!-- Button trigger modal -->
-          <button type="button"  id="hero-button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
-            Request tour
-          </button>
-        </p>
       </div>
       <div id="hero-image">
         <%= svg "hero-image" %>
@@ -26,14 +20,16 @@
 
   <div class="container-fluid" id="about-us">
     <div class="container">
-    <div class="pull-right">
-        <h1>About Us</h1>
-        <p>
-          The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
-        </p>
+      <div class="pull-right">
+          <h1>About Us</h1>
+          <p>
+            The children attending Oak Tree Day Nursery receive the individual attention that will give them the opportunity to grow and develop at their own pace. While our emphasis is on learning through play, we continue to provide a high standard of care and education.
+          </p>
+      </div>
+      <div class="pull-left">
+        <%= image_tag "about-us-image.png" %>
+      </div>
     </div>
-    <div class="pull-left"><%= image_tag "about-us-image.png" %></div>
-  </div>
   </div><!-- End of About Us -->
 
   <div id="services">
@@ -97,18 +93,25 @@
     </div>
   </div>  <!-- End of Services -->
 
-  <div class="container" id="news">
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-        <h2 class="text-center">Calendar</h2>
-        <% @events.each do |event| %>
-          <h5><strong><%= event_text event %></strong></h5>
-          <p><%= event.description %></p>
-        <% end %>
+  <div class="container-fluid" id="visit-us">
+    <div class="container">
+      <div class="text">
+        <h2>
+          The best way to chose a nursery is to come and see it for yourself.
+        </h2>
+        <p>
+          If you would like to make an appointment, please request a viewing. We'll be happy to welcome you and your child for a visit around the Nursery.
+        </p>
+        <p>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#requestTour">
+            Request tour
+          </button>
+        </p>
       </div>
-      <div class="col-xs-12 col-sm-8">
-        <%= image_tag("kids.jpg", class: "img-responsive") %>
-      </div>
+
+        <%= svg "school" %>
+
     </div>
   </div> <!-- End news -->
 </div>

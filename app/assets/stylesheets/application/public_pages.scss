@@ -3,19 +3,19 @@ small{
     }
 
 #home-page{
+  h1 {
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 1.5em;
+      }
+  p {
+    font-size: 1.5em;
+    font-weight: 400;
+    }
   #welcome{
     position: realtive;
     height: 85vh;
-    // background: url('hero-image.svg') 60vw no-repeat;
     padding: 0px!important;
-    h1 {
-      font-weight: 700;
-      font-size: 3em;
-      line-height: 1.5em;
-        }
-    p {
-      font-weight: 400;
-      }
     #hero-image{
       position: absolute;
       bottom: -47px;
@@ -27,10 +27,6 @@ small{
     .container{
       margin: 3em auto 0 auto;
       color: #000;
-    }
-    #hero-button {
-      background-color: $purple;
-      border: none;
     }
     @media (max-width: 900px) {
       #hero-image{
@@ -66,7 +62,7 @@ small{
       width: 50%;
     }
     img{
-      margin: auto;
+      margin-top: 80%;
       height: 400px;
       width: auto;
     }
@@ -82,6 +78,9 @@ small{
   }
 
   #services{
+    p{
+      font-size: 1em;
+    }
     .container{
       margin: 3em auto;
     }
@@ -132,20 +131,32 @@ small{
     }
   }
 
-  // #news{
-  //   margin: 1.5em auto 3 auto;
-  //   .row{
-  //     display: table;
-  //     .col-xs-12, .col-sm-4{
-  //       float: none;
-  //       display: table-cell;
-  //       vertical-align: middle;
-  //     }
-  //   }
-  //   img{
-  //     border-radius: 5px;
-  //   }
-  // }
+  #visit-us{
+    background-color: $purple;
+    .container{
+      position: relative;
+      margin: 3em auto;
+    }
+    .text{
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 1.5em;
+      color: #fff;
+    }
+    svg{
+      width: 50%;
+      float: right;
+    }
+    p{
+      font-size: 1em;
+    }
+    button {
+      background-color: $red;
+      border: none;
+    }
+  }
 }
 
 #about-us-page{
@@ -204,27 +215,34 @@ small{
   height: 100vh;
 }
 
-@media (max-width: 992px) {
+//screen-sm
+@media (max-width: 768px) {
   #home-page{
-    #welcome{
-      background-position: 200px 280px;
+    #about-us .container{
+      .pull-right{
+        width: 100%;
+        float: left;
+      }
+      .pull-left{
+        img{
+          margin-top: 0;
+        }
+      }
     }
-    #about-us{
-      img{
-        width: 30vw;
-        height: auto;
+    #visit-us{
+      .container{
+        position: static;
+        background: url("school.svg") center center no-repeat;
+      }
+      svg{
+        display:none;
+      }
+      .text{
+        position: static;
+        transform: none;
+        width: 100%;
       }
     }
   }
-}
-
-// screen-xs
-@media (max-width: 480px) {
-
-}
-
-//screen-sm
-@media (max-width: 768px) {
-
 }
 

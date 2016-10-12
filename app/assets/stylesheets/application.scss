@@ -115,6 +115,10 @@ button[disabled], html input[disabled]{
 }
 
 @media (max-width: 768px) {
+  #navbar-collapse .navbar-right{
+    background: #fff;
+    text-align: center;
+  }
   .navbar{
     height: 10vh;
   }
