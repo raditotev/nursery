@@ -23,13 +23,14 @@ $blue: #62baec;
 
 // Application
 
-body{
-  height: 100vh;
-  height: 100%;
+html, body{
+  position: relative;
+  min-height: 100vh;
+  min-height: 100%;
 }
 
-section{
-  min-height: 50vh;
+body{
+  padding-bottom: 298px;
 }
 
 
@@ -92,6 +93,10 @@ button[disabled], html input[disabled]{
 } // End Navigation
 
 #footer{
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
   background-color: $blue;
   strong{
     font-weight: 700;
@@ -114,6 +119,9 @@ button[disabled], html input[disabled]{
 }
 
 @media (max-width: 768px) {
+  body{
+    padding-bottom: 451px;
+  }
   #navbar-collapse .navbar-right{
     background: #fff;
     text-align: center;

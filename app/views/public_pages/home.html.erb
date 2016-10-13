@@ -116,7 +116,24 @@
         <%= svg "school" %>
 
     </div>
-  </div> <!-- End news -->
+  </div> <!-- End Visit Us -->
+
+  <div class="container" id="testimonials">
+    <ul>
+      <% @testimonials.each do |testimonial| %>
+        <li>
+          <p>
+            <%= fa_icon("quote-left 1x") %>
+            <%= raw sanitize(simple_format(testimonial.description), :tags => %w(br)) %>
+            <%= fa_icon("quote-right") %>
+          </p>
+          <p class="text-right">
+            - <strong><%= testimonial.name %></strong>
+          </p>
+        </li>
+        <% end %>
+    </ul>
+  </div>
 </div>
 
 <!-- Modal -->

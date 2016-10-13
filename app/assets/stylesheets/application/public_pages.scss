@@ -1,6 +1,4 @@
-small{
-  font-size: 0.6em;
-    }
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 #home-page{
   h1 {
@@ -17,33 +15,35 @@ small{
     border: none;
   }
   #welcome{
-    position: realtive;
+    position: relative;
     height: 85vh;
     padding: 0px!important;
     #hero-image{
       position: absolute;
-      bottom: -47px;
-      right: -20vw;
+      bottom: -10px;
+      right: -350px;
     }
     svg{
-      width: 65vw;
+      width: 1250px;
     }
     .container{
-      margin: 3em auto 0 auto;
       color: #000;
+      margin-top: 3em;
     }
-    @media (max-width: 900px) {
+    @media (max-width: 890px) {
       #hero-image{
-        bottom: -45px;
-        right: -400px;
+        right: -350px;
       }
       svg{
         width: 850px;
       }
+      #home-page #welcome .container{
+        margin-top: 1em;
+      }
     }
-    @media (max-width: 756px) {
+    @media (max-width: 746px) {
       #hero-image{
-        bottom: -3px;
+        bottom: -10px;
         right: -400px;
       }
       svg{
@@ -161,6 +161,26 @@ small{
       border: none;
     }
   }
+
+  #testimonials{
+    margin: 3em auto;
+    position: relative;
+    min-height: 500px;
+  }
+  li{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    p{
+      font: 2.5em 'Indie Flower', cursive;
+    }
+    strong{
+      padding-right: 1em;
+    }
+    .fa{
+      font-size: 0.5em;
+    }
+  }
 }
 
 #about-us-page{
@@ -219,7 +239,7 @@ small{
   height: 100vh;
 }
 
-//screen-sm
+//screen-xs
 @media (max-width: 768px) {
   #home-page{
     #about-us .container{
@@ -247,6 +267,16 @@ small{
         width: 100%;
       }
     }
+    #testimonials li p{
+      font-size: 1.5em;
+    }
+  }
+}
+
+//screen-sm
+@media (max-width: 992px) {
+  #testimonials li p{
+    font-size: 2em;
   }
 }
 
