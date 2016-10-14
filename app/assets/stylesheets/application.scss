@@ -95,9 +95,23 @@ button[disabled], html input[disabled]{
 #navbar-collapse{
   .navbar-nav{
     li{
+      border-bottom: 2px solid transparent;
+       -webkit-transition: 500ms;
+        -o-transition: 500ms;
+        -moz-transition: 500ms;
+        transition: 500ms;
       a{
         color: $red;
       }
+    }
+    li:hover{
+      border-bottom: 2px solid $red;
+    }
+  }
+  .active{
+    border-bottom: 2px solid $red !important;
+    a{
+      background-color: transparent;
     }
   }
 } // End Navigation

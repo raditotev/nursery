@@ -28,6 +28,12 @@ var ready;
 ready = function(){
   $(function() {
 
+    // Will also work for relative and absolute hrefs
+    var url = window.location;
+    $('#navbar-collapse .navbar-nav li a').filter(function() {
+        return this.href == url;
+    }).parent().addClass('active');
+
     var disable_button = function(button, field1, field2, field3){
         $(button).hover(function() {
         if($(field1).val() != "" &&
@@ -67,3 +73,16 @@ ready = function(){
 }
 
 $(document).on('turbolinks:load', ready);
+
+// $(document).ready(function() {
+//   $(function() {
+//     $('#navbar-collapse .navbar-nav li').click(function(e) {
+//       $('#navbar-collapse .navbar-nav li.active').removeClass('active');
+//       var $this = $(this);
+//       if (!$this.hasClass('active')) {
+//         $this.addClass('active');
+//       }
+//       // e.preventDefault();
+//     });
+//   });
+// });
