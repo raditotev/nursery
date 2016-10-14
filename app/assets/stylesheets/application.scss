@@ -67,28 +67,38 @@ button[disabled], html input[disabled]{
   box-shadow: 0px 12px 21px -11px rgba(0,0,0,0.75);
 }
 
-.navbar-header{
-  display: inline-block;
-  .navbar-brand {
-    height: 100%;
+#header{
+  position: relative;
+  height: 100%;
+  .navbar-header{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  .navbar-toggle{
-    margin-top: 25.8px;
-    margin-right: 0px;
+  #navbar-collapse{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
   }
 }
 
+.navbar-default .navbar-toggle{
+  border-color: $red;
+  margin-top: 13px;
+  .icon-bar{
+    background-color: $red;
+  }
+}
+
+
 #navbar-collapse{
-  display: inline-bock;
   .navbar-nav{
     li{
       a{
         color: $red;
       }
     }
-  }
-  .navbar-right {
-    margin-top: 27.5px;
   }
 } // End Navigation
 
@@ -118,9 +128,10 @@ button[disabled], html input[disabled]{
   }
 }
 
+// XS
 @media (max-width: 768px) {
   body{
-    padding-bottom: 451px;
+    padding-bottom: 349px;
   }
   #navbar-collapse .navbar-right{
     background: #fff;
@@ -142,3 +153,21 @@ button[disabled], html input[disabled]{
     }
   }
 }
+
+//Mobile Landscape
+@media (max-width: 740px) {
+  .navbar{
+    height: 25vh;
+  }
+}
+
+// Mobile Portrait
+@media (max-width: 468px){
+  body{
+    padding-bottom: 555px;
+  }
+  .navbar{
+    height: 15vh;
+  }
+}
+
