@@ -1,0 +1,26 @@
+#about-us-page{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  img{
+    border-radius: 5px;
+  }
+  .row{
+    display: table;
+    .col-xs-6{
+      float: none;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  #about-us-page{
+    position: static;
+    top:0;
+    left:0;
+    transform: none;
+  }
+}

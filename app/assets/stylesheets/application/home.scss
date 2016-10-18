@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+#home-page{
+  h1 {
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 1.5em;
+      }
+  p {
+    font-size: 1.5em;
+    font-weight: 400;
+    }
+  .btn-primary {
+    background-color: $red;
+    border: none;
+  }
+  #welcome{
+    position: relative;
+    height: 650px;
+    padding: 0px!important;
+    #hero-image{
+      position: absolute;
+      bottom: -10px;
+      right: -300px;
+      z-index: -1;
+    }
+    svg{
+      height: 750px;
+    }
+    .container{
+      color: #000;
+      margin-top: 3em;
+    }
+    #welcome-text{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  #about-us {
+    background-color: $red;
+    color: #fff;
+    .container{
+      margin: 3em auto;
+    }
+    .pull-left{
+      display:inline-block;
+    }
+    .pull-right{
+      display: inline-block;
+      width: 50%;
+    }
+    img{
+      margin-top: 80%;
+      height: 400px;
+      width: auto;
+    }
+    p {
+      line-height: 2em;
+    }
+    @media (max-width: 600px) {
+      .pull-right{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  #services{
+    p{
+      font-size: 1em;
+    }
+    .container{
+      margin: 3em auto;
+    }
+    .flex-container{
+      @include flexbox;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+      justify-content: space-around;
+    }
+    .flex-item{
+      padding: 20px;
+      @include flex(1);
+      text-align: center;
+    }
+    svg{
+      width: 200px;
+      #baby-unit{
+        path, circle{
+          fill: $purple;
+        }
+      }
+      #toddler-unit{
+        path, circle{
+          fill: $red;
+        }
+      }
+      #preschool-unit{
+        path, circle{
+          fill: $blue;
+        }
+      }
+    }
+    .link{
+      position: realtive;
+      bottom: 0;
+      left: 0;
+    }
+    #baby-link{
+      color: $purple;
+    }
+    #toddler-link{
+      color: $red;
+    }
+    #preschool-link{
+      color: $blue;
+    }
+  }
+
+  #visit-us{
+    background-color: $purple;
+    .container{
+      position: relative;
+      margin: 3em auto;
+    }
+    .text{
+      position: absolute;
+      width: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 1.5em;
+      color: #fff;
+    }
+    svg{
+      width: 50%;
+      float: right;
+    }
+    p{
+      font-size: 1em;
+    }
+    button {
+      background-color: $red;
+      border: none;
+    }
+  }
+
+  #testimonials{
+    margin: 3em auto;
+    position: relative;
+    min-height: 500px;
+  }
+  li{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    p{
+      font: 2.5em 'Indie Flower', cursive;
+    }
+    strong{
+      padding-right: 1em;
+    }
+    .fa{
+      font-size: 0.5em;
+    }
+    .from{
+      text-align: right;
+    }
+  }
+}
+
+// Large
+@media (max-width: 1280px) {
+  #home-page{
+    #welcome{
+      height: 550px;
+      #welcome-text{
+        h1{
+          font-size: 2.5em;
+        }
+        p{
+          font-size:1.25em;
+        }
+      }
+      #hero-image{
+        right: -300px;
+        svg{
+          height: 600px;
+        }
+      }
+    }
+  }
+}
+
+// Medium
+@media (max-width: 991px) {
+  #home-page #welcome #welcome-text{
+    top: 60%;
+    h1{
+      font-size: 2em;
+      text-shadow: 2px 2px 1px #fff;
+    }
+    p{
+      font-size: 1.3em;
+    }
+  }
+  #home-page #welcome #hero-image{
+    right: -400px;
+    svg{
+      height: 600px;
+    }
+  }
+  #testimonials li p{
+    font-size: 2em;
+  }
+}
+
+//screen-xs
+@media (max-width: 767px) {
+  #home-page{
+    #welcome{
+      height: 525px;
+      #welcome-text{
+        top: 0;
+        transform: none;
+        h1{
+          font-size: 2em;
+        }
+        p{
+          font-size: 1em;
+        }
+      }
+      #hero-image{
+        right: 0;
+        svg{
+          height: 300px;
+        }
+      }
+    }
+    #about-us .container{
+      .pull-right{
+        width: 100%;
+        float: left;
+      }
+      .pull-left{
+        img{
+          margin-top: 0;
+        }
+      }
+    }
+    #visit-us{
+      .container{
+        position: static;
+        background: url("school.svg") center center no-repeat;
+      }
+      svg{
+        display:none;
+      }
+      .text{
+        position: static;
+        transform: none;
+        width: 100%;
+      }
+    }
+    #testimonials li p{
+      font-size: 1.5em;
+    }
+  }
+}
+
+//  Mobile Portrait
+@media (max-width: 468px) {
+  #home-page{
+    h1{
+      font-size: 2em
+    }
+    p{
+      font-size: 1em;
+    }
+    #welcome{
+      #welcome-text{
+        top: 0;
+        transform: none;
+        h1{
+          font-size: 2em
+        }
+        p{
+          font-size: 1em;
+        }
+      }
+      #hero-image{
+        right: 0;
+        svg{
+          height: 250px;
+        }
+      }
+    }
+    #services{
+      svg{
+        width: 100px;
+      }
+    }
+  }
+}

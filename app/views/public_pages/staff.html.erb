@@ -36,21 +36,24 @@
             </p>
           </div>
         </div>
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="container">
-      <h2>Staff Awards</h2>
-      <% @awards.each do |award| %>
-      <div class="row text-center">
-        <h3><%= award.title %></h3>
-        <%= image_tag award.photo.url %>
-        <p class="text-left">
-          <%= award.description %>
-        </p>
       </div>
-      <% end %>
+    </div>
+
+    <div class="container-fluid">
+      <div class="container" id="awards">
+        <% @awards.each do |award| %>
+        <div class="row">
+        <h3 class="text-center"><%= award.title %></h3>
+          <div class="col-sm-6">
+            <%= image_tag award.photo.url, class: "img-responsive pull-left" %>
+          </div>
+          <div class="col-sm-6">
+            <p class="text-left">
+              <%= award.description %>
+            </p>
+          </div>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
