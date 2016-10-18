@@ -1,5 +1,5 @@
 class PublicPagesController < ApplicationController
-  before_action :authenticate_parent!, only: [:gallery, :album, :profile]
+  before_action :authenticate_parent!, only: [:gallery, :album, :news]
 
   def home
     @testimonials = Testemonial.all
@@ -79,7 +79,8 @@ class PublicPagesController < ApplicationController
     @photos = album.photos
   end
 
-  def profile
-
+  def news
+    @events = Event.all
+    @newsletters = Newsletter.all
   end
 end

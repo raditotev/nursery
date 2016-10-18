@@ -1,105 +1,93 @@
 <% provide(:title, "Nursery") %>
 <div id="nursery-page">
-  <div class="container-fluid">
-    <div class="container">
-      <h1>Our nursery</h1>
-      <p>
-        We are able to offer full and part-time sessions The nursery is open from 8.00 am to 6.00 pm Monday to Friday, 50 weeks of the year, with a short break in the summer and at Christmas. We also have 3 staff inset days per year when the nursery is closed to children.
-      </p>
-      <p>
-        The nursery aims to provide an educationally stimulating, and caring environment where children are valued. We ensure the highest standards of care and education for your child.
-      </p>
-      <p>
-         To find out more, please read about our units: <%= link_to "Baby", nursery_path(anchor: 'baby-unit') %>, <%= link_to "Toddler", nursery_path(anchor: 'toddler-unit') %> or <%= link_to "Preschool", nursery_path(anchor: 'preschool-unit') %>
-      </p>
-    </div>
+  <div class="container">
+    <p>
+      We are able to offer full and part-time sessions The nursery is open from 8.00 am to 6.00 pm Monday to Friday, 50 weeks of the year, with a short break in the summer and at Christmas. We also have 3 staff inset days per year when the nursery is closed to children.
+    </p>
+    <p>
+      The nursery aims to provide an educationally stimulating, and caring environment where children are valued. We ensure the highest standards of care and education for your child.
+    </p>
+    <p>
+       To find out more, please read about our units: <%= link_to "Baby", nursery_path(anchor: 'baby-unit') %>, <%= link_to "Toddler", nursery_path(anchor: 'toddler-unit') %> or <%= link_to "Preschool", nursery_path(anchor: 'preschool-unit') %>
+    </p>
   </div>
-  <div class="container-fluid" id="baby-unit">
+  <div class="container" id="baby-unit">
     <div class="container">
       <h1>Baby Unit</h1>
       <h3>Caterpillar, Bumble Bee and Teddy Bear Rooms</h3>
-      <div class="row">
-        <div class="col-xs-6">
-          <p>
-             Our baby rooms offer a safe, caring environment, with bright soft toys and equipment. A high staff ratio with qualified motivated staff, ensuring a secure relationship between parents, baby and staff.
-          </p>
-          <p>
-            The babies are stimulated with music, singing, arts and crafts and one to one interaction.
-          </p>
-          <p>
-             As they develop their individual skills, we prepare them for gradual integration into the pre school groups. In the baby rooms the staff to child ratio is 1:3.
-          </p>
-          <p>
-             Our Little Learners group are generally aged 15 to 24 months, however your child may come earlier or later, depending on their individual needs and stage of development. Areas for quiet and imaginative play, as well as plenty of space to move freely, are provided to enhance and encourage your child’s confidence and development.
-          </p>
-          <p>
-            Stimulating activities include story time, messy play, and Arts and Craft in addition to a wide range of toys and books.
-          </p>
-        </div>
-        <div class="col-xs-6">
-          <%= image_tag("babies-painting.jpg", class: "img-responsive", alt: "Babies painting") %>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="container-fluid" id="toddler-unit">
+  <div class="container">
+    <p>
+       Our baby rooms offer a safe, caring environment, with bright soft toys and equipment. A high staff ratio with qualified motivated staff, ensuring a secure relationship between parents, baby and staff.
+    </p>
+    <p>
+      The babies are stimulated with music, singing, arts and crafts and one to one interaction.
+    </p>
+    <%= image_tag("babies-painting.jpg", class: "img-responsive pull-right", alt: "Babies painting") %>
+    <p>
+       As they develop their individual skills, we prepare them for gradual integration into the pre school groups. In the baby rooms the staff to child ratio is 1:3.
+    </p>
+    <p>
+       Our Little Learners group are generally aged 15 to 24 months, however your child may come earlier or later, depending on their individual needs and stage of development. Areas for quiet and imaginative play, as well as plenty of space to move freely, are provided to enhance and encourage your child’s confidence and development.
+    </p>
+    <p>
+      Stimulating activities include story time, messy play, and Arts and Craft in addition to a wide range of toys and books.
+    </p>
+  </div>
+
+  <div class="container" id="toddler-unit">
     <div class="container">
       <h1>Toddler Unit</h1>
       <h3>Penguin, Ladybird and Butterfly Rooms</h3>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag("todler-painting.jpg", class: "img-responsive", alt: "Todler painting") %>
-        </div>
-        <div class="col-xs-6">
-          <p>
-              A child will move through to this stage between their second and third birthday.
-          </p>
-          <p>
-            Our approach is to ensure that learning is fun. The children are introduced to activities, which will enable each child to develop at their own pace.
-          </p>
-          <p>
-              Our activity programme allows children to learn and develop the knowledge, understanding and skills they will need when they move to their first school. Our curriculum is in line with the Early Learning Goals and is displayed on the nursery Parents Notice Board.
-          </p>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="container-fluid" id="preschool-unit">
+  <div class="container">
+    <%= image_tag("todler-painting.jpg", class: "img-responsive pull-left", alt: "Todler painting") %>
+      <p>
+          A child will move through to this stage between their second and third birthday.
+      </p>
+
+      <p>
+        Our approach is to ensure that learning is fun. The children are introduced to activities, which will enable each child to develop at their own pace.
+      </p>
+      <p>
+          Our activity programme allows children to learn and develop the knowledge, understanding and skills they will need when they move to their first school. Our curriculum is in line with the Early Learning Goals and is displayed on the nursery Parents Notice Board.
+      </p>
+  </div>
+  <div class="container" id="preschool-unit">
     <div class="container">
       <h1>Pre-School Unit</h1>
       <h3>Dolphin and Panda Rooms</h3>
-      <div class="row">
-        <div class="col-xs-6">
-          <p>
-              Children will progress to our pre school unit after their third birthday. Our approach is to ensure that learning is fun. The children are introduced to activities, which will enable each child to develop at their own pace. Our activity programme allows children to learn and develop the knowledge, understanding and skills they will need when they move to their first school. Our curriculum  is in line with the Early Years Foundation Stage and is displayed on the nursery Parents Notice Board.
-          </p>
-          <p>
-            We provide an exciting environment for children of all ages, even the very young, to keep them stimulated, interested and happy. We implement learning activities to suit the child''s needs for learning including reading, writing, drawing, painting and craft.
-          </p>
-          <p>
-              The children also have the use of the computer and we have a wide range of educational software for their use.
-          </p>
-          <p>
-            We arrange educational trips to nearby activities and places of interest, always with parents permission.
-          </p>
-          <p>
-            Weather permitting, the children will have an opportunity of playing outdoors in our garden.
-          </p>
-          <p>
-            The children are motivated to help themselves and to think independently.
-          </p>
-          <p>
-            We encourage the children to build relationships with peers and adults, todevelop self-esteem and social skills.
-          </p>
-          <p>
-            <strong>Extra Curricular Activities</strong><br>
-            In addition to the Early Years Curriculum, we also provide Music and Movement and French classes for the children.
-          </p>
-        </div>
-        <div class="col-xs-6">
-          <%= image_tag("preschool-painting.jpg", class: "img-responsive", alt: "Preschool painting") %>
-        </div>
-      </div>
     </div>
+  </div>
+  <div class="container">
+    <p>
+        Children will progress to our pre school unit after their third birthday. Our approach is to ensure that learning is fun. The children are introduced to activities, which will enable each child to develop at their own pace. Our activity programme allows children to learn and develop the knowledge, understanding and skills they will need when they move to their first school. Our curriculum  is in line with the Early Years Foundation Stage and is displayed on the nursery Parents Notice Board.
+    </p>
+    <%= image_tag("preschool-painting.jpg", class: "img-responsive pull-right", alt: "Preschool painting") %>
+    <p>
+      We provide an exciting environment for children of all ages, even the very young, to keep them stimulated, interested and happy. We implement learning activities to suit the child''s needs for learning including reading, writing, drawing, painting and craft.
+    </p>
+
+    <p>
+        The children also have the use of the computer and we have a wide range of educational software for their use.
+    </p>
+    <p>
+      We arrange educational trips to nearby activities and places of interest, always with parents permission.
+    </p>
+    <p>
+      Weather permitting, the children will have an opportunity of playing outdoors in our garden.
+    </p>
+    <p>
+      The children are motivated to help themselves and to think independently.
+    </p>
+    <p>
+      We encourage the children to build relationships with peers and adults, todevelop self-esteem and social skills.
+    </p>
+    <p>
+      <strong>Extra Curricular Activities</strong><br>
+      In addition to the Early Years Curriculum, we also provide Music and Movement and French classes for the children.
+    </p>
   </div>
 </div>

@@ -5,15 +5,15 @@
   <h1 class="text-center">What others say about us</h1>
   <% @testimonials.each do |testimonial| %>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <%= image_tag testimonial.photo.image.url, class: 'img-responsive' %>
       </div>
-      <div class="col-sm-6">
-      <p>
+      <div class="col-sm-8">
+      <p class="text-right">
         <strong><%= testimonial.created_at.strftime("%e %B %Y") %></strong>
       </p>
-      <p><%= testimonial.description %></p>
-      <p>-<strong><%= testimonial.name %></strong>-</p>
+      <p><%= description(testimonial) %></p>
+      <p class="text-right">-<strong><%= testimonial.name %></strong>-</p>
       </div>
     </div>
   <% end %>

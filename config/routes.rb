@@ -45,6 +45,6 @@ Rails.application.routes.draw do
 
   #Parents only
   get 'gallery' => 'public_pages#gallery'
-  get 'profile' => 'public_pages#profile'
+  get 'news' => 'public_pages#news'
   get 'album/:id' => 'public_pages#album', as: 'parents_album'
 end

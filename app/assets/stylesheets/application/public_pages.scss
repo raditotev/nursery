@@ -187,7 +187,25 @@
 }
 
 #nursery-page{
-  @extend #about-us-page;
+  img{
+    width: 70%;
+  }
+  .container{
+    margin: 1.5em auto;
+  }
+  #baby-unit{
+    background: $purple;
+    color: #fff;
+    border-radius: 5px;
+  }
+  #toddler-unit{
+    @extend #baby-unit;
+    background: $red;
+  }
+  #preschool-unit{
+    @extend #baby-unit;
+    background: $blue;
+  }
 }
 
 #staff-page{

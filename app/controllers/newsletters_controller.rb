@@ -1,4 +1,6 @@
 class NewslettersController < AdministrationController
+  before_action :authenticate_admin!, except: :show
+  before_action :authenticate_parent!, only: :show
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
   # GET /newsletters
