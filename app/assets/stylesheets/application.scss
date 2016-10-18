@@ -59,7 +59,7 @@ button[disabled], html input[disabled]{
 }
 
 .navbar{
-  height: 15vh;
+  height: 100px;
   border: 0px;
   background-color: transparent;
   -webkit-box-shadow: 0px 12px 21px -11px rgba(0,0,0,0.75);
@@ -80,41 +80,42 @@ button[disabled], html input[disabled]{
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+    z-index: 100;
+    .navbar-nav{
+      li{
+        border-bottom: 2px solid transparent;
+         -webkit-transition: 500ms;
+          -o-transition: 500ms;
+          -moz-transition: 500ms;
+          transition: 500ms;
+        a{
+          color: $red;
+        }
+      }
+      li:hover{
+        border-bottom: 2px solid $red;
+      }
+    }
+    .active{
+      border-bottom: 2px solid $red !important;
+      a{
+        background-color: transparent;
+      }
+    }
   }
 }
 
 .navbar-default .navbar-toggle{
+  position: relative;
+  top: 18px;
   border-color: $red;
-  margin-top: 13px;
   .icon-bar{
     background-color: $red;
   }
-}
-
-
-#navbar-collapse{
-  .navbar-nav{
-    li{
-      border-bottom: 2px solid transparent;
-       -webkit-transition: 500ms;
-        -o-transition: 500ms;
-        -moz-transition: 500ms;
-        transition: 500ms;
-      a{
-        color: $red;
-      }
-    }
-    li:hover{
-      border-bottom: 2px solid $red;
-    }
+  &:hover, &:focus{
+    background-color: #fff;
   }
-  .active{
-    border-bottom: 2px solid $red !important;
-    a{
-      background-color: transparent;
-    }
-  }
-} // End Navigation
+}   // End Navigation
 
 #footer{
   position: absolute;
@@ -142,23 +143,33 @@ button[disabled], html input[disabled]{
   }
 }
 
-// XS
+// Small
+@media (max-width: 992px) {
+  #header{
+    width: 100%;
+  }
+  .navbar-nav li a{
+    font-size: 14px;
+  }
+}
+
+// XSmall
 @media (max-width: 768px) {
   body{
     padding-bottom: 349px;
   }
-  #navbar-collapse .navbar-right{
+  #header #navbar-collapse{
+    top: 300px;
+    right: 20px;
+    width: 50%;
     background: #fff;
     text-align: center;
-  }
-  .navbar{
-    height: 10vh;
+    .navbar-nav li a{
+      font-size: 18px;
+    }
   }
   .navbar-header{
     width: 100%;
-    #logo{
-      height: 60px;
-    }
   }
   #footer #footer-images{
     margin-top: 1em;
@@ -168,20 +179,10 @@ button[disabled], html input[disabled]{
   }
 }
 
-//Mobile Landscape
-@media (max-width: 740px) {
-  .navbar{
-    height: 25vh;
-  }
-}
-
 // Mobile Portrait
 @media (max-width: 468px){
   body{
     padding-bottom: 555px;
-  }
-  .navbar{
-    height: 15vh;
   }
 }
 
