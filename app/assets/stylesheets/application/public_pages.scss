@@ -16,7 +16,7 @@
   }
   #welcome{
     position: relative;
-    height: 85vh;
+    height: 650px;
     padding: 0px!important;
     #hero-image{
       position: absolute;
@@ -250,12 +250,17 @@
 @media (max-width: 1280px) {
   #home-page{
     #welcome{
+      height: 550px;
       #welcome-text{
-        top: 0;
-        transform: none;
+        h1{
+          font-size: 2.5em;
+        }
+        p{
+          font-size:1.25em;
+        }
       }
       #hero-image{
-        right: -400px;
+        right: -300px;
         svg{
           height: 600px;
         }
@@ -265,10 +270,12 @@
 }
 
 //screen-sm
-@media (max-width: 992px) {
-  #welcome-text{
+@media (max-width: 991px) {
+  #home-page #welcome #welcome-text{
+    top: 60%;
     h1{
       font-size: 2em;
+      text-shadow: 2px 2px 1px #fff;
     }
     p{
       font-size: 1.3em;
@@ -286,17 +293,24 @@
 }
 
 //screen-xs
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #home-page{
     #welcome{
-      height: 75vh;
+      height: 525px;
       #welcome-text{
         top: 0;
         transform: none;
+        h1{
+          font-size: 2em;
+        }
+        p{
+          font-size: 1em;
+        }
       }
       #hero-image{
+        right: 0;
         svg{
-          height: 650px;
+          height: 300px;
         }
       }
     }
@@ -331,79 +345,30 @@
   }
 }
 
-//Mobile Landscape
-@media (max-width: 740px) {
-  #home-page{
-    #welcome{
-      #welcome-text{
-        top: 0;
-        transform: none;
-        h1{
-          font-size: 1.2em;
-        }
-        p{
-          font-size: 0.8em;
-          .btn-lg, .btn-group-lg > .btn{
-            font-size: 1.2em;
-          }
-        }
-      }
-      #hero-image{
-        right: -100px;
-        svg{
-          height: 270px;
-        }
-      }
-    }
-    #about-us{
-      p{
-        line-height: 1.3em;
-      }
-      img{
-        height: 250px;
-      }
-    }
-    #services{
-      svg{
-        width: 150px;
-      }
-    }
-    #testimonials{
-      li{
-        left: 15px;
-      }
-    }
-  }
-}
-
 //  Mobile Portrait
 @media (max-width: 468px) {
   #home-page{
     h1{
-      font-size: 2.3em
+      font-size: 2em
     }
     p{
-      font-size: 1.3em;
+      font-size: 1em;
     }
     #welcome{
-      height: 85vh;
       #welcome-text{
         top: 0;
         transform: none;
         h1{
-          font-size: 1.4em;
+          font-size: 2em
         }
         p{
-          font-size: 0.8em;
-          .btn-lg, .btn-group-lg > .btn{
-            font-size: 1em;
-          }
+          font-size: 1em;
         }
       }
       #hero-image{
-        right: -150px;
+        right: 0;
         svg{
-          height: 300px;
+          height: 250px;
         }
       }
     }
