@@ -1,5 +1,5 @@
 <h1><%= @job.title %></h1>
-<p><%= @job.description %></p>
+<p><%= description(@job.description) %></p>
 <p class="text-right">
   <%= link_to fa_icon("pencil 2x", id: "pencil"), edit_job_path(@job),
                                                                           title: "Edit" %>
