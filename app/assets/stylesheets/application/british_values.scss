@@ -1,0 +1,21 @@
+#british-values-page{
+  cursor: url("big-ben.png"), auto;
+  margin-bottom: 50px;
+  img{
+    border-radius: 5px;
+  }
+  #flag{
+    margin-bottom: 50px;
+  }
+  h3{
+    float: left;
+    margin: 0;
+    line-height: 128px;
+  }
+  .uk-blue{
+    color: #00247D;
+  }
+  .uk-red{
+    color: #CF142B;
+  }
+}

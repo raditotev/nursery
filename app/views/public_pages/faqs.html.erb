@@ -2,11 +2,17 @@
 
 <div id="faqs-page" class="container-fluid">
   <div class="container">
-    <h1>Frequently Asked Questions</h1>
+    <div class="row">
+      <h1>Frequently Asked Questions</h1>
+    </div>
     <% @faqs.each do |faq| %>
     <div>
-      <h4 data-toggle="collapse" data-target="#<%= faq.id %>"><strong>Q:<%= faq.question %></strong></h4>
-      <h4 id="<%= faq.id %>" class="collapse out">A:<%= faq.answer %></h4>
+      <h4 data-toggle="collapse" data-target="#<%= faq.id %>">
+        <strong><%= faq.question %></strong>
+      </h4>
+      <p id="<%= faq.id %>" class="collapse out">
+        <%= faq.answer %>
+      </p>
     </div>
     <% end %>
   </div>

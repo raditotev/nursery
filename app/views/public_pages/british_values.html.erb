@@ -1,6 +1,9 @@
 <% provide(:title, "British Values.") %>
 
 <div id="british-values-page" class="container-fluid">
+  <div class="container" id="flag">
+    <%= image_tag("british-flag-large.png", class: "img-responsive") %>
+  </div>
   <div class="container">
     <p>
       <strong>
@@ -12,7 +15,10 @@
         So, how do we actively promote British Values at Oak Tree Day Nursery?
       </strong>
     </p>
-    <h3>Democracy</h3>
+    <div class="row">
+      <h3 class="uk-blue">Democracy</h3>
+      <%= image_tag("democracy.png", class: "pull-right") %>
+    </div>
     <p>
        We ensure that the children, parent and staff have many opportunities for their voice to be heard at Oak Tree Day Nursery we provide activities such as:
     </p>
@@ -40,7 +46,10 @@
         Parents' opinion are welcome through methods such as questionnaires, parents evening, parent suggestion box and home diaries.
       </li>
     </ul>
-    <h3>Rule of law</h3>
+    <div class="row">
+      <h3 class="uk-red">Rule of law</h3>
+      <%= image_tag("law.png", class: "pull-right") %>
+    </div>
     <ul>
       <li>
         We recognise the importance of rules and laws, that they are referred to and reinforced. We teach the children the importance of rules, that they govern and protect us, what it involves and consequences when they are broken.
@@ -61,7 +70,10 @@
         We have a consistent approach towards managing undesirable behaviour in class.
       </li>
     </ul>
-    <h3>Individual liberty</h3>
+    <div class="row">
+      <h3 class="uk-blue">Liberty</h3>
+      <%= image_tag("dove.png", class: "pull-right") %>
+    </div>
     <ul>
       <li>
         Alongside the rules, we promote freedom of choice and the right to respectfully express views and beliefs.
@@ -88,7 +100,10 @@
         The children participate in outings to the theatre, local shops, libraries, museums and farm. All these experiences broaden the children's knowledge and experience of the world and enhance their learning experience as a whole.
       </li>
     </ul>
-    <h3>Mutual respect and tolerance</h3>
+    <div class="row">
+      <h3 class="uk-red">Tolerance</h3>
+      <%= image_tag("handshake.png", class: "pull-right") %>
+    </div>
     <ul>
       <li>
         Oak Tree Day Nursery serves an area which is culturally  diverse and we are proud to promote and celebrate our different cultures, beliefs, backgrounds and different ways of life.

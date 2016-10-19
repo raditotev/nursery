@@ -1,0 +1,26 @@
+#save-money-page{
+  margin-bottom: 50px;
+  .row{
+    height: 200px;
+    background: $purple;
+    h1{
+      margin: 0;
+      padding-right: 15px;
+      line-height: 200px;
+      color: #fff;
+      text-align: right;
+    }
+  }
+  h3{
+    color: $purple;
+  }
+  @media (max-width: 640px){
+    .row{
+      h1{
+        text-align: center;
+        margin-top: 45px;
+        line-height: 1.2em;
+      }
+    }
+  }
+}

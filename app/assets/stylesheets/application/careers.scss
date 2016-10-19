@@ -1,11 +1,13 @@
 #careers-page{
+  margin-bottom: 50px;
   #no-vacanices{
     @include absolute-position(40%, 50%);
   }
   .row{
     position: relative;
-    height: 200px;
+    height: 250px;
     overflow-y: hidden;
+    margin-bottom: 20px;
   }
   .fadeout {
       position: absolute;
