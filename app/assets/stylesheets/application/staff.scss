@@ -1,8 +1,17 @@
 #staff-page{
+  h2{
+    color: $red;
+  }
+  .col-sm-9{
+    margin-top: 25px;
+  }
   img{
     border-radius: 5px;
   }
   #awards{
     margin-top: 50px;
+    h3{
+      color: $blue;
+    }
   }
 }

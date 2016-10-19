@@ -5,6 +5,13 @@
   transform: translate(-50%, -50%);
 }
 
+@mixin absolute-position($X, $Y) {
+  position: absolute;
+  top: $X;
+  left: $Y;
+  transform: translate(-($X), -($Y));
+}
+
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;

@@ -1,19 +1,22 @@
 <% provide(:title, "Jobs") %>
 
-<div id="careers-page" class="container-fluid">
-  <div class="container">
-  <% if @jobs.any? %>
-    <h1 class="text-center">We are currently hiring:</h1>
-    <% @jobs.each do |job| %>
-      <div class="row">
-      <h2><%= job.title %></h2>
-      <p><%= job.description %></p>
-      </div>
-    <% end %>
-  <% else %>
-    <h1 class="text-center">We dont have any vacancies at the moment.</h1>
-  <% else %>
-    <h1>We're currently not hiring.</h1>
+<div class="container" id="careers-page">
+<% if @jobs.any? %>
+  <h1 class="text-center">We are on the look out for:</h1>
+  <% @jobs.each do |job| %>
+    <div class="row">
+      <h3 class="text-purple"><%= job.title %></h3>
+      <p><%= description(job.description) %></p>
+      <p><%= link_to "Apply", contact_path(subject: "Application for: #{job.title}"),
+                                              class: "btn btn-default",
+                                              data: {confirm: "Please fill out the form on the next screen."} %>
+
+      </p>
+      <div class="fadeout"></div>
+    </div>
   <% end %>
-  </div>
+<% else %>
+  <h1 class="text-center" id="no-vacanices">We don't have any vacancies at the moment.</h1>
+<% end %>
 </div>
+

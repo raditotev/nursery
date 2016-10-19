@@ -28,11 +28,20 @@ var ready;
 ready = function(){
   $(function() {
 
+    // Underline active ink in navbar
     // Will also work for relative and absolute hrefs
     var url = window.location;
     $('#navbar-collapse .navbar-nav li a').filter(function() {
         return this.href == url;
     }).parent().addClass('active');
+
+    // Show full job description - careers.thml.erb
+    $('.fadeout').click(function(e) {
+      e.preventDefault();
+      var el = $(this)
+      el.parent().css('height', 'auto');
+      el.remove();
+    });
 
     var disable_button = function(button, field1, field2, field3){
         $(button).hover(function() {

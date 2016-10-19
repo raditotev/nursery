@@ -1,0 +1,24 @@
+#contact-page{
+  .container-fluid{
+    margin: 50px auto;
+  }
+  h3{
+    color: $purple;
+  }
+  #address{
+    p{
+      margin-top: 40px;
+      strong{
+        color: $purple;
+      }
+    }
+  }
+  #map{
+    margin-bottom: 50px;
+  }
+  @media (max-width: 767px){
+    .container-fluid{
+      margin-top: 0px;
+    }
+  }
+}

@@ -1,15 +1,11 @@
 <% provide(:title, "Contact") %>
+
 <div id="contact-page">
   <div class="container-fluid">
     <div class="container">
-      <h1 class="text-center">Contacts</h1>
       <div class="row" id="contacts">
-        <div class="col-sm-6">
-        <h3 class="text-center">Visit Us</h3>
-          <div>
-            <p>
-              The best way to choose a nursery is to come and see it for yourself. If you would like to make an appointment, or if you have any enquires about our facilities, please do telephone us, we’ll be happy to welcome you and your child for a visit around the Nursery.
-            </p>
+        <div class="col-sm-6" id="address">
+        <h3 class="text-left">Visit Us</h3>
             <p>
               <strong>Oak Tree Day Nursery</strong><br>
                58 Blairderry Road <br>
@@ -19,21 +15,20 @@
                 <br>
                 <%= fa_icon "phone" %> 020 8674 4844
             </p>
-          </div>
         </div>
-        <div class="col-sm-6">
-        <h3 class="text-center">Send Message</h3>
+        <div class="col-sm-6" id="contact-form">
+        <h3 class="text-right">Send Message</h3>
           <%= simple_form_for :contact do |f| %>
             <%= f.input :from, as: :email %>
-            <%= f.input :subject %>
+            <%= f.input :subject, input_html: {value: params[:subject] } %>
             <%= f.input :content, as: :text %>
-            <%= f.submit 'Send Email', id: "send_message", disabled: true %>
+            <%= f.submit 'Send Email', id: "send_message", disabled: true, class: "btn btn-default" %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.9983642108828!2d-0.1296488486734101!3d51.43982392336282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604256b472745%3A0xaa6fe53e1cd4d234!2sOak+Tree+Day+Nursery!5e0!3m2!1sen!2suk!4v1471428218832" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
   </div>
 </div>

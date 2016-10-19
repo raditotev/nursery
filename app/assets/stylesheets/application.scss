@@ -7,6 +7,9 @@ $font-size-base: 18px;
 $red: #eb595a;
 $purple: #7a5fa6;
 $blue: #62baec;
+$btn-default-bg: $purple;
+$btn-default-color: #fff;
+$btn-default-border: #5f4884;
 
 
 @import "bootstrap-sprockets";
@@ -111,6 +114,21 @@ button[disabled], html input[disabled]{
     background-color: #fff;
   }
 }   // End Navigation
+
+// devise/sessions/new.html.erb
+#login{
+  @include dead-center;
+  .btn-default{
+    color: #fff;
+    background-color: $red;
+    border-color: #cc1919;
+  }
+}
+
+// Application wide
+.text-purple{
+  color: $purple;
+}
 
 main{
   min-height: calc(100% - 150px); // navbar total height 150px

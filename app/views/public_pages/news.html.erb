@@ -1,21 +1,20 @@
 <% provide(:title, "News") %>
 
-<div id="parent-profile-page">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <h2 class="text-center">Upcomming Events</h2>
-        <% @events.each do |event| %>
-          <h4><%= get_title(event) %></h4>
-          <p><%= event.description %></p>
-        <% end %>
-      </div>
-      <div class="col-sm-6">
-        <h2 text-center>Newsletters</h2>
-        <% @newsletters.each do |newsletter| %>
-          <h4><%= link_to newsletter.name, newsletter, target: "_blank" %></h4>
-        <% end %>
-      </div>
+<div class="container" id="news-page">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 id="events">Upcomming Events</h2>
+      <% @events.each do |event| %>
+        <h4><%= get_title(event) %></h4>
+        <p><%= event.description %></p>
+      <% end %>
+    </div>
+    <div class="col-sm-6">
+      <h2 id="newsletters">Newsletters</h2>
+      <% @newsletters.each do |newsletter| %>
+        <h5><%= link_to newsletter.name, newsletter, target: "_blank" %></h5>
+      <% end %>
     </div>
   </div>
 </div>
+
