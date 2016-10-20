@@ -1,16 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat:400,700';
 @import 'https://fonts.googleapis.com/css?family=Cabin+Sketch:700';
 
-
-$font-family-sans-serif: 'Montserrat', sans-serif;
-$font-size-base: 18px;
-$red: #eb595a;
-$purple: #7a5fa6;
-$blue: #62baec;
-$btn-default-bg: $purple;
-$btn-default-color: #fff;
-$btn-default-border: #5f4884;
-
+@import "application_global_variables";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";

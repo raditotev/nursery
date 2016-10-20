@@ -1,17 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://fonts.googleapis.com/css?family=Lora);
 
-$font-family-sans-serif: 'Roboto', sans-serif;
-$font-family-serif: 'Lora', serif;
-$font-size-base: 16px;
-$link-hover-decoration: none;
-$light-cappuccino: #FFF4E6;
-$dark-cappuccino: #3C2F2F;
-$gold: #FFA700;
-$blue: #3B5998;
-$green: #5CB85C;
-$ornage: #F47835;
-$brown: #B2875C;
+@import "administration_global_variables";
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -74,17 +64,17 @@ p{
     }
   }
   #admin-back-link{
-  position: fixed;
-  top: 90%;
-  left: 90%;
-  transform: translate(-50%, -50%);
-  opacity: 0.2;
-  h2{
-    font-size: 1.3em;
+    position: fixed;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+    h2{
+      font-size: 1.3em;
+    }
+    h4{
+      font-size: 1em;
+      margin-top: 0;
+    }
   }
-  h4{
-    font-size: 1em;
-    margin-top: 0;
-  }
-}
 }
