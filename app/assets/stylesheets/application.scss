@@ -191,10 +191,20 @@ main{
   .navbar-header{
     width: 100%;
   }
-  #footer #footer-images{
-    margin-top: 1em;
-    img{
-      margin: 0;
+  #footer {
+    #footer-images{
+      margin-top: 1em;
+      img{
+        margin: 0;
+      }
+    }
+    #oaktree-footer , #information-footer, #external-links-footer{
+      strong{
+        cursor: pointer;
+      }
+      ul{
+        display: none;
+      }
     }
   }
 }

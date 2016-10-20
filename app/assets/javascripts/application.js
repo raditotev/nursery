@@ -65,19 +65,30 @@ ready = function(){
     $('#request_date').datepicker({dateFormat: 'dd/mm/yy'});
 
     // Rotate Testimonials
-    $('#testimonials li').hide().eq(0).show();
+    function rotateTestimonials(){
+      $('#testimonials li').hide().eq(0).show();
 
-    function next(){
-      $('#testimonials li:visible').delay(5000).fadeOut('slow',function(){
-        if ($('#testimonials li:visible').length > 0){
-          return
-        }
-        var $next = $(this).next();
-        if ($next.length == 0) { $next = $('#testimonials ul li:first') }
-        $next.fadeIn('slow', next);
-      });
-     }
-    next();
+      function next(){
+        $('#testimonials li:visible').delay(5000).fadeOut('slow',function(){
+          if ($('#testimonials li:visible').length > 0){
+            return
+          }
+          var $next = $(this).next();
+          if ($next.length == 0) { $next = $('#testimonials ul li:first') }
+          $next.fadeIn('slow', next);
+        });
+       }
+      next();
+    }
+    rotateTestimonials();
+
+    // Accordion Footer Links on small screens
+    $('#footer ul li').click(function() {
+      if ($(window).width() < 768){
+        $(this).find(">ul").toggle(1000);
+      }
+    });
+
   });
 }
 
