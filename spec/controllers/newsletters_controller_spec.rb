@@ -10,7 +10,39 @@ RSpec.describe NewslettersController, type: :controller do
   let(:valid_session) { {} }
 
   describe "unauthorized user" do
-    is_redirected :newsletter
+    let(:newsletter){ create(:newsletter) }
+    let(:valid_attributes) { attributes_for(:newsletter) }
+    let(:valid_session) { {} }
+
+    it "is redirected to sign in page on get index" do
+      get :index
+      expect(response).to redirect_to new_admin_session_path
+    end
+
+    it "is redirected to sign in page on get new" do
+      get :new, params: {}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
+    it "is redirected to sign in page on get edit" do
+      get :edit, params: { id: newsletter.id }, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
+    it "is redirected to sign in page on post create" do
+      post :create, params: {:newsletter => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
+    it "is redirected to sign in page on put update" do
+      post :create, params: {:newsletter => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
+    it "is redirected to sign in page on delete destroy" do
+      post :create, params: {:newsletter => valid_attributes}, session: valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
   end
 
   describe "GET #index" do
