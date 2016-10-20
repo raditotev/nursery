@@ -26,6 +26,11 @@ body{
   height: 100vh;
 }
 
+a, a:hover, a:active, a:focus{
+  outline: 0;
+  text-decoration: none;
+}
+
 #admin-header{
   background-color: $light-cappuccino;
   color: $dark-cappuccino;
