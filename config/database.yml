@@ -85,6 +85,6 @@ production:
   adapter: postgresql
   encoding: unicode
   database: nursery_production
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  pool: 5
+  username: ENV['DB_USERNAME']
+  password: ENV['DB_PASSWORD']
