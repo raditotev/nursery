@@ -21,8 +21,8 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
-  # username: <%= Rails.application.secrets[:database][:user] %>
-  # password: <%= Rails.application.secrets[:database][:password] %>
+  username: radi
+  password: password
 
 development:
   <<: *default
