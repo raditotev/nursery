@@ -144,6 +144,12 @@ main{
   a{
     color: #fff;
   }
+  p {
+    color: $purple;
+    a{
+      color: $red;
+    }
+  }
   .container{
     margin-top: 3em;
   }
