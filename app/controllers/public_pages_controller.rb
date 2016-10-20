@@ -62,6 +62,15 @@ class PublicPagesController < ApplicationController
     end
   end
 
+  def fees_terms_and_conditions
+    send_file(
+      "#{Rails.root}/public/Fees Terms and Conditions.pdf",
+      filename: "Fees Terms and Conditions.pdf",
+      disposition: 'inline',
+      type: "application/pdf"
+    )
+  end
+
   def save_money
   end
 

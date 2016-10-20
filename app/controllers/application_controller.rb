@@ -7,14 +7,6 @@ class ApplicationController < ActionController::Base
     resource.class == Admin ? admin_dashboard_path : gallery_path
   end
 
-  def fees_terms_and_conditions
-    send_file(
-      "#{Rails.root}/public/Fees Terms and Conditions.pdf",
-      filename: "Fees Terms and Conditions.pdf",
-      type: "application/pdf"
-    )
-  end
-
   protected
 
   def layout_by_resource
