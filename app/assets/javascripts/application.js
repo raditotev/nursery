@@ -43,11 +43,9 @@ ready = function(){
       el.remove();
     });
 
-    var disable_button = function(button, field1, field2, field3){
-        $(button).hover(function() {
-        if($(field1).val() != "" &&
-            $(field2).val() !="" &&
-            $(field3).val() !=""){
+    var disableButton = function(button, field1, field2, field3){
+      $(field1).add(field2).add(field3).on("change keyup", function(){
+        if($(field1).val() != "" && $(field2).val() != "" && $(field3).val() !=""){
           $(button).prop("disabled", false);
         } else {
           $(button).prop("disabled", true);
@@ -56,10 +54,10 @@ ready = function(){
     }
 
     // Disable send request button if required fields empty (Request Viewing)
-    disable_button("#send_request", "#request_name",
+    disableButton("#send_request", "#request_name",
                                "#request_email", "#request_date");
     // Disable send message button if required fields empty (Contact Form)
-    disable_button("#send_message", "#contact_form",
+    disableButton("#send_message", "#contact_from",
                                "#contact_subject", "#contact_content");
     // Date picker for viewing request modal
     $('#request_date').datepicker({dateFormat: 'dd/mm/yy'});
