@@ -2,7 +2,10 @@
 
   <%= f.input :username %>
   <%= f.input :email %>
-  <% if current_admin.superadmin %>
+  <p>
+    <strong>Note:</strong> Password will be automatically created and send to the admin's email.
+  </p>
+  <% if current_admin.superadmin && !admin.new_record? %>
     <%= f.input :password %>
   <% end %>
   <%= f.button :submit %>
