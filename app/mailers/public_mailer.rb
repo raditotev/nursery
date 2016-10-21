@@ -6,7 +6,7 @@ class PublicMailer < ApplicationMailer
     @content = message["content"]
     @subject = message["subject"]
 
-    mail(to: "office@test_oaktreedaynursery.com", subject: "[website] #{@subject}")
+    mail(to: "raditotev@gmail.com", subject: "[website] #{@subject}")
   end
 
   def request_viewing request
@@ -17,6 +17,6 @@ class PublicMailer < ApplicationMailer
     @date = request["date"]
     @time = request["time"]
 
-    mail(to: "office@test_oaktreedaynursery.com", subject: "Request for Viewing from #{@name}")
+    mail(to: "raditotev@gmail.com", subject: "Request for Viewing from #{@name}")
   end
 end
