@@ -251,6 +251,11 @@
         }
       }
     }
+    #services{
+      .flex-item{
+        @include flex(100%);
+      }
+    }
     #visit-us{
       .container{
         position: static;

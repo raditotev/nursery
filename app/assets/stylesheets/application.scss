@@ -176,7 +176,7 @@ main{
 // XSmall
 @media (max-width: 767px) {
   #header #navbar-collapse{
-    top: 300px;
+    top: 250px;
     right: 20px;
     width: 50%;
     background: #fff;
@@ -189,6 +189,12 @@ main{
     width: 100%;
   }
   #footer {
+    ul li{
+      text-align: center;
+      ul li{
+        text-align: left;
+      }
+    }
     #footer-images{
       margin-top: 1em;
       img{
@@ -203,6 +209,9 @@ main{
         display: none;
       }
     }
+  }
+  main{
+    min-height: 90vh;
   }
 }
 
