@@ -24,7 +24,7 @@ class PublicPagesController < ApplicationController
       params[:contact].each_pair{ |k, v| message[k] = v }
 
       if PublicMailer.contact_form(message).deliver
-        flash.now[:success] = "Message has been send."
+        flash.now[:success] = "Message has been sent."
         render :contact
       else
         flash.now[:error] = "Please try again."
