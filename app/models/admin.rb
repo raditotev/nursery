@@ -12,8 +12,8 @@ class Admin < ApplicationRecord
 
   def set_password
     password = SecureRandom.urlsafe_base64(6)
-    self.password = password
-    self.generated_password = password
+    self.password = password unless self.superadmin
+    self.generated_password = self.password
   end
 
   def send_email

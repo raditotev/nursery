@@ -1,12 +1,12 @@
 class AdminsController < AdministrationController
-  before_action :super_admin
+  before_action :super_admin, only: [:new, :create, :update, :destroy]
   before_action :set_admin, only: [:show, :edit, :update, :destroy]
 
 
   # GET /admins
   # GET /admins.json
   def index
-    @admins = Admin.where(superadmin: false)
+    @admins = Admin.order(superadmin: :desc)
   end
 
   # GET /admins/1
@@ -40,7 +40,7 @@ class AdminsController < AdministrationController
   def update
     respond_to do |format|
       if @admin.update(admin_params)
-        format.html { redirect_to @admin, flash: {success: 'Admin was successfully updated.'} }
+        format.html { redirect_to admin_dashboard_path, flash: {success: 'Admin was successfully updated.'} }
       else
         format.html { render :edit }
       end
@@ -55,6 +55,13 @@ class AdminsController < AdministrationController
     end
   end
 
+  def super_admin
+    unless current_admin.superadmin
+      flash[:error] = "You're not authorized!"
+      redirect_back(fallback_location: new_admin_session_path)
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_admin
@@ -63,12 +70,6 @@ class AdminsController < AdministrationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_params
-      params.require(:admin).permit(:username, :email)
-    end
-
-    def super_admin
-      unless current_admin.superadmin
-        redirect_to new_admin_session_path
-      end
+      params.require(:admin).permit(:username, :email, :password)
     end
 end

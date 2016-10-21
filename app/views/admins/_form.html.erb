@@ -2,6 +2,9 @@
 
   <%= f.input :username %>
   <%= f.input :email %>
+  <% if current_admin.superadmin %>
+    <%= f.input :password %>
+  <% end %>
   <%= f.button :submit %>
 
 <% end %>
