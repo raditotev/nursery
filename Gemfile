@@ -38,6 +38,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # File upload
 gem "paperclip", "~> 5.0.0"
+# Amazon Web Services
+gem 'aws-sdk', '~> 2.3'
 # Forms
 gem 'simple_form'
 # jQuery UI
