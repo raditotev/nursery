@@ -17,4 +17,9 @@
   .uk-red{
     color: #CF142B;
   }
+  @media (max-width: 767px){
+    ul{
+      padding-left: 0;
+    }
+  }
 }
