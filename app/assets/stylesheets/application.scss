@@ -126,6 +126,18 @@ main{
   margin-bottom: 50px;
 }
 
+// Invalid email styling
+#invalid-email{
+    color: $red;
+    font-weight: normal;
+  }
+  .incorrect{
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(235,89,90,0.67);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(235,89,90,0.67);
+    box-shadow: 0px 0px 9px 0px rgba(235,89,90,0.67);
+    border-color: $red;
+  }
+
 .vertical-center{
   min-height: $min-viewport-desktop;
   @include flexbox();
