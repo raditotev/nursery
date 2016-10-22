@@ -152,7 +152,7 @@
           <%= f.input :telephone, required: false, as: :tel %>
           <%= f.input :date, required: true %>
           <%= f.input :time, collection: [ "Morning", "Afternoon"], prompt: "When do you prefer to visit?", required: false %>
-          <%= f.submit "Send request", id:"send_request", disabled: true %>
+          <%= f.submit "Send request", id:"send_request", disabled: true, class: "btn btn-default" %>
         <% end %>
       </div>
     </div>
