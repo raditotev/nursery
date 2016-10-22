@@ -1,5 +1,5 @@
 #about-us-page{
-  @include absolute-position(50%, 50%);
+  min-height: $min-viewport-desktop;
   img{
     border-radius: 5px;
   }
@@ -13,7 +13,12 @@
   }
 }
 
+@media (max-width: 992px){
+  min-height: $min-viewport-tablet;
+}
+
 @media (max-width: 767px){
+  min-height: $min-viewport-mobile;
   #about-us-page{
     position: static;
     top:0;

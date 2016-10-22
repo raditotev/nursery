@@ -4,6 +4,9 @@
   }
   .container{
     margin: 1.5em auto;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   #baby-unit{
     background: $purple;

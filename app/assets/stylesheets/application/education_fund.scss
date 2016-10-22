@@ -1,5 +1,5 @@
 #education-fund-page{
-  @include absolute-position(50%, 50%);
+  min-height: $min-viewport-desktop;
   #slogan{
     height: 200px;
     margin-bottom: 50px;
@@ -22,11 +22,13 @@
     }
   }
   @media (max-width: 991px){
+    min-height: $min-viewport-tablet;
     h1{
       font-size: 1.6em;
     }
   }
   @media (max-width: 767px){
+    min-height: $min-viewport-mobile;
     position: relative;
     top: 0;
     left: 0;

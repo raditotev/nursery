@@ -1,4 +1,5 @@
 #home-page{
+  margin-bottom: -50px;
   h1 {
     font-weight: 700;
     font-size: 3em;
@@ -149,25 +150,23 @@
   #testimonials{
     margin: 3em auto;
     position: relative;
-    min-height: 500px;
+    min-height: 400px;
   }
-  li{
-    position: absolute;
-    top:50%;
-    transform: translateY(-50%);
-    margin-left: -35px;
-    padding-right: 15px;
-    p{
-      font: 2.5em $font-family-cursive;
-    }
-    strong{
-      padding-right: 1em;
-    }
-    .fa{
-      font-size: 0.5em;
-    }
-    .from{
-      text-align: right;
+  ul{
+    padding-left: 0;
+    li{
+      p{
+        font: 2.5em $font-family-cursive;
+      }
+      strong{
+        padding-right: 1em;
+      }
+      .fa{
+        font-size: 0.5em;
+      }
+      .from{
+        text-align: right;
+      }
     }
   }
 }

@@ -20,6 +20,16 @@
   display: flex;
 }
 
+@mixin flex-direction($value){
+  -webkit-flex-direction: $value;
+   flex-direction: $value;
+}
+
+@mixin justify-content($value){
+  -webkit-justify-content: $value;
+   justify-content: $value;
+}
+
 @mixin flex($values) {
   -webkit-box-flex: $values;
   -moz-box-flex:  $values;

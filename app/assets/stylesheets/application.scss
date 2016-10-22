@@ -121,18 +121,21 @@ button[disabled], html input[disabled]{
 }
 
 main{
-  min-height: calc(100% - 150px); // navbar total height 150px
-  min-height: calc(100vh - 150px);
+  min-height: $min-viewport-desktop;
   position: relative;
+  margin-bottom: 50px;
+}
+
+.vertical-center{
+  min-height: $min-viewport-desktop;
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
 }
 
 // devise/sessions/new.html.erb
 #login{
-  margin-bottom: 15px;
-  @extend main;
-  @include flexbox();
-  flex-direction: column;
-  justify-content: center;
+  min-height: $min-viewport-desktop;
   .btn-default{
     color: #fff;
     background-color: $red;
@@ -150,9 +153,10 @@ main{
     color: #fff;
   }
   p {
+    margin-top: 25px;
     color: $purple;
     a{
-      color: $red;
+      color: $purple;
     }
   }
   .container{
@@ -170,16 +174,25 @@ main{
 
 // Small
 @media (max-width: 992px) {
+  main{
+    min-height: $min-viewport-tablet;
+  }
   #header{
     width: 100%;
   }
   .navbar-nav li a{
     font-size: 14px;
   }
+  #login{
+    min-height: $min-viewport-tablet;
+  }
 }
 
 // XSmall
 @media (max-width: 767px) {
+  main{
+    min-height: $min-viewport-mobile;
+  }
   #header #navbar-collapse{
     top: 250px;
     right: 20px;
@@ -215,7 +228,7 @@ main{
       }
     }
   }
-  main{
-    min-height: 90vh;
+  #login{
+    min-height: $min-viewport-mobile;
   }
 }
