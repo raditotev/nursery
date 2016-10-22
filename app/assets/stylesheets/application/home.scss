@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-
 #home-page{
   h1 {
     font-weight: 700;
@@ -157,8 +155,10 @@
     position: absolute;
     top:50%;
     transform: translateY(-50%);
+    margin-left: -35px;
+    padding-right: 15px;
     p{
-      font: 2.5em 'Indie Flower', cursive;
+      font: 2.5em $font-family-cursive;
     }
     strong{
       padding-right: 1em;

@@ -7,6 +7,10 @@ module ApplicationHelper
   end
 
   def description content
-    raw sanitize(simple_format(content), :tags => %w(br p))
+    raw sanitize(simple_format(content), :tags => %w(br))
+  end
+
+  def excerpt description
+    description.split(". ").map(&:strip)[0..1].join(". ") + "."
   end
 end

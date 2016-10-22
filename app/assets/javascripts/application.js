@@ -28,8 +28,7 @@ var ready;
 ready = function(){
   $(function() {
 
-    // Underline active ink in navbar
-    // Will also work for relative and absolute hrefs
+    // Underline active link in navbar
     var url = window.location;
     $('#navbar-collapse .navbar-nav li a').filter(function() {
         return this.href == url;
@@ -43,6 +42,7 @@ ready = function(){
       el.remove();
     });
 
+    // Disable send button
     var disableButton = function(button, field1, field2, field3){
       $(field1).add(field2).add(field3).on("change keyup", function(){
         if($(field1).val() != "" && $(field2).val() != "" && $(field3).val() !=""){
@@ -52,20 +52,19 @@ ready = function(){
         }
       });
     }
-
-    // Disable send request button if required fields empty (Request Viewing)
+    // Request Viewing
     disableButton("#send_request", "#request_name",
                                "#request_email", "#request_date");
-    // Disable send message button if required fields empty (Contact Form)
+    // Contact Form
     disableButton("#send_message", "#contact_from",
                                "#contact_subject", "#contact_content");
+
     // Date picker for viewing request modal
     $('#request_date').datepicker({dateFormat: 'dd/mm/yy'});
 
     // Rotate Testimonials
     function rotateTestimonials(){
       $('#testimonials li').hide().eq(0).show();
-
       function next(){
         $('#testimonials li:visible').delay(5000).fadeOut('slow',function(){
           if ($('#testimonials li:visible').length > 0){
@@ -91,16 +90,3 @@ ready = function(){
 }
 
 $(document).on('turbolinks:load', ready);
-
-// $(document).ready(function() {
-//   $(function() {
-//     $('#navbar-collapse .navbar-nav li').click(function(e) {
-//       $('#navbar-collapse .navbar-nav li.active').removeClass('active');
-//       var $this = $(this);
-//       if (!$this.hasClass('active')) {
-//         $this.addClass('active');
-//       }
-//       // e.preventDefault();
-//     });
-//   });
-// });
