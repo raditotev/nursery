@@ -46,30 +46,23 @@ ready = function(){
     var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
     var validEmail = false;
 
-    $("#contact_from").change(function(){
-      var match = re.test($(this).val());
-      if (!match) {
-        $(this).addClass("incorrect");
-        $('label:first').append("<span id='invalid-email'> Please enter valid email</span>")
-      } else {
-        $('#invalid-email').remove();
-        $(this).removeClass("incorrect");
-        validEmail = true;
-      }
-    });
-
-    $("#request_email").change(function(){
-      var match = re.test($(this).val());
-      if (!match) {
-        $(this).addClass("incorrect");
-        $('label:eq(1)').append("<span id='invalid-email'> Please enter valid email</span>")
-        validEmail = false;
-      } else {
-        $('#invalid-email').remove();
-        $(this).removeClass("incorrect");
-        validEmail = true;
-      }
-    }); // End Email validation
+    function validateEmail (target){
+      $(target).change(function(){
+        var match = re.test($(this).val());
+        if (!match) {
+          var selector = (target == '#contact_from') ? 'label:first' : 'label:eq(1)'
+          $(selector).append("<span id='invalid-email'> Please enter valid email</span>")
+          $(this).addClass("incorrect");
+          validEmail = false;
+        } else {
+          $('#invalid-email').remove();
+          $(this).removeClass("incorrect");
+          validEmail = true;
+        }
+      });
+    }
+    validateEmail ("#contact_from");
+    validateEmail ("#request_email");
 
     // Disable send button
     var disableButton = function(button, field1, field2, field3){
