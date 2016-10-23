@@ -1,10 +1,8 @@
 #careers-page{
-  #no-vacanices{
-    @include absolute-position(40%, 50%);
-  }
+  min-height: $min-viewport-desktop;
   .row{
     position: relative;
-    height: 250px;
+    height: 150px;
     overflow-y: hidden;
     margin-bottom: 20px;
   }
@@ -36,6 +34,7 @@
       );
   }
   @media (max-width: 767px){
+    min-height: $min-viewport-mobile;
   h1{
     font-size: 2em;
     text-align: left;

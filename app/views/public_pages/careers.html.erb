@@ -1,8 +1,10 @@
 <% provide(:title, "Jobs") %>
 
-<div class="container" id="careers-page">
+<div class="container vertical-center" id="careers-page">
 <% if @jobs.any? %>
-  <h1 class="text-center">We are on the look out for:</h1>
+  <div class="row page-banner vertical-center">
+    <h1>We <span class="text-red">HIRE</span></h1>
+  </div>
   <% @jobs.each do |job| %>
     <div class="row">
       <h3 class="text-purple"><%= job.title %></h3>
