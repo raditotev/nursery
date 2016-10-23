@@ -11,6 +11,6 @@ module ApplicationHelper
   end
 
   def excerpt description
-    description.split(". ").map(&:strip)[0..1].join(". ") + "."
+    description.split(/(?<=[.!?])\s*/).map(&:strip)[0..1].join(" ")
   end
 end
