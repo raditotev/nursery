@@ -8,27 +8,27 @@ Visitors of the site can get detailed information about the nursery and the serv
 
 ###For building this site I used:
 
-...Rails 5..
-...Ruby 2.3.0..
-...PostgreSQL..
-...Devise..
-...Paperclip..
-...AWS S3..
+Rails 5
+Ruby 2.3.0
+PostgreSQL
+Devise
+Paperclip
+AWS S3
 ####Tests
-...RSpec..
-...Capybara..
-...Shoulda Matchers..
-...Simple Cov..
-...Factory Girl..
-...Faker..
-...Database CLeaner..
+RSpec
+Capybara
+Shoulda Matchers
+Simple Cov
+Factory Girl
+Faker
+Database CLeaner
 ####Styling
-...CSS3..
-...Bootstrap..
-...Sass..
-...Font Awesome..
-...Simple Form..
+CSS3
+Bootstrap
+Sass
+Font Awesome
+Simple Form
 ####Functionality
-...JavaScript..
-...jQuery..
-...jQuery UI..
+JavaScript
+jQuery
+jQuery UI
