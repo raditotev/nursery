@@ -259,7 +259,7 @@
     #visit-us{
       .container{
         position: static;
-        background: url("school.svg") center center no-repeat;
+        background-image: asset-url("school.svg") center center no-repeat;
       }
       svg{
         display:none;
