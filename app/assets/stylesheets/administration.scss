@@ -43,7 +43,14 @@ p{
 }
 
 #main{
-  padding-bottom: 100px;
+  padding-bottom: 100px; //content above Back button
+}
+
+#yield{
+  min-height: calc(100vh - 178px);
+  @include flexbox();
+  @include flex-direction(column);
+  @include justify-content(center);
 }
 
 #admin-back-link{
@@ -62,6 +69,12 @@ p{
     h1{
       font-size: 1.4em;
     }
+  }
+  #main{
+    padding-bottom: 150px; // content above Back button
+  }
+  #yield{
+    min-height: calc(100vh - 227px); // 57px header + 150px top of back button
   }
   #admin-back-link{
     position: fixed;
